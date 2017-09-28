@@ -7,7 +7,6 @@
   text-align: center;
 }
 
-
 .MonsterList__item_wrapper {
   list-style: none;
   padding: 1rem;
@@ -60,6 +59,14 @@
     flex: 1 1 50px;
   }
 
+  .MonsterList__item {
+    padding-top: 0;
+    padding-left: 1rem;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+  }
+
   .MonsterList__sprite {
     flex: 0 0 56px;
   }
@@ -67,12 +74,5 @@
   .MonsterList__label {
     padding-top: 0;
     align-self: center;
-  }
-  .MonsterList__item {
-    padding-top: 0;
-    padding-left: 1rem;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center;
   }
 }
