@@ -1,10 +1,9 @@
 .MonsterList {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
   padding: 0 1rem;
   margin-top: 0px;
-  text-align: center;
 }
 
 .MonsterList__item_wrapper {
@@ -12,7 +11,6 @@
   padding: 1rem;
   color: white;
   font-weight: 600;
-  flex: 6 6 100px;
   height: 100px;
   width: 100px;
   margin: .25rem;
@@ -20,7 +18,7 @@
 }
 
 .MonsterList__item {
-  padding-top: 2rem;
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,10 +34,10 @@
 }
 
 .MonsterList__sprite {
-  height: 56px;
-  width: 56px;
+  height: 75px;
+  width: 75px;
   margin: 0 auto;
-  flex: 0 0 56px;
+  flex: 0 0 75px;
 }
 
 .MonsterList__label {
@@ -56,7 +54,7 @@
 
   .MonsterList__item_wrapper {
     width: initial;
-    flex: 1 1 50px;
+    height: 45px;
   }
 
   .MonsterList__item {
@@ -68,7 +66,9 @@
   }
 
   .MonsterList__sprite {
-    flex: 0 0 56px;
+    height: 60px;
+    width: 60px;
+    flex: initial;
   }
 
   .MonsterList__label {

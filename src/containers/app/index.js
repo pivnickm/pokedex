@@ -41,7 +41,7 @@ class App extends Component {
             onSearch={this.onSearch}
           />
         </div>
-        <div className="Adivp-intro">
+        <div className="MonsterContent">
           <List
             monsters={filteredData}
           />
