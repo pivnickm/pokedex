@@ -1,5 +1,4 @@
 import React, { PropTypes } from "react";
-
 //import * as colors from "../../constants/colors.js";
 
 import "./index.css";
@@ -42,7 +41,7 @@ const List = ({ monsters }) => {
           <div className="MonsterList__item">
             <img
               className="MonsterList__sprite"
-              src={require(`../../images/sprites/${item.id}.png`)}
+              src={`/hi_res/${item.id}.png`}
               alt={item.id}
             />
             <p
