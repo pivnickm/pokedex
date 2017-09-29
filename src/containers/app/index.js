@@ -3,6 +3,7 @@ import { forceCheck } from 'react-lazyload';
 import './index.css';
 import List from "../../components/list";
 import Filter from "../../components/filter";
+import Spinner from "../../components/spinner";
 import data from "../../data/monsters.json"
 
 class App extends Component {
