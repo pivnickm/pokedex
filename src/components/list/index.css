@@ -20,9 +20,6 @@
 
 .MonsterList__item {
   padding-top: 1rem;
-  /*display: flex;
-  flex-direction: column;
-  align-items: center; */
   text-align: center;
   position: absolute;
   top: 0;
@@ -38,8 +35,6 @@
 .MonsterList__sprite {
   height: 75px;
   width: 75px;
-  /*margin: 0 auto;
-  flex: 0 0 75px;*/
 }
 
 .MonsterList__label {
@@ -63,22 +58,15 @@
 
   .MonsterList__item {
     padding-top: 0;
-    /*padding-left: 1rem;*/
-    /*flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center;*/
   }
 
   .MonsterList__sprite {
     height: 60px;
     width: 60px;
-    /*flex: initial;*/
   }
 
   .MonsterList__label {
     padding-top: 0;
-    /*padding-right: 1rem;
-    align-self: center;*/
   }
 }
 

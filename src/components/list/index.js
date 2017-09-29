@@ -1,5 +1,4 @@
 import React, { PropTypes } from "react";
-//import { Lazy } from 'react-lazy'
 import LazyLoad from "react-lazyload";
 import Spinner from "../spinner";
 
