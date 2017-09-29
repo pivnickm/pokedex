@@ -7,6 +7,7 @@
 }
 
 .MonsterList__item_wrapper {
+  background: #ccc;
   list-style: none;
   padding: 1rem;
   color: white;
@@ -19,9 +20,7 @@
 
 .MonsterList__item {
   padding-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
   position: absolute;
   top: 0;
   right: 0;
@@ -30,21 +29,21 @@
 }
 
 .MonsterList__item:hover {
-  background-color: rgba(255, 255, 255, .25);
+  background-color: rgba(0, 0, 0, .25);
 }
 
 .MonsterList__sprite {
   height: 75px;
   width: 75px;
-  margin: 0 auto;
-  flex: 0 0 75px;
 }
 
 .MonsterList__label {
-  padding-top: .75rem;
+  padding-top: 1.75rem;
   margin: 0;
-  flex: 1 1 115px;
+  text-shadow: 1px 1px #666;
 }
+
+
 
 @media (max-width: 600px) {
   .MonsterList {
@@ -59,20 +58,66 @@
 
   .MonsterList__item {
     padding-top: 0;
-    padding-left: 1rem;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center;
   }
 
   .MonsterList__sprite {
     height: 60px;
     width: 60px;
-    flex: initial;
   }
 
   .MonsterList__label {
     padding-top: 0;
-    align-self: center;
   }
+}
+
+.Normal {
+  border-bottom: 1rem #A8A878 solid;
+}
+.Water {
+  border-bottom: 1rem #6890F0 solid;
+}
+.Fire {
+  border-bottom: 1rem #F08030 solid;
+}
+.Grass {
+  border-bottom: 1rem #78C850 solid;
+}
+.Flying {
+  border-bottom: 1rem #A890F0 solid;
+}
+.Poison {
+  border-bottom: 1rem #A040A0 solid;
+}
+.Dark {
+  border-bottom: 1rem #705848 solid;
+}
+.Psychic {
+  border-bottom: 1rem #F85888 solid;
+}
+.Steel {
+  border-bottom: 1rem #B8B8D0 solid;
+}
+.Electric {
+  border-bottom: 1rem #F8D030 solid;
+}
+.Fighting {
+  border-bottom: 1rem #C03028 solid;
+}
+.Ground {
+  border-bottom: 1rem #E0C068 solid;
+}
+.Rock {
+  border-bottom: 1rem #B8A038 solid;
+}
+.Bug {
+  border-bottom: 1rem #A8B820 solid;
+}
+.Ice {
+  border-bottom: 1rem #98D8D8 solid;
+}
+.Dragon {
+  border-bottom: 1rem #7038F8 solid;
+}
+.Ghost {
+  border-bottom: 1rem #705898 solid;
 }
