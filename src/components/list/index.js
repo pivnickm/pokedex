@@ -1,4 +1,8 @@
 import React, { PropTypes } from "react";
+//import { Lazy } from 'react-lazy'
+import LazyLoad from "react-lazyload";
+import Spinner from "../spinner";
+
 import "./index.css";
 
 const List = ({ monsters }) => {
@@ -19,11 +23,16 @@ const List = ({ monsters }) => {
           <div
             className={`MonsterList__item ${item.monsterTypes[0]}`}
           >
-            <img
-              className="MonsterList__sprite"
-              src={`/hi_res/${item.id}.png`}
-              alt={item.id}
-            />
+            <LazyLoad
+              height={200}
+              placeholder={<Spinner />}
+            >
+              <img
+                className="MonsterList__sprite"
+                src={`/hi_res/${item.id}.png`}
+                alt={item.id}
+              />
+            </LazyLoad>
             <p
               className="MonsterList__label"
             >

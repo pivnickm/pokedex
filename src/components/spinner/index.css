@@ -1,0 +1,56 @@
+body {
+  background: #ccc;
+}
+
+.PokeballSpinner {
+  height: 67px;
+  width: 67px;
+  border: 4px #fff solid;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 4px;
+  animation: rotation 3s infinite linear;
+}
+.PokeballSpinner__center {
+  background: #fff;
+  height: 20px;
+  width: 20px;
+  border: 2px #fff solid;
+  border-radius: 50%;
+  position: relative;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+}
+.PokeballSpinner__seam {
+  width: 100%;
+  border: 2px #fff solid;
+  position: relative;
+  top: 8px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .PokeballSpinner {
+    height: 52px;
+    width: 52px;
+    margin-bottom: 6px;
+  }
+  .PokeballSpinner__center {
+    background: #fff;
+    height: 15px;
+    width: 15px;
+    top: calc(50% - 9px);
+    left: calc(50% - 9px);
+  }
+  .PokeballSpinner__seam {
+    top: 5px;
+  }
+}

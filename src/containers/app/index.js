@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { forceCheck } from 'react-lazyload';
 import './index.css';
 import List from "../../components/list";
 import Filter from "../../components/filter";
+import Spinner from "../../components/spinner";
 import data from "../../data/monsters.json"
 
 class App extends Component {
@@ -22,13 +24,19 @@ class App extends Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.term !== this.state.term) {
+      forceCheck();
+    }
+  }
+
   filterMonsters(data) {
     const term = this.state.term;
 
     return data.filter(monster => {
       const { monsterName } = monster;
 
-      return monsterName.toLowerCase().includes(term.toLowerCase())
+      return monsterName.toLowerCase().startsWith(term.toLowerCase())
     });
   }
 

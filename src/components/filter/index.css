@@ -4,7 +4,7 @@
   padding: 0 .75rem;
   background: none;
   border: none;
-  border-bottom: 2px solid #BEBEBE;
+  border-bottom: 2px solid #eee;
   color: #fff;
   font-size: 1rem;
 }
@@ -14,5 +14,5 @@
 }
 
 .MonsterFilter::placeholder {
-  color: #BEBEBE;
+  color: #eee;
 }
