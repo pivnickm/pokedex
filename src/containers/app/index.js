@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { forceCheck } from 'react-lazyload';
 import './index.css';
-import List from "../../components/list";
 import Filter from "../../components/filter";
 import data from "../../data/monsters.json"
 
@@ -41,17 +40,30 @@ class App extends Component {
 
   render() {
     const filteredData = this.filterMonsters(data);
+    const id = this.props.params.id || 1;
+    const children = React.Children.map(this.props.children, (child) => {
+      if (child.type.name === "List") {
+        return React.cloneElement(child, {
+          monsters: filteredData
+        });
+      } else if (child.type.name === "Test") {
+        return React.cloneElement(child, {
+          monster: filteredData.find((pokemon) => {
+            return pokemon.id === parseInt(id, 10);
+          })
+        });
+      }
+    });
     return (
       <div className="App">
         <div className="App-header">
+          {/* TODO: hide if not on index */}
           <Filter
             onSearch={this.onSearch}
           />
         </div>
         <div className="MonsterContent">
-          <List
-            monsters={filteredData}
-          />
+          {children}
         </div>
       </div>
     );
