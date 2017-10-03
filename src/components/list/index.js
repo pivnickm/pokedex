@@ -1,5 +1,6 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
+import { Link } from "react-router";
 import LazyLoad from "react-lazyload";
 import Spinner from "../spinner";
 
@@ -10,35 +11,39 @@ const List = ({ monsters }) => {
     <ul className="MonsterList">
       { monsters.map((item) =>
         <li
-          className={
-            `MonsterList__item_wrapper
-            ${item.monsterTypes[1]
-              ?
-                item.monsterTypes[1]
-              :
-                item.monsterTypes[0]}`
-            }
+          className="MonsterList__item_wrapper"
           key={item.id}
         >
-          <div
-            className={`MonsterList__item ${item.monsterTypes[0]}`}
+          <Link
+            className="MonsterList__item_link"
+            to={`/pokemon/${item.id}`}
           >
-            <LazyLoad
-              height={200}
-              placeholder={<Spinner />}
+            <div
+              className="MonsterList__item"
             >
-              <img
-                className="MonsterList__sprite"
-                src={`/hi_res/${item.id}.png`}
-                alt={item.id}
-              />
-            </LazyLoad>
-            <p
-              className="MonsterList__label"
-            >
-              {item.monsterName}
-            </p>
-          </div>
+              <LazyLoad
+                height={200}
+                placeholder={<Spinner />}
+              >
+                <img
+                  className="MonsterList__sprite"
+                  src={`/hi_res/${item.id}.png`}
+                  alt={item.id}
+                />
+              </LazyLoad>
+              <div>
+                <p
+                  className="MonsterList__label"
+                >
+                  {item.monsterName}
+                </p>
+                <span className={`type ${item.monsterTypes[0]}`}>{item.monsterTypes[0]}</span>
+                {item.monsterTypes[1] &&
+                  <span className={`type ${item.monsterTypes[1]}`}>{item.monsterTypes[1]}</span>
+                }
+              </div>
+            </div>
+          </Link>
         </li>
       )}
     </ul>

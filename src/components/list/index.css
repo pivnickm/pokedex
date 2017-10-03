@@ -7,25 +7,22 @@
 }
 
 .MonsterList__item_wrapper {
-  background: #eee;
   list-style: none;
-  padding: 1rem;
-  color: white;
+  padding: .5rem;
+  /*color: white;*/
   font-weight: 600;
-  height: 100px;
-  width: 100px;
-  margin: .25rem;
-  position: relative;
+  width: 175px;
 }
 
 .MonsterList__item {
   padding-top: 1rem;
   text-align: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  background: #ccc;
+}
+
+.MonsterList__item_link {
+  text-decoration: none;
+  color: #fff;
 }
 
 .MonsterList__item:hover {
@@ -38,12 +35,16 @@
 }
 
 .MonsterList__label {
-  padding-top: 1.75rem;
   margin: 0;
   text-shadow: 1px 1px #666;
 }
 
-
+.type {
+  font-size: .75rem;
+  font-weight: 300;
+  display: inline-block;
+  width: 50%;
+}
 
 @media (max-width: 600px) {
   .MonsterList {
@@ -53,11 +54,10 @@
 
   .MonsterList__item_wrapper {
     width: initial;
-    height: 45px;
   }
 
   .MonsterList__item {
-    padding-top: 0;
+    padding-top: .5rem;
   }
 
   .MonsterList__sprite {
@@ -71,53 +71,53 @@
 }
 
 .Normal {
-  border-bottom: 1rem #A8A878 solid;
+  background: #A8A878;
 }
 .Water {
-  border-bottom: 1rem #6890F0 solid;
+  background: #6890F0;
 }
 .Fire {
-  border-bottom: 1rem #F08030 solid;
+  background: #F08030;
 }
 .Grass {
-  border-bottom: 1rem #78C850 solid;
+  background: #78C850;
 }
 .Flying {
-  border-bottom: 1rem #A890F0 solid;
+  background: #A890F0;
 }
 .Poison {
-  border-bottom: 1rem #A040A0 solid;
+  background: #A040A0;
 }
 .Dark {
-  border-bottom: 1rem #705848 solid;
+  background: #705848;
 }
 .Psychic {
-  border-bottom: 1rem #F85888 solid;
+  background: #F85888;
 }
 .Steel {
-  border-bottom: 1rem #B8B8D0 solid;
+  background: #B8B8D0;
 }
 .Electric {
-  border-bottom: 1rem #F8D030 solid;
+  background: #F8D030;
 }
 .Fighting {
-  border-bottom: 1rem #C03028 solid;
+  background: #C03028;
 }
 .Ground {
-  border-bottom: 1rem #E0C068 solid;
+  background: #E0C068;
 }
 .Rock {
-  border-bottom: 1rem #B8A038 solid;
+  background: #B8A038;
 }
 .Bug {
-  border-bottom: 1rem #A8B820 solid;
+  background: #A8B820;
 }
 .Ice {
-  border-bottom: 1rem #98D8D8 solid;
+  background: #98D8D8;
 }
 .Dragon {
-  border-bottom: 1rem #7038F8 solid;
+  background: #7038F8;
 }
 .Ghost {
-  border-bottom: 1rem #705898 solid;
+  background: #705898;
 }

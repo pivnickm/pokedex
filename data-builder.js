@@ -18,11 +18,11 @@ const getPokemon = (id) => {
         let monsterStats = {};
 
         // get type(s)
-        const firstType = $("div.col.desk-span-8.lap-span-6 > p > a.itype").first().text();
+        let firstType = $("div.col.desk-span-8.lap-span-6 > p > a.itype").first().text();
         const secondType = $("div.col.desk-span-8.lap-span-6 > p > a.itype").last().text();
 
         if (firstType === "Fairy") {
-          firstType === "Normal";
+          firstType = "Normal";
         }
 
         if (firstType !== secondType) {
@@ -60,7 +60,7 @@ const getPokemon = (id) => {
   });
 };
 
-for (let i = 1; i < 2; i++) {
+for (let i = 1; i < 252; i++) {
   allPromises.push(getPokemon(i));
 }
 
