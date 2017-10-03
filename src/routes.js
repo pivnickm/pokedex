@@ -4,13 +4,13 @@ import { Router, Route, IndexRoute } from 'react-router';
 
 import App from './containers/app';
 import List from './components/list';
-import Test from './components/test.js';
+import MonsterPage from './components/monster-page';
 
 const Routes = (props) => (
   <Router {...props}>
     <Route path="/" component={App} >
       <IndexRoute component={List} />
-      <Route path="pokemon/:id" component={Test} />
+      <Route path="pokemon/:id" component={MonsterPage} />
     </Route>
   </Router>
 );
