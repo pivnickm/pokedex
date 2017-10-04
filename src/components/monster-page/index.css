@@ -1,5 +1,10 @@
 .MonsterPage {
-  padding: 0 1rem;
+  padding: 1rem;
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
+}
+
+.defense {
+  flex: 8 8 100%;
+  display: flex;
 }

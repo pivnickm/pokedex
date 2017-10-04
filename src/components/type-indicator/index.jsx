@@ -3,27 +3,22 @@ import { PropTypes } from 'prop-types';
 
 import "./index.css";
 
-const TypeIndicator = ({ types }) => {
+const TypeIndicator = ({ type }) => {
   return (
-    <div>
-      {types.map((item) =>
-        <span
-          className={`type ${item}`}
-          key={item}
-        >
-          {item}
-        </span>
-      )}
-    </div>
+    <span
+      className={`type ${type}`}
+    >
+      {type}
+    </span>
   );
 };
 
 TypeIndicator.propTypes = {
-  types: PropTypes.array
+  type: PropTypes.string
 };
 
 TypeIndicator.defaultProps = {
-  types: []
+  types: ""
 };
 
 

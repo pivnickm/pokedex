@@ -1,0 +1,17 @@
+export const Normal = "#A8A878";
+export const Water = "#6890F0";
+export const Fire = "#F08030";
+export const Grass = "#78C850";
+export const Flying = "#A890F0";
+export const Poison = "#A040A0";
+export const Dark = "#705848";
+export const Psychic = "#F85888";
+export const Steel = "#B8B8D0";
+export const Electric = "#F8D030";
+export const Fighting = "#C03028";
+export const Ground = "#E0C068";
+export const Rock = "#B8A038";
+export const Bug = "#A8B820";
+export const Ice = "#98D8D8";
+export const Dragon = "#7038F8";
+export const Ghost = "#705898";

@@ -68,10 +68,12 @@ class App extends Component {
     });
     return (
       <div className="App">
-        <Header
-          isHome={isHome}
-          onSearch={this.onSearch}
-        />
+        { isHome &&
+          <Header
+            isHome={isHome}
+            onSearch={this.onSearch}
+          />
+        }
         <div className="MonsterContent">
           {childPage}
         </div>

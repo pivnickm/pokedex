@@ -16,6 +16,10 @@
   font-size: .8rem;
 }
 
+.VitalInfo__sizing {
+  text-align: center;
+}
+
 .VitalInfo__height,
 .VitalInfo__weight {
   display: inline-block;
@@ -38,11 +42,15 @@
 
 .VitalInfo__value {
   font-size: 1.5rem;
-  text-align: center;
 }
 
-.VitalInfo__label:nth-child(2) {
+.VitalInfo__label:nth-child(3) {
   margin-left: .25rem;
+}
+
+.VitalInfo__back {
+  color: #fff;
+  margin-right: 1rem;
 }
 
 @media (max-width: 600px) {
@@ -55,6 +63,5 @@
   .VitalInfo__weight .VitalInfo__label {
     padding-bottom: .25rem;
     font-size: .8rem;
-    text-align: center;
   }
 }

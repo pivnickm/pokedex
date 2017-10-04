@@ -3,6 +3,9 @@ import { PropTypes } from 'prop-types';
 
 import Image from "./image";
 import VitalInfo from "./vital-info";
+import DefensiveInfo from "./defensive-info";
+
+import * as colors from "../../data/colors.js";
 import "./index.css";
 
 const MonsterPage = ({ monster }) => {
@@ -12,6 +15,9 @@ const MonsterPage = ({ monster }) => {
   return (
     <div
       className="MonsterPage"
+      style={{
+        backgroundImage: `linear-gradient(to bottom, ${colors[monster.monsterTypes[0]]}, #eee)`,
+      }}
     >
       <VitalInfo
         id={paddedId}
@@ -23,6 +29,9 @@ const MonsterPage = ({ monster }) => {
       <Image
         id={monster.id}
         types={monster.monsterTypes}
+      />
+      <DefensiveInfo
+        defenseInfo={monster.monsterDefensive}
       />
     </div>
   );

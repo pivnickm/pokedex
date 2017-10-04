@@ -21,9 +21,12 @@ const Image = ({ id, types }) => {
       <div
         className="VisualInfo__type_wrapper"
       >
-        <TypeIndicator
-          types={types}
-        />
+        {types.map((type, index) => (
+          <TypeIndicator
+            key={type}
+            type={type}
+          />
+        ))}
       </div>
     </div>
   );

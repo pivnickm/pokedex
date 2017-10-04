@@ -71,7 +71,7 @@ const getPokemon = (id) => {
         /* Defensive Strengths/Weaknesses */
         let monsterDefensive = [];
         $(".primary-content .weaknesses-resistances ul").children().each((i, elem) => {
-          const typeName = $(elem).children(".tag").text();
+          const typeName = editType($(elem).children(".tag").text());
           const dmgMultiplier = $(elem).children(".multiplier").text() || 1; // multiplier if not defined is just 1, neutral damage
           monsterDefensive.push({
             typeName,

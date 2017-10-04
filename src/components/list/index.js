@@ -39,9 +39,12 @@ const List = ({ monsters }) => {
                 >
                   {item.monsterName}
                 </p>
-                <TypeIndicator
-                  types={item.monsterTypes}
-                />
+                {item.monsterTypes.map((type, index) => (
+                  <TypeIndicator
+                    key={type}
+                    type={type}
+                  />
+                ))}
               </div>
             </div>
           </Link>
