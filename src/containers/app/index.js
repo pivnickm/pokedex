@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { forceCheck } from 'react-lazyload';
-import './index.css';
-import Filter from "../../components/filter";
+import Header from "../../components/header";
 import data from "../../data/monsters.json"
+
+import './index.css';
 
 class App extends Component {
 	constructor(props) {
@@ -28,6 +29,15 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    window.addEventListener("resize", forceCheck);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", forceCheck);
+  }
+
+
   filterMonsters(data) {
     const term = this.state.term;
 
@@ -39,14 +49,16 @@ class App extends Component {
   }
 
   render() {
+    const { router, params, children } = this.props;
+    const isHome = router.location.pathname === "/";
     const filteredData = this.filterMonsters(data);
-    const id = this.props.params.id || 1;
-    const children = React.Children.map(this.props.children, (child) => {
+    const id = params.id || 1;
+    const childPage = React.Children.map(children, (child) => {
       if (child.type.name === "List") {
         return React.cloneElement(child, {
           monsters: filteredData
         });
-      } else if (child.type.name === "Test") {
+      } else if (child.type.name === "MonsterPage") {
         return React.cloneElement(child, {
           monster: filteredData.find((pokemon) => {
             return pokemon.id === parseInt(id, 10);
@@ -56,14 +68,12 @@ class App extends Component {
     });
     return (
       <div className="App">
-        <div className="App-header">
-          {/* TODO: hide if not on index */}
-          <Filter
-            onSearch={this.onSearch}
-          />
-        </div>
+        <Header
+          isHome={isHome}
+          onSearch={this.onSearch}
+        />
         <div className="MonsterContent">
-          {children}
+          {childPage}
         </div>
       </div>
     );

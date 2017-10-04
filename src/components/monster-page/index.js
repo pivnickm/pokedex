@@ -1,22 +1,40 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
 
+import Image from "./image";
+import VitalInfo from "./vital-info";
+import "./index.css";
 
-const Test = ({ monster }) => {
+const MonsterPage = ({ monster }) => {
+  console.log(monster);
+  const zeroes = "0000";
+  const paddedId = (zeroes + monster.id).substr(-3, 3);
   return (
-    <div>
-      {monster.id} {monster.monsterName}
+    <div
+      className="MonsterPage"
+    >
+      <VitalInfo
+        id={paddedId}
+        name={monster.monsterName}
+        species={monster.monsterSpecies}
+        height={monster.monsterHeight}
+        weight={monster.monsterWeight}
+      />
+      <Image
+        id={monster.id}
+        types={monster.monsterTypes}
+      />
     </div>
   );
 };
 
-Test.propTypes = {
-  monsters: PropTypes.array
+MonsterPage.propTypes = {
+  monsters: PropTypes.object
 };
 
-Test.defaultProps = {
-  monsters: []
+MonsterPage.defaultProps = {
+  monsters: {}
 };
 
 
-export default Test;
+export default MonsterPage;

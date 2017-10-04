@@ -1,0 +1,23 @@
+.Header {
+  background: #6890F0;
+  min-height: 34px;
+  padding: 20px;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.HomeHeader {
+  display: flex;
+  align-items: center;
+}
+
+.GenHeader {
+  display: flex;
+  align-items: center;
+}
+
+.GenHeader__homeLink {
+  color: #fff;
+}

@@ -1,0 +1,60 @@
+.VitalInfo__name {
+  flex: 0 0 100%;
+  margin-bottom: 1rem;
+}
+
+.VitalInfo{
+  flex: 6 6 60px;
+  padding: .5rem .25rem;
+}
+
+.VitalInfo__species {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: .5rem;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.VitalInfo__height,
+.VitalInfo__weight {
+  display: inline-block;
+  padding: .5rem;
+}
+
+.VitalInfo__height .VitalInfo__label,
+.VitalInfo__weight .VitalInfo__label {
+  padding-bottom: .25rem;
+}
+
+.VitalInfo__height {
+  padding-left: 0
+}
+
+.VitalInfo__label {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.VitalInfo__value {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.VitalInfo__label:nth-child(2) {
+  margin-left: .25rem;
+}
+
+@media (max-width: 600px) {
+  .VitalInfo__label {
+    font-weight: normal;
+    font-size: initial;
+  }
+
+  .VitalInfo__height .VitalInfo__label,
+  .VitalInfo__weight .VitalInfo__label {
+    padding-bottom: .25rem;
+    font-size: .8rem;
+    text-align: center;
+  }
+}
