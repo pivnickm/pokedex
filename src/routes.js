@@ -6,13 +6,16 @@ import App from './containers/app';
 import List from './components/list';
 import MonsterPage from './components/monster-page';
 
-const Routes = (props) => (
-  <Router {...props}>
+const Routes = (props) => {
+  console.log(process.env.PUBLIC_URL);
+  return (
+  <Router basename={process.env.PUBLIC_URL} {...props}>
     <Route path="/" component={App} >
       <IndexRoute component={List} />
       <Route path="pokemon/:id" component={MonsterPage} />
     </Route>
   </Router>
-);
+  );
+}
 
 export default Routes;
