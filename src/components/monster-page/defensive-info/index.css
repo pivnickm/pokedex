@@ -1,0 +1,25 @@
+.DefensiveInfo {
+  background: #eee;
+  padding: .5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.DefensiveInfo__types {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.DefensiveInfo__header {
+  margin-bottom: .5rem;
+}
+
+.DefensiveInfo__item {
+  flex: 0;
+}
+
+.DefensiveInfo__value {
+  margin: .5rem 0;
+  font-size: .75rem;
+}

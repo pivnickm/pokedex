@@ -19,7 +19,7 @@ const VitalInfo = ({ id, name, species, height, weight }) => {
         <span className="VitalInfo__label">
           #{id}
         </span>
-        <span className="VitalInfo__label">
+        <span className="VitalInfo__label name">
           {name}
         </span>
       </div>

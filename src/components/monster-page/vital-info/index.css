@@ -59,6 +59,10 @@
     font-size: initial;
   }
 
+  .VitalInfo__label.name {
+    font-weight: 700;
+  }
+
   .VitalInfo__height .VitalInfo__label,
   .VitalInfo__weight .VitalInfo__label {
     padding-bottom: .25rem;
