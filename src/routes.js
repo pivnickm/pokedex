@@ -9,10 +9,10 @@ import MonsterPage from './components/monster-page';
 const Routes = (props) => {
   console.log(process.env.PUBLIC_URL);
   return (
-  <Router basename={process.env.PUBLIC_URL} {...props}>
+  <Router {...props}>
     <Route path="/" component={App} >
       <IndexRoute component={List} />
-      <Route path="pokemon/:id" component={MonsterPage} />
+      <Route path="/pokemon/:id" component={MonsterPage} />
     </Route>
   </Router>
   );

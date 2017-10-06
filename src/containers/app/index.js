@@ -49,6 +49,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("here", this.props);
     const { router, params, children } = this.props;
     const isHome = router.location.pathname === "/";
     const filteredData = this.filterMonsters(data);
