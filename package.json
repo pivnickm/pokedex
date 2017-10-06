@@ -2,10 +2,8 @@
   "name": "pokedex",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pivnickm.github.io/pokedex",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "gh-pages": "^1.0.0",
     "node-sass-chokidar": "0.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -16,8 +14,6 @@
     "request-promise": "^4.2.2"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -o upstream",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { forceCheck } from 'react-lazyload';
 import Header from "../../components/header";
-import data from "../../data/monsters.json"
+import data from "../../data/monsters.json";
 
 import './index.css';
 
@@ -49,7 +49,7 @@ class App extends Component {
   }
 
   render() {
-    console.log("here", this.props);
+    console.log("here", data);
     const { router, params, children } = this.props;
     const isHome = router.location.pathname === "/";
     const filteredData = this.filterMonsters(data);
