@@ -7,7 +7,6 @@ import List from './components/list';
 import MonsterPage from './components/monster-page';
 
 const Routes = (props) => {
-  console.log(process.env.PUBLIC_URL);
   return (
   <Router {...props}>
     <Route path="/" component={App} >
