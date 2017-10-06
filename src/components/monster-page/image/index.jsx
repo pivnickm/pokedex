@@ -14,7 +14,7 @@ const Image = ({ id, types }) => {
       >
         <img
           className="VisualInfo__sprite"
-          src={`/hi_res/${id}.png`}
+          src={require(`../../../data/images/hi_res/${id}.png`)}
           alt={id}
         />
       </div>
