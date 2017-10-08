@@ -1,6 +1,6 @@
 .VitalInfo__name {
   flex: 0 0 100%;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 
 .VitalInfo{
@@ -14,6 +14,7 @@
   padding: .5rem;
   text-align: center;
   font-size: .8rem;
+  margin-bottom: .5rem;
 }
 
 .VitalInfo__sizing {
@@ -23,7 +24,7 @@
 .VitalInfo__height,
 .VitalInfo__weight {
   display: inline-block;
-  padding: .5rem;
+  padding: 0 .5rem;
 }
 
 .VitalInfo__height .VitalInfo__label,
@@ -41,7 +42,7 @@
 }
 
 .VitalInfo__value {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .VitalInfo__label:nth-child(3) {
@@ -66,6 +67,6 @@
   .VitalInfo__height .VitalInfo__label,
   .VitalInfo__weight .VitalInfo__label {
     padding-bottom: .25rem;
-    font-size: .8rem;
+    font-size: .65rem;
   }
 }

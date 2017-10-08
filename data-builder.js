@@ -26,12 +26,28 @@ const editType = (type) => {
   return newType;
 }
 
+const editDmgMultiplier = (multiplier) => {
+  if (!multiplier) {  // multiplier if not defined is just 1, neutral damage
+    return 1;
+  } else if(multiplier === "½") {
+    return 0.5;
+  } else if(multiplier === "¼") {
+    return 0.25;
+  } else if(multiplier === "2×") {
+    return 2;
+  } else if(multiplier === "immune") {
+    return 0;
+  }
+  return multiplier;
+}
+
 const getPokemon = (id) => {
   return new Promise((resolve, reject) => {
     return request(`${url}${id}`, (error, response, html) => {
       if(!error){
         const $ = cheerio.load(html);
 
+        console.log(`Building info for ${id}`);
         /* Name + Info*/
         const regExp = /\(([^)]+)\)/;
         const monsterName = $(".primary-content .header").eq(0).text();
@@ -57,14 +73,17 @@ const getPokemon = (id) => {
         /* End Types */
 
         /* Base Stats */
-        let monsterStats = {};
+        let monsterStats = [];
         const statElem = $(".primary-content .stats dl");
 
         for (let i = 0; i < statElem.children().length / 2; i++) {
           const statName = statElem.children(".name").eq(i).text();
           const statValue = statElem.children(".value").eq(i).text();
 
-          monsterStats[statName] = statValue;
+          monsterStats.push({
+            statName,
+            statValue
+          });
         }
         /* End Base Stats */
 
@@ -72,11 +91,23 @@ const getPokemon = (id) => {
         let monsterDefensive = [];
         $(".primary-content .weaknesses-resistances ul").children().each((i, elem) => {
           const typeName = editType($(elem).children(".tag").text());
-          const dmgMultiplier = $(elem).children(".multiplier").text() || 1; // multiplier if not defined is just 1, neutral damage
-          monsterDefensive.push({
-            typeName,
-            dmgMultiplier
-          });
+          const dmgMultiplier = editDmgMultiplier($(elem).children(".multiplier").text());
+
+          if (dmgMultiplier !== 1) {
+            monsterDefensive.push({
+              typeName,
+              dmgMultiplier
+            });
+          }
+        });
+        // finally, sort by low => high
+        monsterDefensive.sort((a, b) => {
+          if (a.dmgMultiplier < b.dmgMultiplier) {
+            return -1;
+          } if (a.dmgMultiplier > b.dmgMultiplier) {
+            return 1;
+          }
+          return 0;
         });
         /* End Defensive Strengths/Weaknesses */
 

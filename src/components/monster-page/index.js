@@ -14,6 +14,7 @@ class MonsterPage extends Component {
     const monster = data[this.props.params.id - 1];
     const zeroes = "0000";
     const paddedId = (zeroes + monster.id).substr(-3, 3);
+    console.log(monster);
     return (
       <div
         className="MonsterPage"
@@ -25,12 +26,13 @@ class MonsterPage extends Component {
           id={paddedId}
           name={monster.monsterName}
           species={monster.monsterSpecies}
-          height={monster.monsterHeight}
-          weight={monster.monsterWeight}
+          stats={monster.monsterStats}
         />
         <Image
           id={monster.id}
           types={monster.monsterTypes}
+          height={monster.monsterHeight}
+          weight={monster.monsterWeight}
         />
         <DefensiveInfo
           defenseInfo={monster.monsterDefensive}

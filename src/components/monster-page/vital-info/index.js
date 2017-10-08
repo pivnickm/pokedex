@@ -2,9 +2,11 @@ import React from "react";
 import { PropTypes } from 'prop-types';
 import { Link } from "react-router";
 
+import BaseStats from "../base-stats";
+
 import "./index.css";
 
-const VitalInfo = ({ id, name, species, height, weight }) => {
+const VitalInfo = ({ id, name, species, height, weight, stats }) => {
   return (
     <div
       className="VitalInfo"
@@ -26,24 +28,9 @@ const VitalInfo = ({ id, name, species, height, weight }) => {
       <div className="VitalInfo__species">
         {species}
       </div>
-      <div className="VitalInfo__sizing">
-        <div className="VitalInfo__height">
-          <div className="VitalInfo__label">
-            Height
-          </div>
-          <div className="VitalInfo__value">
-            {height}
-          </div>
-        </div>
-        <div className="VitalInfo__weight">
-          <div className="VitalInfo__label">
-            Weight
-          </div>
-          <div className="VitalInfo__value">
-            {weight}
-          </div>
-        </div>
-      </div>
+      <BaseStats
+        stats={stats}
+      />
     </div>
   );
 };
