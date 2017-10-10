@@ -29,6 +29,24 @@
       "css": "up-open",
       "code": 59394,
       "src": "fontawesome"
+    },
+    {
+      "uid": "81bb68665e8e595505272a746db07c7a",
+      "css": "dot-circled",
+      "code": 61842,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "f39ab571fe73e796e24bb8edc1f9d875",
+      "css": "dwolla",
+      "code": 59395,
+      "src": "zocial"
+    },
+    {
+      "uid": "1a14e43d8e27f5b63fb418b586a2ade3",
+      "css": "certificate",
+      "code": 59396,
+      "src": "elusive"
     }
   ]
 }

@@ -18,7 +18,7 @@ const DefensiveInfo = ({ defenseInfo }) => {
                 type={item.typeName}
               />
               <div className="DefensiveInfo__value">
-                {item.dmgMultiplier}
+                {item.dmgMultiplier}x
               </div>
             </div>
         )}

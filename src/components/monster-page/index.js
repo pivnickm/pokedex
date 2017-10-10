@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import Image from "./image";
 import VitalInfo from "./vital-info";
 import DefensiveInfo from "./defensive-info";
+import MoveList from "./move-list";
 
 import * as colors from "../../data/colors.js";
 import data from "../../data/monsters.json";
@@ -36,6 +37,9 @@ class MonsterPage extends Component {
         />
         <DefensiveInfo
           defenseInfo={monster.monsterDefensive}
+        />
+        <MoveList
+          moves={monster.monsterMoves}
         />
       </div>
     );

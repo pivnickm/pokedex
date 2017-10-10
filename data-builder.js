@@ -35,10 +35,32 @@ const editDmgMultiplier = (multiplier) => {
     return 0.25;
   } else if(multiplier === "2×") {
     return 2;
+  } else if(multiplier === "4×") {
+    return 4;
   } else if(multiplier === "immune") {
     return 0;
   }
   return multiplier;
+}
+
+const editMovePower = (movePower) => {
+  if (movePower.length < 3) {
+    return { movePower };
+  } else if (movePower.includes("STAB")) {
+    return {
+      movePower: movePower.split("STAB")[1], // "60 due to STAB40" => "40"
+      moveNoteType: "STAB",
+      moveNote: `Move has ${movePower.split(" due")[0]} power with STAB`
+    };
+  } else if (movePower.includes("exactly")) {
+    return {
+     movePower: movePower.substr(13, 2), // "Does exactly 20 damage.varies" => "20"
+     moveNoteType: "Fixed Damage",
+     moveNote: "Move does exact damage."
+    };
+  } else {
+    return { movePower };
+  }
 }
 
 const getPokemon = (id) => {
@@ -117,13 +139,19 @@ const getPokemon = (id) => {
           const elem = $("#tab-moves").children(".listing-container").eq(0).find("tbody").children().eq(j);
           let moveData = {};
           for (let i = 0; i < elem.children().length; i++) {
+            const movePowerInfo = editMovePower(elem.children().eq(4).text().trim());
+
             moveData.level = elem.children().eq(0).text();
             moveData.name = elem.children().eq(1).text();
-            moveData.type = elem.children().eq(2).text();
+            moveData.type = editType(elem.children().eq(2).text());
             moveData.category = elem.children().eq(3).text();
-            moveData.power = elem.children().eq(4).find("strong").text() || elem.children().eq(4).text().trim(); // undefined means status or similar.
+            moveData.power = elem.children().eq(4).find("strong").text() || movePowerInfo.movePower;
             moveData.accuracy = elem.children().eq(5).text();
             moveData.pp = elem.children().eq(6).text();
+            if ( movePowerInfo.moveNote ) {
+              moveData.notes = movePowerInfo.moveNote;
+              moveData.noteType = movePowerInfo.moveNoteType;
+            }
           }
 
           monsterMoves.push(moveData);
