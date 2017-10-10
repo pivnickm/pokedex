@@ -1,0 +1,71 @@
+.MoveList__row {
+  flex: 1 1 100%;
+  flex-flow: row wrap;
+  display: flex;
+  padding: .25rem;
+  position: relative;
+}
+
+.MoveList__row_wrap {
+  width: 100%;
+  display: flex;
+  height: 40px;
+  position: relative;
+  z-index: 10;
+  background-color: #ccc;
+}
+
+.MoveList__row {
+  background-color: #eee;
+}
+
+.MoveList__row_item {
+  flex: 1 1 25px;
+  align-self: center;
+}
+
+.MoveList__row_item_move {
+  flex: 1 1 90px;
+  align-self: center;
+}
+
+.MoveList__row_item_sub {
+  flex: 0 1 auto;
+  align-self: center;
+}
+
+.MoveList__row_item_level {
+  flex: 1 1 25px;
+  align-self: center;
+}
+.MoveList__row_item_more {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: space-around;
+  height: 40px;
+  background-color: #eee;
+  transition: margin .1s linear;
+}
+
+.MoveList__closed {
+  margin-top: -40px;
+}
+
+.MoveList__open {
+  margin-top: 0px;
+}
+
+.icon__closed::before {
+  transform: rotate(90deg);
+  transition: transform .1s linear;
+}
+
+.icon__open::before {
+  transform: rotate(180deg);
+  transition: transform .1s linear;
+}
+
+/* for "special" icon */
+.icon-dot-circled:before {
+  transform: scale(2.2, .7)
+}

@@ -11,6 +11,14 @@ import data from "../../data/monsters.json";
 import "./index.css";
 
 class MonsterPage extends Component {
+  componentDidMount() {
+    this.scrollTop = 0;
+  }
+
+  set scrollTop(x) {
+    (document.scrollingElement || document.documentElement).scrollTop = x;
+  }
+
   render() {
     const monster = data[this.props.params.id - 1];
     const zeroes = "0000";
