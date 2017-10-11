@@ -9,15 +9,11 @@ const Image = ({ id, types, height, weight }) => {
     <div
       className="VisualInfo"
     >
-      <div
-        className="VisualInfo__sprite_wrapper"
-      >
-        <img
-          className="VisualInfo__sprite"
-          src={require(`../../../data/images/hi_res/${id}.png`)}
-          alt={id}
-        />
-      </div>
+      <img
+        className="VisualInfo__sprite"
+        src={require(`../../../data/images/hi_res/${id}.png`)}
+        alt={id}
+      />
       <div className="VitalInfo__sizing">
         <div className="VitalInfo__height">
           <div className="VitalInfo__value">

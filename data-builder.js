@@ -50,15 +50,20 @@ const editMovePower = (movePower) => {
     return {
       movePower: movePower.split("STAB")[1], // "60 due to STAB40" => "40"
       moveNoteType: "STAB",
-      moveNote: `Move has ${movePower.split(" due")[0]} power with STAB`
+      moveNote: `${movePower.split(" due")[0]} power with STAB`
     };
   } else if (movePower.includes("exactly")) {
     return {
      movePower: movePower.substr(13, 2), // "Does exactly 20 damage.varies" => "20"
      moveNoteType: "Fixed Damage",
-     moveNote: "Move does exact damage."
+     moveNote: "Fixed damage"
     };
-  } else {
+  } else if(movePower.includes("equal to")) {
+    return {
+      movePower: "Varies", //Does exact damage equal to the user's level.varies"
+      moveNote: "Damage equal to user's level"
+    }
+  }else {
     return { movePower };
   }
 }
@@ -79,7 +84,7 @@ const getPokemon = (id) => {
         const monsterWeight = weightMatches[1];
         // height needs some manipulation because it's 10x too big
         const heightMatches = regExp.exec($(".pokemon-height td").eq(1).text()); // ex: "9m"
-        const monsterHeight = heightMatches[1];
+        const monsterHeight = (parseInt(heightMatches[1], 10) / 10) + "m";
         /* End Name + Info */
 
         /* Types */
@@ -158,20 +163,47 @@ const getPokemon = (id) => {
         }
         /* End Moveset */
 
-        // get evolutionary info NEEDS WORK =/
-        // $(".infocard-evo-list").children(".infocard-tall:not(.small)").each((i, elem) => {
-        //   return console.log("YO", {
-        //     "evoName": $(elem).eq(i).children(".ent-name").text(),
-        //     "evoNumber": $(elem).eq(i).children("small").eq(0).text(),
-        //     "evoLevel": $(elem).eq(i+1).children().remove().end().text().replace(/\s/g,''),
-        //     "evoTypes": [
-        //       $(elem).eq(i).children("small").eq(1).children(".itype").eq(0).text(),
-        //       $(elem).eq(i).children("small").eq(1).children(".itype").eq(1).text(),
-        //     ]
-        //   });
-        // });
+        // get evolutionary info =/
+        const evoList = $(".evolution");
+        const monsterEvolutions = [];
+        // there may be more than one evolution section if
+        // a pokemon mega evolves...
+        const evoTree = evoList.length > 1
+          ?
+            evoList.eq(1)
+          :
+            evoList;
 
-        resolve({id, monsterName, monsterSpecies, monsterWeight, monsterHeight, monsterTypes, monsterStats, monsterDefensive, monsterMoves});
+        const stageOne = evoTree.children(".base-evo").text().trim(); // "slowpoke"
+        monsterEvolutions.push([{
+          stage: 1,
+          text: stageOne
+        }]);
+
+        let temp = []
+
+        for (let i = 0; i < evoTree.children(".second-evo").length; i++) {
+          temp.push({
+            stage: 2,
+            text: evoTree.children(".second-evo").eq(i).text().trim()
+          });
+        }
+        if (temp.length) {
+          monsterEvolutions.push(temp);
+        }
+
+        temp = [];
+        for (let i = 0; i < evoTree.children(".third-evo").length; i++) {
+          temp.push({
+            stage: 3,
+            text: evoTree.children(".third-evo").eq(i).text().trim()
+          });
+        }
+        if (temp.length) {
+          monsterEvolutions.push(temp);
+        }
+
+        resolve({id, monsterName, monsterSpecies, monsterWeight, monsterHeight, monsterTypes, monsterStats, monsterDefensive, monsterMoves, monsterEvolutions});
       }
     });
   });

@@ -1,32 +1,22 @@
 .VisualInfo {
-  flex: 2 2 35px;
-  padding: .5rem 0 .5rem .25rem;
-  margin-right: -1rem;
-}
-
-.VisualInfo__sprite_wrapper {
-  /*background: #ccc;
-  border-radius: 50% 0 0 50%;*/
-  padding-left: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  flex: 3 3 30px;
+  flex-flow: column;
+  align-items: center;
 }
 
 .VisualInfo__type_wrapper {
-  width: 160px;
   padding: .5rem 0;
-  margin-right: 1rem;
-  text-align: center;
+  flex: 0 0 auto;
 }
 
 .VisualInfo__sprite {
   height: 200px;
+  flex: 0 0 auto;
 }
 
 @media (max-width: 600px) {
-  .VisualInfo__sprite_wrapper {
-    /*padding: 1rem .5rem .5rem 1.75rem;
-    height: 140px;*/
-  }
-
   .VisualInfo__sprite {
     height: 125px;
   }

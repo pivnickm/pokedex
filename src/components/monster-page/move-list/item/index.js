@@ -78,8 +78,20 @@ class MoveListItem extends Component {
                 />
               }
             </div>
-            <span className="MoveList__row_item_sub">Accuracy: {move.accuracy}</span>
-            <span className="MoveList__row_item_sub">PP: {move.pp}</span>
+            <div className="MoveList__row_item_sub">
+              <div>Accuracy</div>
+              <div>{move.accuracy}</div>
+            </div>
+            <div className="MoveList__row_item_sub">
+              <div>PP</div>
+              <div>{move.pp}</div>
+            </div>
+            { move.notes &&
+              <div className="MoveList__row_item_sub">
+                <div>Notes</div>
+                <div>{move.notes}</div>
+              </div>
+            }
           </div>
         }
       </div>
