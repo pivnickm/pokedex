@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.f0b1c9ee.css",
-  "main.css.map": "static/css/main.f0b1c9ee.css.map",
-  "main.js": "static/js/main.6de02a1e.js",
-  "main.js.map": "static/js/main.6de02a1e.js.map",
+  "main.css": "static/css/main.708ab3ee.css",
+  "main.css.map": "static/css/main.708ab3ee.css.map",
+  "main.js": "static/js/main.1c6b80b5.js",
+  "main.js.map": "static/js/main.1c6b80b5.js.map",
   "static/media/1.png": "static/media/1.66f22baf.png",
   "static/media/10.png": "static/media/10.3121c5e4.png",
   "static/media/100.png": "static/media/100.2cf47447.png",
@@ -255,9 +255,9 @@
   "static/media/97.png": "static/media/97.7fa2fc41.png",
   "static/media/98.png": "static/media/98.03ffa53b.png",
   "static/media/99.png": "static/media/99.43dd1e3c.png",
-  "static/media/fontello.eot?58875586": "static/media/fontello.79e51139.eot",
-  "static/media/fontello.svg?58875586": "static/media/fontello.20f757be.svg",
-  "static/media/fontello.ttf?58875586": "static/media/fontello.caccd721.ttf",
-  "static/media/fontello.woff2?58875586": "static/media/fontello.bc8d4a2d.woff2",
-  "static/media/fontello.woff?58875586": "static/media/fontello.7e487cba.woff"
+  "static/media/fontello.eot?78357517": "static/media/fontello.b47d376e.eot",
+  "static/media/fontello.svg?78357517": "static/media/fontello.5846cdf8.svg",
+  "static/media/fontello.ttf?78357517": "static/media/fontello.6e21ba07.ttf",
+  "static/media/fontello.woff2?78357517": "static/media/fontello.6cf7a884.woff2",
+  "static/media/fontello.woff?78357517": "static/media/fontello.fe8ef3a1.woff"
 }
