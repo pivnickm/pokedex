@@ -25,7 +25,13 @@ class MoveListItem extends Component {
   render() {
     const { move } = this.props;
     return (
-      <div className="MoveList__row" onClick={this.toggleOpen}>
+      <div className="MoveList__row" onClick={
+        move.type.header
+        ?
+          () => {}
+        :
+          () => { this.toggleOpen(); }
+        }>
         <div
           className="MoveList__row_wrap"
         >

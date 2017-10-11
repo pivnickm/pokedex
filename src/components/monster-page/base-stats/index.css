@@ -28,4 +28,18 @@
   color: #fff;
   text-shadow: 1px 1px 2px black;
   padding: .125rem 0 .125rem .5rem;
+  -webkit-animation: progress-bar 2s;
+  -moz-animation: progress-bar 2s;
+  animation: progress-bar 2s;
+}
+
+/* progress bar loading style animation */
+@-webkit-keyframes progress-bar {
+  0% { width: 0; }
+}
+@-moz-keyframes progress-bar {
+  0% { width: 0; }
+}
+keyframes progress-bar {
+  0% { width: 0; }
 }
