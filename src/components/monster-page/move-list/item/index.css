@@ -56,12 +56,12 @@
 }
 
 .icon__closed::before {
-  transform: rotate(90deg);
+  transform: rotate(180deg);
   transition: transform .1s linear;
 }
 
 .icon__open::before {
-  transform: rotate(180deg);
+  transform: rotate(0deg);
   transition: transform .1s linear;
 }
 
