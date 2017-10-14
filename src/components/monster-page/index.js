@@ -5,6 +5,7 @@ import Image from "./image";
 import VitalInfo from "./vital-info";
 import DefensiveInfo from "./defensive-info";
 import MoveList from "./move-list";
+import EvolutionInfo from "./evolution-info";
 
 import * as colors from "../../data/colors.js";
 import data from "../../data/monsters.json";
@@ -46,6 +47,19 @@ class MonsterPage extends Component {
         <DefensiveInfo
           defenseInfo={monster.monsterDefensive}
         />
+        <div className="MonsterPage__EvolutionInfo">
+          <div className="DefensiveInfo__header">
+            Evolutions
+          </div>
+          <div className="MonsterPage__EvolutionInfo_wrap">
+            { monster.monsterEvolutions.map((evoStage, index) =>
+              <EvolutionInfo
+                key={`${evoStage[0].name}_wrap`}
+                evolutions={evoStage}
+              />
+            )}
+          </div>
+        </div>
         <MoveList
           moves={monster.monsterMoves}
         />

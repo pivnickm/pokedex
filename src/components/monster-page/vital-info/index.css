@@ -43,7 +43,7 @@
   font-size: 1rem;
 }
 
-.VitalInfo__label:nth-child(3) {
+.VitalInfo__label:last-child {
   margin-left: .25rem;
 }
 

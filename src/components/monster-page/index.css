@@ -10,3 +10,13 @@
   flex: 8 8 100%;
   display: flex;
 }
+
+.MonsterPage__EvolutionInfo {
+  /* flex: 8 8 100%;
+  display: flex;
+  justify-content: space-evenly; */
+  background: #eee;
+  padding: .5rem .25rem .25rem;
+  width: 100%;
+  text-align: center;
+}

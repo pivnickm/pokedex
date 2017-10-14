@@ -5,6 +5,9 @@ const cheerio = require('cheerio');
 const url = 'http://www.azurilland.com/pokedex/gen-2/';
 const allPromises = [];
 
+const irregularMoves = require("./src/data/move-info.js");
+const damages = require("./src/data/damages.js");
+
 const editType = (type) => {
   let newType;
   const hashMap = {
@@ -43,28 +46,46 @@ const editDmgMultiplier = (multiplier) => {
   return multiplier;
 }
 
-const editMovePower = (movePower) => {
-  if (movePower.length < 3) {
+// const editDmgMultiplier = (types) => {
+//   const damageCollector = [];
+
+//   if (types.length < 2) {
+//     return damages[types[0]];
+//   } else {
+//     [types[0]].map((item) => {
+//       [types[1]].map((innerItem) => {
+//         console.log(item, innerItem);
+//       });
+//     });
+//   }
+// }
+
+const editMovePower = (moveName, movePower) => {
+  if (irregularMoves[moveName]) {
+    return {
+      movePower: irregularMoves[moveName].power,
+      moveNote: irregularMoves[moveName].notes
+    };
+  } else {
     return { movePower };
-  } else if (movePower.includes("STAB")) {
-    return {
-      movePower: movePower.split("STAB")[1], // "60 due to STAB40" => "40"
-      moveNoteType: "STAB",
-      moveNote: `${movePower.split(" due")[0]} power with STAB`
-    };
-  } else if (movePower.includes("exactly")) {
-    return {
-     movePower: movePower.substr(13, 2), // "Does exactly 20 damage.varies" => "20"
-     moveNoteType: "Fixed Damage",
-     moveNote: "Fixed damage"
-    };
-  } else if(movePower.includes("equal to")) {
-    return {
-      movePower: "Varies", //Does exact damage equal to the user's level.varies"
-      moveNote: "Damage equal to user's level"
+  }
+}
+
+const editEvolutionMethod = (methodText) => {
+  if (methodText.match(/level\s(\w*)/, "")) {
+    return methodText.match(/at\s([\s\S]*)/,"") ? methodText.match(/at\s([\s\S]*)/,"")[1] : null;// "level 16"
+  } else if (methodText.match(/using\s([\s\S]*)/,"")) {
+    return methodText.match(/using\s([\s\S]*)/,"")[1]; // "Moon Stone"
+  } else if (methodText.includes("traded")) {
+    if (!methodText.includes("holding")) {
+      return "Trade";
+    } else {
+      return `Trade while holding ${methodText.match(/holding\s([\s\S]*)/,"")[1]}`;
     }
-  }else {
-    return { movePower };
+  } else if (methodText.includes("daytime") || methodText.includes("night time")) {
+    return methodText.match(/during the\s([\s\S]*)/,"")[1];
+  } else if (methodText.includes("happiness")) {
+    return "Happiness";
   }
 }
 
@@ -136,6 +157,7 @@ const getPokemon = (id) => {
           }
           return 0;
         });
+        // const monsterDefensive = editDmgMultiplier(monsterTypes);
         /* End Defensive Strengths/Weaknesses */
 
         /* Moveset */
@@ -144,10 +166,11 @@ const getPokemon = (id) => {
           const elem = $("#tab-moves").children(".listing-container").eq(0).find("tbody").children().eq(j);
           let moveData = {};
           for (let i = 0; i < elem.children().length; i++) {
-            const movePowerInfo = editMovePower(elem.children().eq(4).text().trim());
-
+            const moveName = elem.children().eq(1).text();
+            const movePowerInfo = editMovePower(moveName, elem.children().eq(4).text().trim());
+            //console.log(movePowerInfo);
             moveData.level = elem.children().eq(0).text();
-            moveData.name = elem.children().eq(1).text();
+            moveData.name = moveName;
             moveData.type = editType(elem.children().eq(2).text());
             moveData.category = elem.children().eq(3).text();
             moveData.power = elem.children().eq(4).find("strong").text() || movePowerInfo.movePower;
@@ -155,7 +178,6 @@ const getPokemon = (id) => {
             moveData.pp = elem.children().eq(6).text();
             if ( movePowerInfo.moveNote ) {
               moveData.notes = movePowerInfo.moveNote;
-              moveData.noteType = movePowerInfo.moveNoteType;
             }
           }
 
@@ -174,10 +196,10 @@ const getPokemon = (id) => {
           :
             evoList;
 
-        const stageOne = evoTree.children(".base-evo").text().trim(); // "slowpoke"
         monsterEvolutions.push([{
           stage: 1,
-          text: stageOne
+          name: evoTree.children(".base-evo").text().trim(), // "slowpoke",
+          id: evoTree.children(".base-evo").find("a").eq(0).attr("href").split("/")[3].split("-")[0] // uhh...
         }]);
 
         let temp = []
@@ -185,7 +207,9 @@ const getPokemon = (id) => {
         for (let i = 0; i < evoTree.children(".second-evo").length; i++) {
           temp.push({
             stage: 2,
-            text: evoTree.children(".second-evo").eq(i).text().trim()
+            name: evoTree.children(".second-evo").eq(i).text().trim().match(/Evolves to\s(\w*)/, "")[1],
+            method: editEvolutionMethod(evoTree.children(".second-evo").eq(i).text().trim()),
+            id: evoTree.children(".second-evo").eq(i).find("a").eq(0).attr("href").split("/")[3].split("-")[0]
           });
         }
         if (temp.length) {
@@ -196,14 +220,27 @@ const getPokemon = (id) => {
         for (let i = 0; i < evoTree.children(".third-evo").length; i++) {
           temp.push({
             stage: 3,
-            text: evoTree.children(".third-evo").eq(i).text().trim()
+            name: evoTree.children(".third-evo").eq(i).text().trim().match(/Evolves to\s(\w*)/, "")[1],
+            method: editEvolutionMethod(evoTree.children(".third-evo").eq(i).text().trim()),
+            id: evoTree.children(".third-evo").eq(i).find("a").eq(0).attr("href").split("/")[3].split("-")[0]
           });
         }
         if (temp.length) {
           monsterEvolutions.push(temp);
         }
 
-        resolve({id, monsterName, monsterSpecies, monsterWeight, monsterHeight, monsterTypes, monsterStats, monsterDefensive, monsterMoves, monsterEvolutions});
+        resolve({
+          id,
+          monsterName,
+          monsterSpecies,
+          monsterWeight,
+          monsterHeight,
+          monsterTypes,
+          monsterStats,
+          monsterDefensive,
+          monsterMoves,
+          monsterEvolutions
+        });
       }
     });
   });
@@ -215,7 +252,7 @@ for (let i = 1; i < 252; i++) {
 }
 
 Promise.all(allPromises).then(values => {
-  console.log("hi", values);
+  console.log(values);
   fs.writeFile("src/data/monsters.json", JSON.stringify(values), err => {
     if (err) return console.log(err);
     console.log("Monsters.json written successfully");

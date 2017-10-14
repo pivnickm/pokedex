@@ -1,6 +1,5 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
-import { Link } from "react-router";
 
 import BaseStats from "../base-stats";
 
@@ -12,12 +11,6 @@ const VitalInfo = ({ id, name, species, height, weight, stats }) => {
       className="VitalInfo"
     >
       <div className="VitalInfo__name">
-        <Link
-          className="VitalInfo__back"
-          to={"/"}
-        >
-          <i className="icon icon-left-big icon-big" />
-        </Link>
         <span className="VitalInfo__label">
           #{id}
         </span>
