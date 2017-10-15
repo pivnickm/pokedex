@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router';
 
 import Image from "./image";
 import VitalInfo from "./vital-info";
 import DefensiveInfo from "./defensive-info";
 import MoveList from "./move-list";
 import EvolutionInfo from "./evolution-info";
+import MonsterTabs from "./monster-tabs";
+import TypeIndicator from "../type-indicator"
 
 import * as colors from "../../data/colors.js";
 import data from "../../data/monsters.json";
@@ -25,6 +28,11 @@ class MonsterPage extends Component {
     const zeroes = "0000";
     const paddedId = (zeroes + monster.id).substr(-3, 3);
     console.log(monster);
+    const childrenWithProps = React.Children.map(this.props.children,
+      (child) => React.cloneElement(child, {
+        monsterInfo: monster
+      })
+     );
     return (
       <div
         className="MonsterPage"
@@ -32,37 +40,41 @@ class MonsterPage extends Component {
           backgroundImage: `linear-gradient(to bottom, ${colors[monster.monsterTypes[0]]}, #eee)`,
         }}
       >
-        <VitalInfo
-          id={paddedId}
-          name={monster.monsterName}
-          species={monster.monsterSpecies}
-          stats={monster.monsterStats}
-        />
-        <Image
-          id={monster.id}
-          types={monster.monsterTypes}
-          height={monster.monsterHeight}
-          weight={monster.monsterWeight}
-        />
-        <DefensiveInfo
-          defenseInfo={monster.monsterDefensive}
-        />
-        <div className="MonsterPage__EvolutionInfo">
-          <div className="DefensiveInfo__header">
-            Evolutions
+        <div className="MonsterPage__basic">
+          <div className="VitalInfo__name">
+            <Link
+              className="VitalInfo__back"
+              to={"/"}
+            >
+              <i className="icon icon-left-big icon-big" />
+            </Link>
+            <span className="VitalInfo__label">
+              #{paddedId}
+            </span>
+            <span className="VitalInfo__label name">
+              {monster.monsterName}
+            </span>
           </div>
-          <div className="MonsterPage__EvolutionInfo_wrap">
-            { monster.monsterEvolutions.map((evoStage, index) =>
-              <EvolutionInfo
-                key={`${evoStage[0].name}_wrap`}
-                evolutions={evoStage}
+          <div
+            className="VisualInfo__type_wrapper"
+          >
+            {monster.monsterTypes.map((type, index) => (
+              <TypeIndicator
+                key={type}
+                type={type}
               />
-            )}
+            ))}
           </div>
         </div>
-        <MoveList
-          moves={monster.monsterMoves}
+        <Image
+          id={monster.id}
         />
+        <MonsterTabs
+          id={monster.id}
+        />
+        <div className="MonsterPage__tabContent">
+          {childrenWithProps}
+        </div>
       </div>
     );
   }

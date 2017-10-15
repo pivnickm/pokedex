@@ -1,9 +1,5 @@
 .VisualInfo {
-  padding-top: 1rem;
-  display: flex;
-  flex: 3 3 30px;
-  flex-flow: column;
-  align-items: center;
+  /* flex: 3 3 30px; */
 }
 
 .VisualInfo__type_wrapper {
@@ -13,7 +9,6 @@
 
 .VisualInfo__sprite {
   height: 200px;
-  flex: 0 0 auto;
 }
 
 @media (max-width: 600px) {

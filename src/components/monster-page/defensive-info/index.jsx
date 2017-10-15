@@ -4,14 +4,15 @@ import TypeIndicator from "../../type-indicator"
 
 import "./index.css";
 
-const DefensiveInfo = ({ defenseInfo }) => {
+const DefensiveInfo = ({ monsterInfo }) => {
+  const { monsterDefensive } = monsterInfo;
   return (
     <div className="DefensiveInfo">
       <div className="DefensiveInfo__header">
         Damage Taken
       </div>
       <div className="DefensiveInfo__types">
-        {defenseInfo.map((item, key) =>
+        {monsterDefensive.map((item, key) =>
           item.dmgMultiplier !== 1 &&
             <div key={item.typeName} className="DefensiveInfo__item">
               <TypeIndicator

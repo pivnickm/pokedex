@@ -1,0 +1,30 @@
+.MonsterTabs {
+  flex: 0 100%;
+}
+
+.MonsterTabs__List {
+  list-style: none;
+  display: flex;
+  flex-flow: row;
+  padding: 0;
+  margin-top: 0;
+  justify-content: space-between;
+}
+
+.MonsterTabs__List_item {
+  background: rgba(255,255,255,.5);
+  flex: 3 3 30px;
+  max-width: 75px;
+  padding: .5rem;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.MonsterTabs__List_item:not(:first-child) {
+  margin-left: .25rem;
+}
+
+.MonsterTabs__List_link {
+  text-decoration: none;
+  color: #333;
+}

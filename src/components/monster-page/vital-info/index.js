@@ -1,29 +1,35 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
 
-import BaseStats from "../base-stats";
-
 import "./index.css";
 
-const VitalInfo = ({ id, name, species, height, weight, stats }) => {
+const VitalInfo = ({ monsterInfo }) => {
+  const { monsterSpecies, monsterHeight, monsterWeight } = monsterInfo;
   return (
     <div
       className="VitalInfo"
     >
-      <div className="VitalInfo__name">
-        <span className="VitalInfo__label">
-          #{id}
-        </span>
-        <span className="VitalInfo__label name">
-          {name}
-        </span>
-      </div>
       <div className="VitalInfo__species">
-        {species}
+        {monsterSpecies}
       </div>
-      <BaseStats
-        stats={stats}
-      />
+      <div className="VitalInfo__sizing">
+        <div className="VitalInfo__height">
+          <div className="VitalInfo__value">
+            {monsterHeight}
+          </div>
+          <div className="VitalInfo__label">
+            Height
+          </div>
+        </div>
+        <div className="VitalInfo__weight">
+          <div className="VitalInfo__value">
+            {monsterWeight}
+          </div>
+          <div className="VitalInfo__label">
+            Weight
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

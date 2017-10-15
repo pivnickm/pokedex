@@ -5,7 +5,7 @@ import MoveListItem from "./item"
 
 import "./index.css";
 
-const MoveList = ({ moves }) => {
+const MoveList = ({ monsterInfo }) => {
   const enhancedMoves =
   [
     ...[{
@@ -23,7 +23,7 @@ const MoveList = ({ moves }) => {
       accuracy: "Accuracy",
       pp: "PP"
     }],
-    ...moves
+    ...monsterInfo.monsterMoves
   ]
   return (
     <div className="MoveList">
