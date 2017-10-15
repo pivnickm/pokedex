@@ -20,7 +20,8 @@ const barColor = (value) => {
   }
 }
 
-const BaseStats = ({ stats }) => {
+const BaseStats = ({ monsterInfo }) => {
+  const stats = monsterInfo.monsterStats;
   return (
     <div className="BaseStats">
       { stats.map((item) =>
