@@ -1,6 +1,13 @@
 .VitalInfo__name {
   flex: 0 0 100%;
+  height: 56px;
+  display: flex;
+  background: #6890F0;
+  color: #fff;
+  flex-flow: row wrap;
+  align-items: center;
   margin-bottom: .5rem;
+  padding-left: .5rem;
 }
 
 .VitalInfo{

@@ -1,10 +1,10 @@
 .MonsterFilter {
-  height: 30px;
+  height: 15px;
   width: calc(100% - 4rem);
   margin-left: 1rem;
   background: none;
   border: none;
-  border-radius: 0; /* ios is adding a border radius... */
+  border-radius: 0;
   border-bottom: 2px solid #eee;
   color: #fff;
   font-size: 1rem;

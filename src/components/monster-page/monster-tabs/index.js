@@ -2,6 +2,7 @@ import React from "react";
 import { PropTypes } from 'prop-types';
 import { Link } from "react-router";
 
+import tabData from "./tab-data";
 import "./index.css";
 
 const MonsterTabs = ({ id }) => {
@@ -10,56 +11,21 @@ const MonsterTabs = ({ id }) => {
       <ul
         className="MonsterTabs__List"
       >
-        <li
-          className="MonsterTabs__List_item"
-        >
-          <Link
-            to={`/${id}/basic-info`}
-            className="MonsterTabs__List_link"
+        { tabData.tabLinks.map((item, index) =>
+          <li
+            className="MonsterTabs__List_item"
+            key={item.title}
           >
-            Info
-          </Link>
-        </li>
-        <li
-          className="MonsterTabs__List_item"
-        >
-          <Link
-            to={`/${id}/moves`}
-            className="MonsterTabs__List_link"
-          >
-            Moves
-          </Link>
-        </li>
-        <li
-          className="MonsterTabs__List_item"
-        >
-          <Link
-            to={`/${id}/stats`}
-            className="MonsterTabs__List_link"
-          >
-            Stats
-          </Link>
-        </li>
-        <li
-          className="MonsterTabs__List_item"
-        >
-          <Link
-            to={`/${id}/evolutions`}
-            className="MonsterTabs__List_link"
-          >
-            Evolutions
-          </Link>
-        </li>
-        <li
-          className="MonsterTabs__List_item"
-        >
-          <Link
-            to={`/${id}/defense`}
-            className="MonsterTabs__List_link"
-          >
-            Weaknesses
-          </Link>
-        </li>
+            <Link
+              to={`/${id}/${item.to}`}
+              className="MonsterTabs__List_link"
+              activeClassName="MonsterTabs__active"
+              onlyActiveOnIndex={true}
+            >
+              <i className={`icon ${item.iconName}`} />
+            </Link>
+          </li>
+        )}
       </ul>
     </div>
   );
