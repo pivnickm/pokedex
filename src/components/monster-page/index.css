@@ -1,9 +1,6 @@
 .MonsterPage {
-  padding: .5rem 1rem;
   display: flex;
   flex-flow: row wrap;
-  background-repeat: no-repeat;
-  background-size: 100% 300px;
 }
 
 .MonsterPage__basic {
@@ -31,4 +28,5 @@
   padding: .25rem;
   width: 100%;
   text-align: center;
+  min-height: 75vw;
 }

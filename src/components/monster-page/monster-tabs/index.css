@@ -1,30 +1,39 @@
 .MonsterTabs {
   flex: 0 100%;
+  background: #6890F0;
 }
 
 .MonsterTabs__List {
   list-style: none;
-  display: flex;
-  flex-flow: row;
   padding: 0;
-  margin-top: 0;
-  justify-content: space-between;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 .MonsterTabs__List_item {
-  background: rgba(255,255,255,.5);
-  flex: 3 3 30px;
-  max-width: 75px;
-  padding: .5rem;
   text-align: center;
   font-size: .8rem;
-}
-
-.MonsterTabs__List_item:not(:first-child) {
-  margin-left: .25rem;
+  display: inline-block;
+  flex: 1 1 20%;
+  height: 48px;
 }
 
 .MonsterTabs__List_link {
+  display: flex;
   text-decoration: none;
-  color: #333;
+  color: rgba(255, 255, 255, .625);
+  font-size: 1.5rem;
+  border-bottom: 2px solid #6890F0;
+  position: relative;
+  top: 0;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.MonsterTabs__active {
+  color: #fff;
+  border-bottom: 2px solid #FEE94E;
 }

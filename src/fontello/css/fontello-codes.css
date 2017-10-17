@@ -4,5 +4,10 @@
 .icon-up-open:before { content: '\e802'; } /* '' */
 .icon-dwolla:before { content: '\e803'; } /* '' */
 .icon-certificate:before { content: '\e804'; } /* '' */
+.icon-info-circled:before { content: '\e805'; } /* '' */
+.icon-user:before { content: '\e806'; } /* '' */
+.icon-ccw:before { content: '\e807'; } /* '' */
 .icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-sort-number-up:before { content: '\f162'; } /* '' */
 .icon-dot-circled:before { content: '\f192'; } /* '' */
+.icon-heartbeat:before { content: '\f21e'; } /* '' */

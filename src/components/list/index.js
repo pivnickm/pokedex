@@ -60,7 +60,7 @@ class List extends Component {
             >
               <Link
                 className="MonsterList__item_link"
-                to={`/${item.id}`}
+                to={`/${item.id}/basic-info`}
               >
                 <div
                   className="MonsterList__item"

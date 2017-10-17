@@ -100,6 +100,13 @@ const getPokemon = (id) => {
         const regExp = /\(([^)]+)\)/;
         const monsterName = $(".primary-content .header").eq(0).text();
         const monsterSpecies = $(".species td").eq(1).text();
+        const monsterCatchRate = $(".pokemon-catch-rate").children().eq(1).text();
+        const monsterBaseExp = $(".pokemon-base-xp").children().eq(1).text();
+        const monsterBaseHappiness = $(".pokemon-base-happiness").children().eq(1).text();
+        const monsterHatchSteps = $(".pokemon-hatch-steps").children().eq(1).text();
+        const monsterGenderSplit = $(".pokemon-gender-group").children().eq(1).text();
+        const monsterGrowth = $(".pokemon-level-rate").children().eq(1).text();
+        const monsterEffortValues = $(".pokemon-effort-values").children().eq(1).text();
 
         const weightMatches = regExp.exec($(".pokemon-weight td").eq(1).text());
         const monsterWeight = weightMatches[1];
@@ -239,7 +246,14 @@ const getPokemon = (id) => {
           monsterStats,
           monsterDefensive,
           monsterMoves,
-          monsterEvolutions
+          monsterEvolutions,
+          monsterCatchRate,
+          monsterBaseExp,
+          monsterBaseHappiness,
+          monsterHatchSteps,
+          monsterGenderSplit,
+          monsterGrowth,
+          monsterEffortValues
         });
       }
     });
