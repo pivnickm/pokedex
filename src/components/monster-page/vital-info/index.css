@@ -1,3 +1,10 @@
+.VitalInfo{
+  flex: 4 4 40px;
+  padding: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .VitalInfo__name {
   flex: 0 0 100%;
   height: 56px;
@@ -10,47 +17,51 @@
   padding-left: .5rem;
 }
 
-.VitalInfo{
-  flex: 4 4 40px;
-  padding: .5rem .25rem;
+.VitalInfo__row {
+  display: flex;
+  flex: 1 1 100%;
+}
+
+.VitalInfo__row:not(:first-child) {
+  margin-top: 1rem;
+  border-top: 1px solid #c0c0c0;
+  padding-top: 1rem;
 }
 
 .VitalInfo__species {
-  background: rgba(255, 255, 255, .5);
-  padding: .5rem;
+  flex: 1 1 50%;
   text-align: center;
   font-size: .8rem;
-  margin-bottom: .5rem;
 }
 
 .VitalInfo__sizing {
   text-align: center;
-  flex: 0 0 auto;
-  margin-top: .5rem;
+  flex: 1 1 50%;
+  display: flex;
 }
 
 .VitalInfo__height,
 .VitalInfo__weight {
-  display: inline-block;
-  padding: 0 .5rem;
+  flex: 1 1 50%;
 }
 
+.VitalInfo__base {
+  flex: 1 1 33%;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.VitalInfo__species .VitalInfo__label,
+.VitalInfo__base .VitalInfo__label,
 .VitalInfo__height .VitalInfo__label,
 .VitalInfo__weight .VitalInfo__label {
   padding-bottom: .25rem;
   font-size: .65rem;
 }
 
-.VitalInfo__height {
-  padding-left: 0
-}
-
 .VitalInfo__value {
   font-size: 1rem;
-}
-
-.VitalInfo__label:last-child {
-  margin-left: .25rem;
+  margin-bottom: .25rem;
 }
 
 .VitalInfo__back {
