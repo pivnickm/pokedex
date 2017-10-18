@@ -29,6 +29,7 @@
   width: 100%;
   text-align: center;
   min-height: 75vw;
+  padding: 1rem;
 }
 
 .VisualInfo__type_wrapper {

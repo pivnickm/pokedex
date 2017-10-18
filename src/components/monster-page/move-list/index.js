@@ -27,9 +27,6 @@ const MoveList = ({ monsterInfo }) => {
   ]
   return (
     <div className="MoveList">
-      <div className="DefensiveInfo__header">
-        Learned Moves
-      </div>
       <div className="MoveList__moves">
         { enhancedMoves.map((move, index) =>
           <MoveListItem

@@ -1,6 +1,5 @@
 .VitalInfo{
   flex: 4 4 40px;
-  padding: 1rem;
   display: flex;
   flex-flow: row wrap;
 }
