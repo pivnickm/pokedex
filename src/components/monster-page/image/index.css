@@ -1,12 +1,3 @@
-.VisualInfo {
-  /* flex: 3 3 30px; */
-}
-
-.VisualInfo__type_wrapper {
-  padding: .5rem 0;
-  flex: 0 0 auto;
-}
-
 .VisualInfo__sprite {
   height: 200px;
 }

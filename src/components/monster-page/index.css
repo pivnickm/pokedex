@@ -5,7 +5,11 @@
 
 .MonsterPage__basic {
   flex: 3 3 30px;
-  padding-top: 1rem;
+  padding: 1rem 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .defense {
@@ -14,9 +18,6 @@
 }
 
 .MonsterPage__EvolutionInfo {
-  /* flex: 8 8 100%;
-  display: flex;
-  justify-content: space-evenly; */
   background: #eee;
   padding: .5rem .25rem .25rem;
   width: 100%;
@@ -25,8 +26,16 @@
 
 .MonsterPage__tabContent {
   background: #eee;
-  padding: .25rem;
   width: 100%;
   text-align: center;
   min-height: 75vw;
+}
+
+.VisualInfo__type_wrapper {
+  text-align: center;
+}
+
+.VisualInfo__gender_wrapper {
+  padding-top: .5rem;
+  font-size: .75rem;
 }

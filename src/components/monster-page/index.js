@@ -6,6 +6,7 @@ import Image from "./image";
 import MonsterTabs from "./monster-tabs";
 import TypeIndicator from "../type-indicator"
 
+import * as colors from "../../data/colors.js";
 import data from "../../data/monsters.json";
 import "./index.css";
 
@@ -20,14 +21,14 @@ class MonsterPage extends Component {
 
   render() {
     const monster = data[this.props.params.id - 1];
-    const zeroes = "0000";
-    const paddedId = (zeroes + monster.id).substr(-3, 3);
-    console.log(monster);
+    const paddedId = ("0000" + monster.id).substr(-3, 3);
+    const pageBackgroundColor = `${monster.monsterTypes[0]}Lighten`;
     const childrenWithProps = React.Children.map(this.props.children,
       (child) => React.cloneElement(child, {
         monsterInfo: monster
       })
-     );
+    );
+    console.log(monster);
     return (
       <div>
         <Header
@@ -36,6 +37,9 @@ class MonsterPage extends Component {
         />
         <div
           className="MonsterPage"
+          style={{
+            backgroundColor: `${colors[pageBackgroundColor]}`,
+          }}
         >
           <MonsterTabs
             id={monster.id}
@@ -50,11 +54,14 @@ class MonsterPage extends Component {
                   type={type}
                 />
               ))}
+              <div className="VisualInfo__gender_wrapper">
+                {monster.monsterGenderSplit}
+              </div>
             </div>
+            <Image
+              id={monster.id}
+            />
           </div>
-          <Image
-            id={monster.id}
-          />
           <div className="MonsterPage__tabContent">
             {childrenWithProps}
           </div>
