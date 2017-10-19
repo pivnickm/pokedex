@@ -5,8 +5,9 @@ import { Link } from "react-router";
 import data from "../../../data/monsters.json";
 import "./index.css";
 
-const EvolutionInfo = ({ evolutions  }) => {
-  const newItems = evolutions.filter((item) => {
+const EvolutionInfo = ({ monsterInfo  }) => {
+  const { monsterEvolutions } = monsterInfo;
+  const newItems = monsterEvolutions.filter((item) => {
     return data.find((innerItem) => {
       return innerItem.id === parseInt(item.id, 10);
     });

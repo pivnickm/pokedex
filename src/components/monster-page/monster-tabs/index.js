@@ -23,6 +23,11 @@ const MonsterTabs = ({ id }) => {
               onlyActiveOnIndex={true}
             >
               <i className={`icon ${item.iconName}`} />
+              <span
+                className="MonsterTabs__List_link_text"
+              >
+                {item.title}
+              </span>
             </Link>
           </li>
         )}

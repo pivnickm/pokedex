@@ -11,10 +11,20 @@
         "src": "/android-chrome-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
+    },
+    {
+        "src": "/favicon-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+    },
+    {
+        "src": "/favicon-16x16.png",
+        "sizes": "16x16",
+        "type": "image/png"
     }
 ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#3fb1f9",
-  "background_color": "#3fb1f9"
+  "theme_color": "#6890F0",
+  "background_color": "#6890F0"
 }

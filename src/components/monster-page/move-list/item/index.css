@@ -2,8 +2,9 @@
   flex: 1 1 100%;
   flex-flow: row wrap;
   display: flex;
-  padding: .25rem;
+  /*padding: .25rem;*/
   position: relative;
+  background-color: #eee;
 }
 
 .MoveList__row_wrap {
@@ -12,11 +13,8 @@
   height: 40px;
   position: relative;
   z-index: 10;
+  border: .25rem solid #eee;
   background-color: #ccc;
-}
-
-.MoveList__row {
-  background-color: #eee;
 }
 
 .MoveList__row_item {
@@ -34,6 +32,11 @@
   align-self: center;
 }
 
+.MoveList__row_item_notes {
+  flex: 1 1 100%;
+  align-self: center;
+}
+
 .MoveList__row_item_level {
   flex: 1 1 25px;
   align-self: center;
@@ -41,14 +44,15 @@
 .MoveList__row_item_more {
   display: flex;
   flex: 0 0 100%;
+  flex-flow: row wrap;
   justify-content: space-around;
-  height: 40px;
+  height: 80px;
   background-color: #eee;
   transition: margin .1s linear;
 }
 
 .MoveList__closed {
-  margin-top: -40px;
+  margin-top: -80px;
 }
 
 .MoveList__open {

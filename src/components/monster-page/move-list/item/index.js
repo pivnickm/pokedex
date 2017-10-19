@@ -30,7 +30,7 @@ class MoveListItem extends Component {
         ?
           () => {}
         :
-          () => { this.toggleOpen(); }
+          this.toggleOpen
         }>
         <div
           className="MoveList__row_wrap"
@@ -93,7 +93,7 @@ class MoveListItem extends Component {
               <div>{move.pp}</div>
             </div>
             { move.notes &&
-              <div className="MoveList__row_item_sub">
+              <div className="MoveList__row_item_notes">
                 <div>Notes</div>
                 <div>{move.notes}</div>
               </div>
