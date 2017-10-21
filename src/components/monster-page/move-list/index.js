@@ -40,11 +40,11 @@ const MoveList = ({ monsterInfo }) => {
 }
 
 MoveList.propTypes = {
-  defenseInf:PropTypes.array
+  monsterInfo: PropTypes.object
 }
 
 MoveList.defaultProps = {
-  defenseInf:[]
+  monsterInfo: {}
 }
 
 export default MoveList;

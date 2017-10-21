@@ -21,7 +21,7 @@ export default {
       iconName: "icon-ccw"
     },
     {
-      title: "Weaknesses",
+      title: "Defenses",
       to: "defense",
       iconName: "icon-heartbeat"
     }

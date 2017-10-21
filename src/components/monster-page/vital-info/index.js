@@ -108,19 +108,11 @@ const VitalInfo = ({ monsterInfo }) => {
 };
 
 VitalInfo.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  species: PropTypes.string,
-  height: PropTypes.string,
-  weight: PropTypes.string
+  monsterInfo: PropTypes.object
 };
 
 VitalInfo.defaultProps = {
-  id: "001",
-  name: "",
-  species: "",
-  height: "0m",
-  weight: "0.0kg"
+  monsterInfo: {}
 };
 
 

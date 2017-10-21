@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { PropTypes } from 'prop-types';
 import { Link } from "react-router";
 import LazyLoad, { forceCheck } from "react-lazyload";
 
@@ -97,14 +96,5 @@ class List extends Component {
     );
   }
 }
-
-List.propTypes = {
-  monsters: PropTypes.array
-};
-
-List.defaultProps = {
-  monsters: []
-};
-
 
 export default List;

@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 
 import "./index.css";
 
-const Image = ({ id, types, height, weight }) => {
+const Image = ({ id }) => {
   return (
     <div
       className="VisualInfo"
@@ -18,13 +18,11 @@ const Image = ({ id, types, height, weight }) => {
 };
 
 Image.propTypes = {
-  id: PropTypes.number,
-  types: PropTypes.array
+  id: PropTypes.number
 };
 
 Image.defaultProps = {
-  id: 1,
-  types: []
+  id: 1
 };
 
 

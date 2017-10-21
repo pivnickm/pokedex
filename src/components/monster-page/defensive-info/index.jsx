@@ -29,11 +29,11 @@ const DefensiveInfo = ({ monsterInfo }) => {
 }
 
 DefensiveInfo.propTypes = {
-  defenseInfo: PropTypes.array
+  monsterInfo: PropTypes.object
 }
 
 DefensiveInfo.defaultProps = {
-  defenseInfo: []
+  monsterInfo: {}
 }
 
 export default DefensiveInfo;

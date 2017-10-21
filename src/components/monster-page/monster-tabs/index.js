@@ -37,13 +37,11 @@ const MonsterTabs = ({ id }) => {
 };
 
 MonsterTabs.propTypes = {
-  id: PropTypes.number,
-  types: PropTypes.array
+  id: PropTypes.number
 };
 
 MonsterTabs.defaultProps = {
-  id: 1,
-  types: []
+  id: 1
 };
 
 

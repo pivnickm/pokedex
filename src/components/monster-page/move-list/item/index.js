@@ -106,11 +106,11 @@ class MoveListItem extends Component {
 }
 
 MoveListItem.propTypes = {
-  monsters: PropTypes.array
+  move: PropTypes.object
 };
 
 MoveListItem.defaultProps = {
-  monsters: []
+  move: {}
 };
 
 

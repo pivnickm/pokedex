@@ -39,11 +39,15 @@ const Header = ({ isHome, onSearch, text }) => {
 };
 
 Header.propTypes = {
-  isHome: PropTypes.bool
+  isHome: PropTypes.bool,
+  onSearch: PropTypes.func,
+  text: PropTypes.string
 }
 
 Header.defaultProps = {
-  isHome: false
+  isHome: false,
+  onSearch: () => {},
+  text: ""
 }
 
 export default Header;

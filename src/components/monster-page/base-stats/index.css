@@ -2,7 +2,6 @@
   display: flex;
   flex-flow: row wrap;
   font-size: .8rem;
-  padding: .5rem;
 }
 
 .BaseStats__item_row {

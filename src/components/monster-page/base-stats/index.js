@@ -56,11 +56,11 @@ const BaseStats = ({ monsterInfo }) => {
 }
 
 BaseStats.propTypes = {
-  defenseInfo: PropTypes.array
+  monsterInfo: PropTypes.object
 }
 
 BaseStats.defaultProps = {
-  defenseInfo: []
+  monsterInfo: {}
 }
 
 export default BaseStats;

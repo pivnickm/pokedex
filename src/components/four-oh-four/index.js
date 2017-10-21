@@ -1,6 +1,6 @@
 import React from "react";
 
-const FourOhFour = ({ id, types }) => {
+const FourOhFour = () => {
   return (
     <div
       className="NotFound"
