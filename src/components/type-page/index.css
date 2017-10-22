@@ -1,0 +1,38 @@
+.typeWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.typeWrapper__section {
+  flex: 6 6 calc(50% - 1px);
+  padding: .5rem 0;
+  margin: 0.25rem 0;
+}
+
+.types__stronger {
+  border-right: 1px solid #ccc;
+}
+
+.typeWrapper__header {
+  flex: 1 1 100%;
+}
+
+.typeWrapper__section_wrap {
+  display: flex;
+}
+
+.typeWrapper__section_value {
+  flex: 6 6 50%;
+}
+
+.typeWrapper__header {
+  padding: .25rem 0;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.typeWrapper:first-child {
+  margin-top: .5rem;
+}

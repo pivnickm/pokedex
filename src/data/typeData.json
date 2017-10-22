@@ -1,0 +1,523 @@
+[
+  {
+    "type": "Normal",
+    "typesAgainst": [
+      {
+        "type": "Ghost",
+        "multiplier": 0
+      },
+      {
+        "type": "Fighting",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Water",
+    "typesAgainst": [
+      {
+        "type": "Fire",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Water",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ice",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Steel",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Grass",
+        "multiplier": 2
+      },
+      {
+        "type": "Electric",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Fire",
+    "typesAgainst": [
+      {
+        "type": "Fire",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Grass",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ice",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Bug",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Steel",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Water",
+        "multiplier": 2
+      },
+      {
+        "type": "Ground",
+        "multiplier": 2
+      },
+      {
+        "type": "Rock",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Grass",
+    "typesAgainst": [
+      {
+        "type": "Water",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Electric",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Grass",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ground",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Fire",
+        "multiplier": 2
+      },
+      {
+        "type": "Ice",
+        "multiplier": 2
+      },
+      {
+        "type": "Poison",
+        "multiplier": 2
+      },
+      {
+        "type": "Flying",
+        "multiplier": 2
+      },
+      {
+        "type": "Bug",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Flying",
+    "typesAgainst": [
+      {
+        "type": "Grass",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Fighting",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Bug",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Electric",
+        "multiplier": 2
+      },
+      {
+        "type": "Ice",
+        "multiplier": 2
+      },
+      {
+        "type": "Rock",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Poison",
+    "typesAgainst": [
+      {
+        "type": "Grass",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Fighting",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Poison",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Bug",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ground",
+        "multiplier": 2
+      },
+      {
+        "type": "Psychic",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Dark",
+    "typesAgainst": [
+      {
+        "type": "Ghost",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Dark",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Fighting",
+        "multiplier": 2
+      },
+      {
+        "type": "Bug",
+        "multiplier": 2
+      },
+      {
+        "type": "Psychic",
+        "multiplier": 0
+      }
+    ]
+  },
+  {
+    "type": "Psychic",
+    "typesAgainst": [
+      {
+        "type": "Fighting",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Psychic",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Bug",
+        "multiplier": 2
+      },
+      {
+        "type": "Ghost",
+        "multiplier": 2
+      },
+      {
+        "type": "Dark",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Steel",
+    "typesAgainst": [
+      {
+        "type": "Normal",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Grass",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ice",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Flying",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Psychic",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Bug",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Rock",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ghost",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Dragon",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Dark",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Steel",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Fire",
+        "multiplier": 2
+      },
+      {
+        "type": "Fighting",
+        "multiplier": 2
+      },
+      {
+        "type": "Ground",
+        "multiplier": 2
+      },
+      {
+        "type": "Poison",
+        "multiplier": 0
+      }
+    ]
+  },
+  {
+    "type": "Electric",
+    "typesAgainst": [
+      {
+        "type": "Electric",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Flying",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Steel",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ground",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Fighting",
+    "typesAgainst": [
+      {
+        "type": "Bug",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Rock",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Dark",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Flying",
+        "multiplier": 2
+      },
+      {
+        "type": "Psychic",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Ground",
+    "typesAgainst": [
+      {
+        "type": "Poison",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Rock",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Water",
+        "multiplier": 2
+      },
+      {
+        "type": "Grass",
+        "multiplier": 2
+      },
+      {
+        "type": "Ice",
+        "multiplier": 2
+      },
+      {
+        "type": "Electric",
+        "multiplier": 0
+      }
+    ]
+  },
+  {
+    "type": "Rock",
+    "typesAgainst": [
+      {
+        "type": "Normal",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Fire",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Poison",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Flying",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Water",
+        "multiplier": 2
+      },
+      {
+        "type": "Grass",
+        "multiplier": 2
+      },
+      {
+        "type": "Fighting",
+        "multiplier": 2
+      },
+      {
+        "type": "Ground",
+        "multiplier": 2
+      },
+      {
+        "type": "Steel",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Bug",
+    "typesAgainst": [
+      {
+        "type": "Grass",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Fighting",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ground",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Fire",
+        "multiplier": 2
+      },
+      {
+        "type": "Flying",
+        "multiplier": 2
+      },
+      {
+        "type": "Rock",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Ice",
+    "typesAgainst": [
+      {
+        "type": "Ice",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Fire",
+        "multiplier": 2
+      },
+      {
+        "type": "Fighting",
+        "multiplier": 2
+      },
+      {
+        "type": "Rock",
+        "multiplier": 2
+      },
+      {
+        "type": "Steel",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Dragon",
+    "typesAgainst": [
+      {
+        "type": "Fire",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Water",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Electric",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Grass",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ice",
+        "multiplier": 2
+      },
+      {
+        "type": "Dragon",
+        "multiplier": 2
+      }
+    ]
+  },
+  {
+    "type": "Ghost",
+    "typesAgainst": [
+      {
+        "type": "Poison",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Bug",
+        "multiplier": 0.5
+      },
+      {
+        "type": "Ghost",
+        "multiplier": 2
+      },
+      {
+        "type": "Dark",
+        "multiplier": 2
+      },
+      {
+        "type": "Normal",
+        "multiplier": 0
+      },
+      {
+        "type": "Fighting",
+        "multiplier": 0
+      }
+    ]
+  }
+]

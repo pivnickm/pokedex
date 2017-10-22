@@ -14,17 +14,25 @@ class List extends Component {
     super(props);
 
     this.state= {
-      term: ""
+      term: "",
+      isTrayOpen: false
     };
 
 		this.filterMonsters = this.filterMonsters.bind(this);
 		this.onSearch = this.onSearch.bind(this);
+		this.openTray = this.openTray.bind(this);
   }
 
   onSearch(evt) {
     this.setState({
       term: evt.target.value
     });
+  }
+
+  openTray() {
+    this.setState((prevState) => ({
+      isTrayOpen: !prevState.isTrayOpen
+    }))
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -50,7 +58,24 @@ class List extends Component {
         <Header
           isHome={true}
           onSearch={this.onSearch}
+          onClick={this.openTray}
         />
+        <div
+          className={`${this.state.isTrayOpen
+            ?
+              "trayOpen"
+            :
+              "trayClosed"
+            }
+            testDrawer`
+          }
+        >
+        <Link
+          to="/types"
+        >
+          TypeDex
+        </Link>
+        </div>
         <ul className="MonsterList">
           { monsters.map((item) =>
             <li

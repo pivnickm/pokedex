@@ -5,6 +5,7 @@ import { Route, IndexRoute } from 'react-router';
 import App from './containers/app';
 import List from './components/list';
 import MonsterPage from './components/monster-page';
+import TypePage from './components/type-page';
 import FourOhFour from './components/four-oh-four';
 import BaseStats from "./components/monster-page/base-stats";
 import MoveList from "./components/monster-page/move-list";
@@ -15,6 +16,7 @@ import DefensiveInfo from "./components/monster-page/defensive-info";
 const routes = (
   <Route path="/" component={App} >
     <IndexRoute component={List} />
+    <Route path="/types" component={TypePage} />
     <Route path="/:id" component={MonsterPage}>
       <IndexRoute component={VitalInfo} />
       <Route path="basic-info" component={VitalInfo} />

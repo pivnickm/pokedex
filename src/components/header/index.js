@@ -6,7 +6,7 @@ import Filter from "../filter";
 import "./index.css";
 import "../../fontello/css/fontello.css";
 
-const Header = ({ isHome, onSearch, text }) => {
+const Header = ({ isHome, onSearch, text, onClick }) => {
   return (
   <div className="Header">
     { isHome
@@ -14,7 +14,10 @@ const Header = ({ isHome, onSearch, text }) => {
       <div
         className="Header__inner"
       >
-        <i className="icon icon-menu icon-big" />
+        <i
+          className="icon icon-menu icon-big"
+          onClick={onClick}
+        />
         <Filter
           onSearch={onSearch}
         />

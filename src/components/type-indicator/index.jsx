@@ -1,15 +1,20 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
+import { Link } from "react-router";
 
 import "./index.css";
 
 const TypeIndicator = ({ type }) => {
   return (
-    <span
-      className={`type ${type}`}
+    <Link
+      to={`types#${type}`}
     >
-      {type}
-    </span>
+      <span
+        className={`type ${type}`}
+      >
+        {type}
+      </span>
+    </Link>
   );
 };
 
