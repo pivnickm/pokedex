@@ -2,7 +2,8 @@ const fs = require('fs');
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-const url = 'http://www.azurilland.com/pokedex/gen-2/';
+//const url = 'http://www.azurilland.com/pokedex/gen-4/';
+const url = "https://www.azurilland.com/pokedex/gen-4/";
 const allPromises = [];
 
 const irregularMoves = require("./src/data/move-info.js");
@@ -108,10 +109,10 @@ const getPokemon = (id) => {
         const monsterGrowth = $(".pokemon-level-rate").children().eq(1).text();
         const monsterEffortValues = $(".pokemon-effort-values").children().eq(1).text();
 
-        const weightMatches = regExp.exec($(".pokemon-weight td").eq(1).text());
+        const weightMatches = regExp.exec($(".pokemon-weight td").eq(1).text()) || [0, 10];
         const monsterWeight = weightMatches[1];
         // height needs some manipulation because it's 10x too big
-        const heightMatches = regExp.exec($(".pokemon-height td").eq(1).text()); // ex: "9m"
+        const heightMatches = regExp.exec($(".pokemon-height td").eq(1).text()) || [0, 10]; // ex: "9m"
         const monsterHeight = (parseInt(heightMatches[1], 10) / 10) + "m";
         /* End Name + Info */
 
@@ -191,7 +192,7 @@ const getPokemon = (id) => {
           monsterMoves.push(moveData);
         }
         /* End Moveset */
-
+/*
         // get evolutionary info =/
         const evoList = $(".evolution");
         const monsterEvolutions = [];
@@ -235,7 +236,7 @@ const getPokemon = (id) => {
         if (temp.length) {
           monsterEvolutions.push(temp);
         }
-
+*/
         resolve({
           id,
           monsterName,
@@ -246,7 +247,7 @@ const getPokemon = (id) => {
           monsterStats,
           monsterDefensive,
           monsterMoves,
-          monsterEvolutions,
+          //monsterEvolutions,
           monsterCatchRate,
           monsterBaseExp,
           monsterBaseHappiness,
@@ -261,13 +262,13 @@ const getPokemon = (id) => {
 };
 
 
-for (let i = 1; i < 252; i++) {
+for (let i = 1; i < 494; i++) {
   allPromises.push(getPokemon(i));
 }
 
 Promise.all(allPromises).then(values => {
   console.log(values);
-  fs.writeFile("src/data/monsters.json", JSON.stringify(values), err => {
+  fs.writeFile("src/data/monsters2.json", JSON.stringify(values), err => {
     if (err) return console.log(err);
     console.log("Monsters.json written successfully");
   });
