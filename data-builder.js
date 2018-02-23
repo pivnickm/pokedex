@@ -9,57 +9,11 @@ const allPromises = [];
 const irregularMoves = require("./src/data/move-info.js");
 const damages = require("./src/data/damages.js");
 
+const makeCapital = (name) => name.replace(/\b\w/g, l => l.toUpperCase());
+
 const editType = (type) => {
-  let newType;
-  const hashMap = {
-    Electr: "Electric",
-    Psychc: "Psychic",
-    Fight: "Fighting"
-  }
-
-  if (type === "Fairy") {
-    type = "Normal";
-  }
-
-  if (hashMap[type]) {
-    newType = hashMap[type];
-  } else {
-    newType = type;
-  }
-
-  return newType;
+  return type ? makeCapital(type.split("/")[2].split(".shtml")[0]) : "";
 }
-
-const editDmgMultiplier = (multiplier) => {
-  if (!multiplier) {  // multiplier if not defined is just 1, neutral damage
-    return 1;
-  } else if(multiplier === "½") {
-    return 0.5;
-  } else if(multiplier === "¼") {
-    return 0.25;
-  } else if(multiplier === "2×") {
-    return 2;
-  } else if(multiplier === "4×") {
-    return 4;
-  } else if(multiplier === "immune") {
-    return 0;
-  }
-  return multiplier;
-}
-
-// const editDmgMultiplier = (types) => {
-//   const damageCollector = [];
-
-//   if (types.length < 2) {
-//     return damages[types[0]];
-//   } else {
-//     [types[0]].map((item) => {
-//       [types[1]].map((innerItem) => {
-//         console.log(item, innerItem);
-//       });
-//     });
-//   }
-// }
 
 const editMovePower = (moveName, movePower) => {
   if (irregularMoves[moveName]) {
@@ -92,10 +46,15 @@ const editEvolutionMethod = (methodText) => {
 
 const getPokemon = (id) => {
   return new Promise((resolve, reject) => {
-    return request(`${url}${id}.shtml`, (error, response, html) => {
-      if(!error){
+    return setTimeout(() => {
+      return request({ uri: `${url}${id}.shtml`, encoding: "binary" }, (error, response, html) => {
+        if (error) {
+          console.log("error!!!!", `${url}${id}.shtml`, error); // eslint-disable-line
+          reject(error);
+        }
+
         const $ = cheerio.load(html);
-        console.log(`${url}${id}.shtml`); // eslint-disable-line
+
         console.log(`Building info for ${id}`);
         /* Name + Info*/
         const monsterName = $(".fooinfo").eq(0).text();
@@ -108,6 +67,84 @@ const getPokemon = (id) => {
         const monsterHeight = $(".fooinfo").eq(7).text();
         /* End Name + Info */
 
+        /* Types */
+        let monsterTypes = [];
+        let firstType = editType($(".fooinfo").eq(4).children().eq(0).attr("href"));
+        let secondType = editType($(".fooinfo").eq(4).children().eq(1).attr("href"));
+
+        if (secondType !== "") {
+          monsterTypes.push(firstType, secondType);
+        } else {
+          monsterTypes.push(firstType);
+        }
+        /* End Types */
+
+        /* Base Stats */
+        let monsterStats = [];
+        const statElem = $("[name=stats]").next(".dextable");
+        const statElemChildren = statElem.children().children();
+
+        for (let i = 0; i < statElemChildren.eq(1).children(".fooevo").length; i++) {
+          const statName = statElemChildren.eq(1).children(".fooevo").eq(i).text();
+          const statValue = statElemChildren.eq(2).children(".fooinfo").eq(i+1).text();
+
+          monsterStats.push({
+            statName,
+            statValue
+          });
+        }
+        /* End Base Stats */
+
+        /* Defensive Strengths/Weaknesses */ //+17
+        let monsterDefensive = [];
+        const defElem = $("[name=general]").next(".dextable").next(".dextable").children().children();
+        const types = defElem.eq(1).children();
+        const multipliers = defElem.eq(2).children();
+        types.each((i, elem) => {
+          const typeName = editType($(elem).children().eq(0).attr("href"));
+          const dmgMultiplier = parseFloat(multipliers.eq(i).text().split("*")[1], 10);
+          if (dmgMultiplier !== 1) {
+            monsterDefensive.push({
+              typeName,
+              dmgMultiplier
+            });
+          }
+        });
+
+        // finally, sort by low => high
+        monsterDefensive.sort((a, b) => {
+          if (a.dmgMultiplier < b.dmgMultiplier) {
+            return -1;
+          } if (a.dmgMultiplier > b.dmgMultiplier) {
+            return 1;
+          }
+          return 0;
+        });
+        /* End Defensive Strengths/Weaknesses */
+
+        /* Moveset */
+        const monsterMoves = [];
+        const atkElem = $("[name=attacks]").next(".dextable").children().children();
+        const numMoves = (atkElem.length - 2) / 2; //two headers and two rows per move
+
+        for (let j = 2; j <= numMoves; j+=2) {
+          let moveData = {};
+          atkElem.eq(j).each((i, elem) => {
+            try {
+              moveData.level = $(elem).children().eq(0).text();
+              moveData.name = $(elem).children().eq(1).children().eq(0).text();
+              moveData.type = makeCapital($(elem).children().eq(2).children().eq(0).attr("src").split("/")[3].split(".")[0]);
+              moveData.category = $(elem).children().eq(3).children().eq(0).attr("src").split("/")[3].split(".")[0];
+              moveData.power = $(elem).children().eq(4).text();
+              moveData.accuracy = $(elem).children().eq(4).text();
+              moveData.pp = $(elem).children().eq(6).text();
+            } catch (e) {
+              console.log("Move Error"); // eslint-disable-line
+            }
+
+          });
+          monsterMoves.push(moveData);
+        }
         resolve({
           id,
           monsterName,
@@ -117,21 +154,24 @@ const getPokemon = (id) => {
           monsterCatchRate,
           monsterBaseHappiness,
           monsterHatchSteps,
-          monsterGenderSplit
+          monsterGenderSplit,
+          monsterTypes,
+          monsterStats,
+          monsterDefensive,
+          monsterMoves
         });
-      }
-    });
+      })}, 300 * id);
   });
 };
 
 
-for (let i = 1; i < 2; i++) {
+for (let i = 1; i < 494; i++) {
   const id = ("0000" + i).substr(-3, 3);
   allPromises.push(getPokemon(id));
 }
 
 Promise.all(allPromises).then(values => {
-  console.log(values);
+  //console.log(values);
   fs.writeFile("src/data/monsters2.json", JSON.stringify(values), err => {
     if (err) return console.log(err);
     console.log("Monsters.json written successfully");

@@ -11,9 +11,7 @@ const VitalInfo = ({ monsterInfo }) => {
     monsterBaseExp,
     monsterBaseHappiness,
     monsterCatchRate,
-    monsterEffortValues,
-    monsterHatchSteps,
-    monsterGrowth
+    monsterHatchSteps
   } = monsterInfo;
   return (
     <div
@@ -76,14 +74,6 @@ const VitalInfo = ({ monsterInfo }) => {
       <div className="VitalInfo__row">
         <div className="VitalInfo__base">
           <div className="VitalInfo__value">
-            {monsterEffortValues.trim()}
-          </div>
-          <div className="VitalInfo__label">
-            Effort Values
-          </div>
-        </div>
-        <div className="VitalInfo__base">
-          <div className="VitalInfo__value">
             {monsterHatchSteps}
           </div>
           <div className="VitalInfo__label">
@@ -91,18 +81,6 @@ const VitalInfo = ({ monsterInfo }) => {
           </div>
         </div>
       </div>
-      { monsterGrowth.length > 0 &&
-        <div className="VitalInfo__row">
-          <div className="VitalInfo__base">
-            <div className="VitalInfo__value">
-              {monsterGrowth}
-            </div>
-            <div className="VitalInfo__label">
-              Growth Rate
-            </div>
-          </div>
-        </div>
-      }
     </div>
   );
 };

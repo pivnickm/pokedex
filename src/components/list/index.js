@@ -5,8 +5,9 @@ import LazyLoad, { forceCheck } from "react-lazyload";
 import TypeIndicator from "../type-indicator"
 import Header from "../header";
 import Spinner from "../spinner";
+import Image from "../image";
 
-import data from "../../data/monsters.json";
+import data from "../../data/monsters2.json";
 import "./index.css";
 
 class List extends Component {
@@ -84,7 +85,7 @@ class List extends Component {
             >
               <Link
                 className="MonsterList__item_link"
-                to={`/${item.id}/basic-info`}
+                to={`/${parseInt(item.id, 10)}/basic-info`}
               >
                 <div
                   className="MonsterList__item"
@@ -93,10 +94,8 @@ class List extends Component {
                     height={200}
                     placeholder={<Spinner />}
                   >
-                    <img
-                      className="MonsterList__sprite"
-                      src={require(`../../data/images/hi_res/${item.id}.png`)}
-                      alt={item.id}
+                    <Image
+                      id={item.id}
                     />
                   </LazyLoad>
                   <div>

@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes } from 'prop-types';
 import { Link } from "react-router";
 
-import data from "../../../../data/monsters.json";
+import data from "../../../../data/monsters2.json";
 
 const EvolutionInfo = ({ evolutions  }) => {
   const newItems = evolutions.filter((item) => {

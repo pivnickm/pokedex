@@ -1,0 +1,83 @@
+.MonsterList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 0 1rem;
+  margin-top: 0px;
+}
+
+.MonsterList__item_wrapper {
+  list-style: none;
+  padding: .5rem;
+  /*color: white;*/
+  font-weight: 600;
+  width: 175px;
+}
+
+.MonsterList__item {
+  padding-top: 1rem;
+  text-align: center;
+  background: #ccc;
+}
+
+.MonsterList__item_link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.MonsterList__item:hover {
+  background-color: rgba(0, 0, 0, .25);
+}
+
+.MonsterList__sprite {
+  height: 75px;
+  width: 75px;
+}
+
+.MonsterList__label {
+  margin: 0;
+  text-shadow: 1px 1px #666;
+}
+
+@media (max-width: 600px) {
+  .MonsterList {
+    flex-direction: column;
+    font-size: 1.3rem;
+  }
+
+  .MonsterList__item_wrapper {
+    width: initial;
+  }
+
+  .MonsterList__item {
+    padding-top: .5rem;
+  }
+
+  .MonsterList__sprite {
+    height: 60px;
+    width: 60px;
+  }
+
+  .MonsterList__label {
+    padding-top: 0;
+  }
+}
+
+.testDrawer {
+  height: 100%;
+  width: 200px;
+  background: #ccc;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: left .1s linear;
+  z-index: 12;
+}
+
+.trayClosed {
+  left: -200px;
+}
+
+.trayOpen {
+  left: 0;
+}

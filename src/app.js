@@ -3,6 +3,7 @@ import { Router, browserHistory } from "react-router";
 import routes from "./routes";
 
 class App extends Component {
+
   render () {
     return (
       <Router history={browserHistory}>

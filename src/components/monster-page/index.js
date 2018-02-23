@@ -7,7 +7,7 @@ import MonsterTabs from "./monster-tabs";
 import TypeIndicator from "../type-indicator"
 
 import * as colors from "../../data/colors.js";
-import data from "../../data/monsters.json";
+import data from "../../data/monsters2.json";
 import "./index.css";
 
 class MonsterPage extends Component {
