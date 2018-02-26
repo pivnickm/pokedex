@@ -15,7 +15,7 @@ class Item extends Component {
   }
 
   render() {
-    const { monsterId, monsterName, monsterNumber, monsterTypes, monsterImage} = this.props
+    const { monsterName, monsterNumber, monsterTypes, monsterImage} = this.props
     return (
       <li
         className="MonsterList__item_wrapper"
@@ -34,7 +34,7 @@ class Item extends Component {
             >
               <Image
                 monsterImage={monsterImage}
-                id={monsterId}
+                id={monsterNumber}
               />
               <p
                 className="MonsterList__label"
@@ -58,18 +58,15 @@ class Item extends Component {
 }
 
 Item.propTypes = {
-  monsterId: PropTypes.number,
   monsterName: PropTypes.string,
   monsterNumber: PropTypes.string,
   monsterTypes: PropTypes.array
 };
 
 Item.defaultProps = {
-  monsterId: "",
   monsterName: "",
   monsterNumber: "",
   monsterTypes: []
 };
-
 
 export default Item;
