@@ -94,7 +94,7 @@ class MoveListItem extends Component {
             </div>
             { move.notes &&
               <div className="MoveList__row_item_notes">
-                <div>Notes</div>
+                <div>Notes:</div>
                 <div>{move.notes}</div>
               </div>
             }

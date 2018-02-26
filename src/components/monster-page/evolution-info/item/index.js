@@ -30,7 +30,7 @@ const EvolutionInfo = ({ evolutions  }) => {
         >
           <img
             className="EvolutionInfo__sprite"
-            src={require(`../../../../data/images/hi_res/${evolution.id}.png`)}
+            //src={require(`../../../../data/images/hi_res/${evolution.id}.png`)}
             alt={evolution.id}
           />
           <span

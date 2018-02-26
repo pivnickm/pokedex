@@ -14,7 +14,7 @@ export default {
       title: "Stats",
       to: "stats",
       iconName: "icon-sort-number-up"
-    },
+    }/*,
     {
       title: "Evolutions",
       to: "evolutions",
@@ -24,6 +24,6 @@ export default {
       title: "Defenses",
       to: "defense",
       iconName: "icon-heartbeat"
-    }
+    }*/
   ]
 };

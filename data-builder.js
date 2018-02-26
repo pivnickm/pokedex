@@ -1,13 +1,13 @@
 const fs = require('fs');
 const request = require('request-promise');
 const cheerio = require('cheerio');
+const getPokemonImage = require("./image-builder");
 
-// const url = 'http://www.azurilland.com/pokedex/gen-2/';
 const url = 'https://www.serebii.net/pokedex-dp/';
 const allPromises = [];
+const errors = [];
 
 const irregularMoves = require("./src/data/move-info.js");
-const damages = require("./src/data/damages.js");
 
 const makeCapital = (name) => name.replace(/\b\w/g, l => l.toUpperCase());
 
@@ -67,6 +67,10 @@ const getPokemon = (id) => {
         const monsterHeight = $(".fooinfo").eq(7).text();
         /* End Name + Info */
 
+        /* Image */
+        const monsterImage = getPokemonImage.getPokemonImage(parseInt(id, 10));
+        /* End Image */
+
         /* Types */
         let monsterTypes = [];
         let firstType = editType($(".fooinfo").eq(4).children().eq(0).attr("href"));
@@ -125,21 +129,33 @@ const getPokemon = (id) => {
         /* Moveset */
         const monsterMoves = [];
         const atkElem = $("[name=attacks]").next(".dextable").children().children();
-        const numMoves = (atkElem.length - 2) / 2; //two headers and two rows per move
+        const numMoves = (atkElem.length - 2); //two headers and two rows per move
 
         for (let j = 2; j <= numMoves; j+=2) {
           let moveData = {};
           atkElem.eq(j).each((i, elem) => {
             try {
+              const moveName = $(elem).children().eq(1).children().eq(0).text();
+              const power = $(elem).children().eq(4).text();
+              const updatedMove = editMovePower(moveName, power);
+
+              moveData.name = moveName;
               moveData.level = $(elem).children().eq(0).text();
-              moveData.name = $(elem).children().eq(1).children().eq(0).text();
               moveData.type = makeCapital($(elem).children().eq(2).children().eq(0).attr("src").split("/")[3].split(".")[0]);
               moveData.category = $(elem).children().eq(3).children().eq(0).attr("src").split("/")[3].split(".")[0];
-              moveData.power = $(elem).children().eq(4).text();
-              moveData.accuracy = $(elem).children().eq(4).text();
+              moveData.accuracy = $(elem).children().eq(5).text();
               moveData.pp = $(elem).children().eq(6).text();
+
+              moveData.power = updatedMove.movePower;
+              if (updatedMove.moveNote) {
+                moveData.notes = updatedMove.moveNote;
+              }
             } catch (e) {
               console.log("Move Error"); // eslint-disable-line
+              errors.push({
+                pokemonId: id,
+                error: e
+              });
             }
 
           });
@@ -158,7 +174,8 @@ const getPokemon = (id) => {
           monsterTypes,
           monsterStats,
           monsterDefensive,
-          monsterMoves
+          monsterMoves,
+          monsterImage
         });
       })}, 300 * id);
   });
@@ -176,6 +193,12 @@ Promise.all(allPromises).then(values => {
     if (err) return console.log(err);
     console.log("Monsters.json written successfully");
   });
-}).catch(reason => {
+}).then(() => {
+  fs.writeFile("src/data/errorLog.json", JSON.stringify(errors), err => {
+    if (err) return console.log(err);
+    console.log("Error log written successfully");
+  });
+})
+.catch(reason => {
   console.log(reason)
 });

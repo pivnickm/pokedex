@@ -33,7 +33,7 @@
 }
 
 .MoveList__row_item_notes {
-  flex: 1 1 100%;
+  flex: 0 1 auto;
   align-self: center;
 }
 
@@ -46,13 +46,13 @@
   flex: 0 0 100%;
   flex-flow: row wrap;
   justify-content: space-around;
-  height: 80px;
+  height: 60px;
   background-color: #eee;
   transition: margin .1s linear;
 }
 
 .MoveList__closed {
-  margin-top: -80px;
+  margin-top: -60px;
 }
 
 .MoveList__open {

@@ -1,0 +1,51 @@
+.MonsterList__item_wrapper {
+  list-style: none;
+  padding: .5rem;
+  /*color: white;*/
+  font-weight: 600;
+  width: 175px;
+}
+
+.MonsterList__item {
+  padding-top: 1rem;
+  text-align: center;
+  background: #ccc;
+}
+
+.MonsterList__item_link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.MonsterList__item:hover {
+  background-color: rgba(0, 0, 0, .25);
+}
+
+.MonsterList__label {
+  /* margin: 0; */
+  text-shadow: 1px 1px #666;
+}
+
+@media (max-width: 600px) {
+  .MonsterList__item_wrapper {
+    width: initial;
+  }
+
+  .MonsterList__item {
+    padding-top: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .MonsterList__label {
+    padding-top: 0;
+    flex: 0 1 25%;
+    order: 0;
+  }
+
+  .MonsterList__types {
+    flex: 0 1 50%;
+    order: 1;
+  }
+}

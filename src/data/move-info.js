@@ -25,7 +25,7 @@ module.exports = {
   },
   "Low Kick": {
     power: 50,
-    notes: "Power based on weight after GenII"
+    notes: "Power based on weight (Gen II onward)"
   },
   "Magnitude": {
     power: "varies",
@@ -45,7 +45,7 @@ module.exports = {
   },
   "Pursuit": {
     power: 40,
-    notes: "Doubles if enemy switches out"
+    notes: "Doubles if enemy switching out"
   },
   "Rollout": {
     power: 40,
@@ -105,7 +105,7 @@ module.exports = {
   },
   "Psywave": {
     power: "varies",
-    notes: "50% and 150% of the user's level"
+    notes: "50% to 150% of the user's level"
   },
   "Night Shade": {
     power: "varies",
