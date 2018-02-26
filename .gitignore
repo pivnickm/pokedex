@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+# sprite images
+/src/data/images
+
 # testing
 /coverage
 
