@@ -61,7 +61,6 @@ class List extends Component {
               monsterId={parseInt(item.id, 10)}
               monsterNumber={item.id}
               monsterTypes={item.monsterTypes}
-              monsterImage={item.monsterImage}
             />
           )}
         </ul>

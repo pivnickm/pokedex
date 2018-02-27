@@ -1,7 +1,6 @@
 const fs = require('fs');
 const request = require('request-promise');
 const cheerio = require('cheerio');
-const getPokemonImage = require("./image-builder");
 
 const url = 'https://www.serebii.net/pokedex-dp/';
 const allPromises = [];
@@ -66,10 +65,6 @@ const getPokemon = (id) => {
         const monsterWeight = $(".fooinfo").eq(8).text();
         const monsterHeight = $(".fooinfo").eq(7).text();
         /* End Name + Info */
-
-        /* Image */
-        const monsterImage = getPokemonImage.getPokemonImage(parseInt(id, 10));
-        /* End Image */
 
         /* Types */
         let monsterTypes = [];
@@ -174,8 +169,7 @@ const getPokemon = (id) => {
           monsterTypes,
           monsterStats,
           monsterDefensive,
-          monsterMoves,
-          monsterImage
+          monsterMoves
         });
       })}, 300 * id);
   });
@@ -188,7 +182,6 @@ for (let i = 1; i < 494; i++) {
 }
 
 Promise.all(allPromises).then(values => {
-  //console.log(values);
   fs.writeFile("src/data/monsters2.json", JSON.stringify(values), err => {
     if (err) return console.log(err);
     console.log("Monsters.json written successfully");

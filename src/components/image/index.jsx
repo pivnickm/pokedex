@@ -3,12 +3,12 @@ import { PropTypes } from 'prop-types';
 
 import "./index.css";
 
-const  Image = ({ id, monsterImage }) => {
+const  Image = ({ id }) => {
   return (
     <div className="MonsterList__sprite_wrapper">
       <img
         className="MonsterList__sprite"
-        src={monsterImage}
+        src={require(`../../data/images/hi_res/${parseInt(id, 10)}.png`)}
         alt={id}
       />
     </div>
@@ -16,12 +16,10 @@ const  Image = ({ id, monsterImage }) => {
 }
 
 Image.propTypes = {
-  monsterImage: PropTypes.string,
   id: PropTypes.string
 }
 
 Image.defaultProps = {
-  monsterImage: "",
   id: ""
 }
 

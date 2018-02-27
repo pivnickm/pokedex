@@ -4,7 +4,6 @@ import { Link } from "react-router";
 import LazyLoad, { forceCheck } from "react-lazyload";
 
 import TypeIndicator from "../../type-indicator"
-import Spinner from "../../spinner";
 import Image from "../../image";
 
 import "./index.css";
@@ -15,25 +14,24 @@ class Item extends Component {
   }
 
   render() {
-    const { monsterName, monsterNumber, monsterTypes, monsterImage} = this.props
+    const { monsterName, monsterNumber, monsterTypes } = this.props
     return (
       <li
         className="MonsterList__item_wrapper"
       >
-        <Link
-          className="MonsterList__item_link"
-          to={`/${monsterNumber}/basic-info`}
+        <LazyLoad
+          height={75}
+          placeholder={<p/>}
+          unmountIfInvisible={true}
         >
-          <LazyLoad
-            height={75}
-            placeholder={<Spinner />}
-            unmountIfInvisible={true}
+          <Link
+            className="MonsterList__item_link"
+            to={`/${monsterNumber}/basic-info`}
           >
             <div
               className="MonsterList__item"
             >
               <Image
-                monsterImage={monsterImage}
                 id={monsterNumber}
               />
               <p
@@ -50,8 +48,8 @@ class Item extends Component {
                 ))}
               </div>
             </div>
-          </LazyLoad>
-        </Link>
+          </Link>
+        </LazyLoad>
       </li>
     );
   }

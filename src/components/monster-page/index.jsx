@@ -59,7 +59,6 @@ class MonsterPage extends Component {
             </div>
             <Image
               id={monster.id}
-              monsterImage={monster.monsterImage}
             />
           </div>
           <div className="MonsterPage__tabContent">
