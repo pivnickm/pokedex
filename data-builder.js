@@ -66,17 +66,42 @@ const getPokemon = (id) => {
         const monsterHeight = $(".fooinfo").eq(7).text();
         /* End Name + Info */
 
-        /* Types */
+        /* Types and forms */
         let monsterTypes = [];
-        let firstType = editType($(".fooinfo").eq(4).children().eq(0).attr("href"));
-        let secondType = editType($(".fooinfo").eq(4).children().eq(1).attr("href"));
+        let firstType;
+        let secondType;
+        //let formName;
 
-        if (secondType !== "") {
-          monsterTypes.push(firstType, secondType);
+        if ($(".fooinfo").eq(4).children().children().children().length > 1) {
+          $(".fooinfo").eq(4).children().children().children().each((i, elem) => {
+            //formName = $(elem).children().eq(0).text();
+            firstType = editType($(elem).children().eq(1).children().eq(0).attr("href"));
+            secondType = editType($(elem).children().eq(1).children().eq(1).attr("href"));
+            monsterTypes.push([ firstType, secondType ]);
+          });
         } else {
-          monsterTypes.push(firstType);
+          firstType = editType($(".fooinfo").eq(4).children().eq(0).attr("href"));
+          secondType = editType($(".fooinfo").eq(4).children().eq(1).attr("href"));
+          if (secondType !== "") {
+            monsterTypes.push([firstType, secondType]);
+          } else {
+            monsterTypes.push([firstType]);
+          }
         }
-        /* End Types */
+
+        let monsterHasMultiform = false;
+        let monsterForms = [];
+        const altFormElemHeader = $('.fooevo:contains("Alternate Forms")')
+        console.log(id, altFormElemHeader.text()); // eslint-disable-line
+        if(altFormElemHeader.text()) {
+          monsterHasMultiform = true;
+          const altFormElems = altFormElemHeader.parent().next().find($(".fooinfo")).children().eq(0).children().children().eq(0).children(); //this is gross?
+
+          altFormElems.each((i, elem) => {
+            monsterForms.push($(elem).text());
+          })
+        }
+        /* End Types and forms */
 
         /* Base Stats */
         let monsterStats = [];
@@ -123,39 +148,49 @@ const getPokemon = (id) => {
 
         /* Moveset */
         const monsterMoves = [];
-        const atkElem = $("[name=attacks]").next(".dextable").children().children();
-        const numMoves = (atkElem.length - 2); //two headers and two rows per move
+        const atkTables = $("[name=attacks]");
+        atkTables.each((i, elem) => {
+          const moveSet = {
+            header: "",
+            moves: []
+          };
+          const atkRows = $(elem).next(".dextable").children().children();
+          const numMoves = (atkRows.length - 2); //two headers and two rows per move
+          moveSet.header = atkRows.eq(0).text();
 
-        for (let j = 2; j <= numMoves; j+=2) {
-          let moveData = {};
-          atkElem.eq(j).each((i, elem) => {
-            try {
-              const moveName = $(elem).children().eq(1).children().eq(0).text();
-              const power = $(elem).children().eq(4).text();
-              const updatedMove = editMovePower(moveName, power);
+          for (let j = 2; j <= numMoves; j+=2) {
+            let moveData = {};
+            atkRows.eq(j).each((i, elem) => {
+              try {
+                const moveName = $(elem).children().eq(1).children().eq(0).text();
+                const power = $(elem).children().eq(4).text();
+                const updatedMove = editMovePower(moveName, power);
 
-              moveData.name = moveName;
-              moveData.level = $(elem).children().eq(0).text();
-              moveData.type = makeCapital($(elem).children().eq(2).children().eq(0).attr("src").split("/")[3].split(".")[0]);
-              moveData.category = $(elem).children().eq(3).children().eq(0).attr("src").split("/")[3].split(".")[0];
-              moveData.accuracy = $(elem).children().eq(5).text();
-              moveData.pp = $(elem).children().eq(6).text();
+                moveData.name = moveName;
+                moveData.level = $(elem).children().eq(0).text();
+                moveData.type = makeCapital($(elem).children().eq(2).children().eq(0).attr("src").split("/")[3].split(".")[0]);
+                moveData.category = $(elem).children().eq(3).children().eq(0).attr("src").split("/")[3].split(".")[0];
+                moveData.accuracy = $(elem).children().eq(5).text();
+                moveData.pp = $(elem).children().eq(6).text();
 
-              moveData.power = updatedMove.movePower;
-              if (updatedMove.moveNote) {
-                moveData.notes = updatedMove.moveNote;
+                moveData.power = updatedMove.movePower;
+                if (updatedMove.moveNote) {
+                  moveData.notes = updatedMove.moveNote;
+                }
+                moveSet.moves.push(moveData);
+              } catch (e) {
+                console.log("Move Error"); // eslint-disable-line
+                errors.push({
+                  pokemonId: id,
+                  error: e
+                });
               }
-            } catch (e) {
-              console.log("Move Error"); // eslint-disable-line
-              errors.push({
-                pokemonId: id,
-                error: e
-              });
-            }
+            });
+          }
+          monsterMoves.push(moveSet);
+        });
+        /* End Moveset(s) */
 
-          });
-          monsterMoves.push(moveData);
-        }
         resolve({
           id,
           monsterName,
@@ -167,6 +202,8 @@ const getPokemon = (id) => {
           monsterHatchSteps,
           monsterGenderSplit,
           monsterTypes,
+          monsterHasMultiform,
+          monsterForms,
           monsterStats,
           monsterDefensive,
           monsterMoves

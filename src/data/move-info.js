@@ -1,5 +1,5 @@
 module.exports = {
-  "SonicBoom" : {
+  "Sonicboom" : {
     power: 20,
     notes: "Fixed Damage"
   },

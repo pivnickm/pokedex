@@ -40,7 +40,7 @@ class Item extends Component {
                 {monsterName}
               </p>
               <div className="MonsterList__types">
-                {monsterTypes.map((type, index) => (
+                {monsterTypes[0].map((type, index) => (
                   <TypeIndicator
                     key={type}
                     type={type}
