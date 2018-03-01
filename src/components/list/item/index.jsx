@@ -32,20 +32,21 @@ class Item extends Component {
               className="MonsterList__item"
             >
               <Image
+                className="MonsterList__item_image"
                 id={monsterNumber}
               />
-              <p
+              <div
                 className="MonsterList__label"
               >
                 {monsterName}
-              </p>
-              <div className="MonsterList__types">
-                {monsterTypes[0].map((type, index) => (
-                  <TypeIndicator
-                    key={type}
-                    type={type}
-                  />
-                ))}
+                <div className="MonsterList__types">
+                  {monsterTypes[0].map((type, index) => (
+                    <TypeIndicator
+                      key={type}
+                      type={type}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </Link>

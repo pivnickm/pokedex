@@ -13,4 +13,9 @@
     flex: 0 1 25%;
     order: 2;
   }
+
+  .MonsterList__item_image {
+    flex: 0 1 50%;
+    order: 2;
+  }
 }
