@@ -36,7 +36,7 @@ class MonsterPage extends Component {
   render() {
     const monster = data[this.props.params.id - 1];
     const pageBackgroundColor = monster.monsterHasMultiform ?
-      `${monster.monsterTypes[0].firstType}Lighten` : `${monster.monsterTypes[0]}Lighten`;
+      `${monster.monsterTypes[0][0]}Lighten` : `${monster.monsterTypes[0][0]}Lighten`;
     const childrenWithProps = React.Children.map(this.props.children,
       (child) => React.cloneElement(child, {
         monsterInfo: monster
@@ -72,18 +72,18 @@ class MonsterPage extends Component {
               <div className="VisualInfo__gender_wrapper">
                 { monster.monsterGenderSplit}
               </div>
+              { monster.monsterHasMultiform &&
+                <select id="lang" onChange={this.changeForm} value={this.state.form}>
+                  { monster.monsterForms.map((form, index) =>
+                    <option value={index} key={form}>{form}</option>
+                  )}
+                </select>
+              }
             </div>
             <Image
               id={monster.id}
               form={this.state.form}
             />
-            { monster.monsterHasMultiform &&
-              <select id="lang" onChange={this.changeForm} value={this.state.form}>
-                { monster.monsterForms.map((form, index) =>
-                  <option value={index} key={form}>{form}</option>
-                )}
-              </select>
-            }
           </div>
           <div className="MonsterPage__tabContent">
             {childrenWithProps}

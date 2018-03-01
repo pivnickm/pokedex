@@ -14,16 +14,16 @@ export default {
       title: "Stats",
       to: "stats",
       iconName: "icon-sort-number-up"
-    }/*,
-    {
+    },
+    /*{
       title: "Evolutions",
       to: "evolutions",
       iconName: "icon-ccw"
-    },
+    },*/
     {
       title: "Defenses",
       to: "defense",
       iconName: "icon-heartbeat"
-    }*/
+    }
   ]
 };

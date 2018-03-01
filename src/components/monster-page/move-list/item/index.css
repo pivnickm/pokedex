@@ -1,8 +1,6 @@
 .MoveList__row {
-  flex: 1 1 100%;
   flex-flow: row wrap;
   display: flex;
-  /*padding: .25rem;*/
   position: relative;
   background-color: #eee;
 }

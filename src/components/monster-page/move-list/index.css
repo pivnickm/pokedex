@@ -3,3 +3,7 @@
   flex-flow: row wrap;
   font-size: .8rem;
 }
+
+.MoveList__moves_wrapper {
+  flex: 1 1 100%;
+}

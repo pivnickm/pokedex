@@ -20,8 +20,8 @@ class Item extends Component {
         className="MonsterList__item_wrapper"
       >
         <LazyLoad
-          height={75}
-          placeholder={<p/>}
+          height={200}
+          placeholder={<p className="placeholder" />}
           unmountIfInvisible={true}
         >
           <Link

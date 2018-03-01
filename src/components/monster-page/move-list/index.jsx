@@ -33,7 +33,7 @@ const MoveList = ({ monsterInfo }) => {
     <div className="MoveList">
       <div className="MoveList__moves">
         { enhancedMoves.map((moveSet, index) => (
-          <div key={index}>
+          <div className="MoveList__moves_wrapper" key={index}>
             <h4>{moveSet.header}</h4>
             { moveSet.moves.map((move, index) => (
               <MoveListItem

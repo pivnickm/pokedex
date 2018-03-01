@@ -43,6 +43,19 @@ const editEvolutionMethod = (methodText) => {
   }
 }
 
+const finalEdits = (id, types) => {
+  let newTypes;
+  if (id === 351) {
+    newTypes = [[ "Normal" ], [ "Fire" ], [ "Water" ], [ "Ice" ]];
+  } else if (id === 479) {
+    newTypes = [[ "Electric", "Ghost" ], [ "Electric", "Flying" ], [ "Electric", "Ice" ], [ "Electric", "Fire" ], [ "Electric", "Grass" ], [ "Electric", "Water" ]];
+  } else {
+    newTypes = types;
+  }
+
+  return newTypes;
+}
+
 const getPokemon = (id) => {
   return new Promise((resolve, reject) => {
     return setTimeout(() => {
@@ -70,11 +83,9 @@ const getPokemon = (id) => {
         let monsterTypes = [];
         let firstType;
         let secondType;
-        //let formName;
 
         if ($(".fooinfo").eq(4).children().children().children().length > 1) {
           $(".fooinfo").eq(4).children().children().children().each((i, elem) => {
-            //formName = $(elem).children().eq(0).text();
             firstType = editType($(elem).children().eq(1).children().eq(0).attr("href"));
             secondType = editType($(elem).children().eq(1).children().eq(1).attr("href"));
             monsterTypes.push([ firstType, secondType ]);
@@ -92,7 +103,6 @@ const getPokemon = (id) => {
         let monsterHasMultiform = false;
         let monsterForms = [];
         const altFormElemHeader = $('.fooevo:contains("Alternate Forms")')
-        console.log(id, altFormElemHeader.text()); // eslint-disable-line
         if(altFormElemHeader.text()) {
           monsterHasMultiform = true;
           const altFormElems = altFormElemHeader.parent().next().find($(".fooinfo")).children().eq(0).children().children().eq(0).children(); //this is gross?
@@ -101,6 +111,8 @@ const getPokemon = (id) => {
             monsterForms.push($(elem).text());
           })
         }
+
+        monsterTypes = finalEdits(parseInt(id, 10), monsterTypes);
         /* End Types and forms */
 
         /* Base Stats */
@@ -110,7 +122,7 @@ const getPokemon = (id) => {
 
         for (let i = 0; i < statElemChildren.eq(1).children(".fooevo").length; i++) {
           const statName = statElemChildren.eq(1).children(".fooevo").eq(i).text();
-          const statValue = statElemChildren.eq(2).children(".fooinfo").eq(i+1).text();
+          const statValue = parseInt(statElemChildren.eq(2).children(".fooinfo").eq(i+1).text(), 10); //make the value a numbah
 
           monsterStats.push({
             statName,
@@ -119,7 +131,7 @@ const getPokemon = (id) => {
         }
         /* End Base Stats */
 
-        /* Defensive Strengths/Weaknesses */ //+17
+        /* Defensive Strengths/Weaknesses */
         let monsterDefensive = [];
         const defElem = $("[name=general]").next(".dextable").next(".dextable").children().children();
         const types = defElem.eq(1).children();

@@ -6,6 +6,10 @@
   width: 175px;
 }
 
+.placeholder {
+  height: 183px;
+}
+
 .MonsterList__item {
   padding-top: 1rem;
   text-align: center;
@@ -29,6 +33,10 @@
 @media (max-width: 600px) {
   .MonsterList__item_wrapper {
     width: initial;
+  }
+
+  .placeholder {
+    height: 90px;
   }
 
   .MonsterList__item {
