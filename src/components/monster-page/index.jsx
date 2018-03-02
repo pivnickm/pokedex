@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { PropTypes } from 'prop-types';
+import { Link } from "react-router";
 
 import Header from "../header";
 import Image from "../image";
 import MonsterTabs from "./monster-tabs";
 import TypeIndicator from "../type-indicator"
+import { getPokemonPath } from "../../routes";
 
 import * as colors from "../../data/colors.js";
 import data from "../../data/monsters2.json";
@@ -19,10 +21,21 @@ class MonsterPage extends Component {
     };
 
     this.changeForm = this.changeForm.bind(this);
+    this.cycle = this.cycle.bind(this);
   }
 
   changeForm(event) {
     this.setState({form: event.target.value});
+  }
+
+  cycle(dir) {
+    if (dir < 0) {
+      // move backwards
+      console.log("BACK"); // eslint-disable-line
+    } else {
+      // move forwards
+      console.log("FORWARDS"); // eslint-disable-line
+    }
   }
 
   componentDidMount() {
@@ -43,6 +56,7 @@ class MonsterPage extends Component {
       })
     );
     const showType = monster.monsterTypes.length > 1 ? this.state.form : 0;
+    const numMonsterId = parseInt(monster.id, 10);
     console.log(monster);
     return (
       <div>
@@ -60,6 +74,18 @@ class MonsterPage extends Component {
             id={monster.id}
           />
           <div className="MonsterPage__basic">
+            <div
+              className="MonsterPage__nav"
+            >
+              { numMonsterId > 1 &&
+                <Link
+                  className="MonsterPage__nav_back"
+                  to={getPokemonPath(numMonsterId - 1)}
+                  >
+                  <i className="icon icon-left-open" />
+                </Link>
+              }
+            </div>
             <div
               className="VisualInfo__type_wrapper"
             >
@@ -84,6 +110,18 @@ class MonsterPage extends Component {
               id={monster.id}
               form={this.state.form}
             />
+            <div
+              className="MonsterPage__nav"
+            >
+              { numMonsterId < 493 &&
+                <Link
+                  className="MonsterPage__nav_forward"
+                  to={getPokemonPath(numMonsterId + 1)}
+                >
+                  <i className="icon icon-right-open" />
+                </Link>
+              }
+            </div>
           </div>
           <div className="MonsterPage__tabContent">
             {childrenWithProps}

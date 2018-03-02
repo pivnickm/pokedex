@@ -74,9 +74,9 @@ const getPokemon = (id) => {
         const monsterCatchRate = $(".fooinfo").eq(9).text();
         const monsterBaseHappiness = $(".fooinfo").eq(12).text();
         const monsterHatchSteps = $(".fooinfo").eq(10).text();
-        const monsterGenderSplit = $(".fooinfo").eq(3).text();
+        const monsterGenderSplit = $(".fooinfo").eq(3).text().replace("%", "% "); // put a space between Male ♂:0%Female ♀:100%
         const monsterWeight = $(".fooinfo").eq(8).text();
-        const monsterHeight = $(".fooinfo").eq(7).text();
+        const monsterHeight = $(".fooinfo").eq(7).text().replace("'", "' "); // put a space between 2'10"
         /* End Name + Info */
 
         /* Types and forms */
@@ -88,7 +88,11 @@ const getPokemon = (id) => {
           $(".fooinfo").eq(4).children().children().children().each((i, elem) => {
             firstType = editType($(elem).children().eq(1).children().eq(0).attr("href"));
             secondType = editType($(elem).children().eq(1).children().eq(1).attr("href"));
-            monsterTypes.push([ firstType, secondType ]);
+            if (secondType !== "") {
+              monsterTypes.push([firstType, secondType]);
+            } else {
+              monsterTypes.push([firstType]);
+            }
           });
         } else {
           firstType = editType($(".fooinfo").eq(4).children().eq(0).attr("href"));

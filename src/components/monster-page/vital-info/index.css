@@ -28,14 +28,14 @@
 }
 
 .VitalInfo__species {
-  flex: 1 1 50%;
+  flex: 1 1 33%;
   text-align: center;
   font-size: .8rem;
 }
 
 .VitalInfo__sizing {
   text-align: center;
-  flex: 1 1 50%;
+  flex: 1 1 67%;
   display: flex;
 }
 

@@ -10,7 +10,7 @@
   }
 
   .MonsterList__sprite_wrapper {
-    flex: 0 1 25%;
+    flex: 1 auto%;
     order: 2;
   }
 

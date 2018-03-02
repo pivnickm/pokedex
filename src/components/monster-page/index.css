@@ -12,6 +12,28 @@
   align-items: center;
 }
 
+.MonsterPage__nav {
+  flex: 1 5%;
+  padding: 0 .5rem .5rem .5rem;
+  text-align: center;
+}
+
+.MonsterPage__nav:last-child {
+  order: 3;
+}
+
+.MonsterPage__nav_forward ,
+.MonsterPage__nav_back {
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.MonsterPage__nav_forward:hover ,
+.MonsterPage__nav_back:hover {
+  color: #666;
+}
+
 .defense {
   flex: 8 8 100%;
   display: flex;
@@ -33,6 +55,7 @@
 }
 
 .VisualInfo__type_wrapper {
+  flex: 1 40%;
   text-align: center;
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { Link } from "react-router";
 import LazyLoad, { forceCheck } from "react-lazyload";
+import { getPokemonPath } from "../../../routes";
 
 import TypeIndicator from "../../type-indicator"
 import Image from "../../image";
@@ -23,10 +24,11 @@ class Item extends Component {
           height={200}
           placeholder={<p className="placeholder" />}
           unmountIfInvisible={true}
+          offset={165}
         >
           <Link
             className="MonsterList__item_link"
-            to={`/${monsterNumber}/basic-info`}
+            to={getPokemonPath(monsterNumber)}
           >
             <div
               className="MonsterList__item"

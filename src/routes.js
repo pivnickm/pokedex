@@ -29,4 +29,15 @@ const routes = (
   </Route>
 );
 
+const getPokemonPath = (id) => {
+  const paddedId = ("0000" + id).substr(-3, 3)
+  return {
+    pathname: `/${paddedId}/basic-info`
+  }
+};
+
 export default routes;
+
+export {
+  getPokemonPath
+};
