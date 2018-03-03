@@ -29,10 +29,10 @@ const routes = (
   </Route>
 );
 
-const getPokemonPath = (id) => {
+const getPokemonPath = (id, path) => {
   const paddedId = ("0000" + id).substr(-3, 3)
   return {
-    pathname: `/${paddedId}/basic-info`
+    pathname: `/${paddedId}/${path}`
   }
 };
 

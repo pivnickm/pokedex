@@ -28,7 +28,7 @@ class Item extends Component {
         >
           <Link
             className="MonsterList__item_link"
-            to={getPokemonPath(monsterNumber)}
+            to={getPokemonPath(monsterNumber, "basic-info")}
           >
             <div
               className="MonsterList__item"
