@@ -7,32 +7,20 @@ import List from './components/list';
 import MonsterPage from './components/monster-page';
 import TypePage from './components/type-page';
 import FourOhFour from './components/four-oh-four';
-import BaseStats from "./components/monster-page/base-stats";
-import MoveList from "./components/monster-page/move-list";
-import VitalInfo from "./components/monster-page/vital-info";
-import EvolutionInfo from "./components/monster-page/evolution-info";
-import DefensiveInfo from "./components/monster-page/defensive-info";
 
 const routes = (
   <Route path="/" component={App} >
     <IndexRoute component={List} />
     <Route path="/types" component={TypePage} />
-    <Route path="/:id" component={MonsterPage}>
-      <IndexRoute component={VitalInfo} />
-      <Route path="basic-info" component={VitalInfo} />
-      <Route path="stats" component={BaseStats} />
-      <Route path="moves" component={MoveList} />
-      <Route path="defense" component={DefensiveInfo} />
-      <Route path="evolutions" component={EvolutionInfo} />
-    </Route>
+    <Route path="/:id" component={MonsterPage} />
     <Route path="*" component={FourOhFour} />
   </Route>
 );
 
-const getPokemonPath = (id, path) => {
+const getPokemonPath = (id) => {
   const paddedId = ("0000" + id).substr(-3, 3)
   return {
-    pathname: `/${paddedId}/${path || "basic-info"}`
+    pathname: `/${paddedId}`
   }
 };
 
