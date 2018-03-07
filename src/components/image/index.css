@@ -1,21 +1,26 @@
 .MonsterList__sprite {
+  height: 150px;
+  width: 150px;
+}
+
+.MonsterList__sprite_wrapper {
+  flex: 0 auto;
+  order: 2;
+}
+
+.MonsterList__item_image {
+  flex: 0 1 50%;
+  order: 2;
+}
+
+.MonsterList__item_image .MonsterList__sprite {
   height: 100px;
   width: 100px;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .MonsterList__sprite {
-    height: 115px;
-    width: 115px;
-  }
-
-  .MonsterList__sprite_wrapper {
-    flex: 0 auto;
-    order: 2;
-  }
-
-  .MonsterList__item_image {
-    flex: 0 1 50%;
-    order: 2;
+    height: 225px;
+    width: 225px;
   }
 }
