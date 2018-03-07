@@ -43,9 +43,9 @@ class MonsterPage extends Component {
     const LEFT = 2;
     const RIGHT = 4;
 
-    if (direction === LEFT) {
+    if (direction === LEFT && numMonsterId < 494) {
       browserHistory.push(getPokemonPath(numMonsterId + 1, currPath));
-    } else if (direction === RIGHT) {
+    } else if (direction === RIGHT && numMonsterId > 1) {
       browserHistory.push(getPokemonPath(numMonsterId - 1, currPath));
     }
   }
@@ -111,6 +111,9 @@ class MonsterPage extends Component {
                     )}
                   </select>
                 }
+                <div>
+                  {monster.monsterDexEntry}
+                </div>
               </div>
               <Image
                 id={monster.id}

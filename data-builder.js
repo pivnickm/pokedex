@@ -77,6 +77,16 @@ const getPokemon = (id) => {
         const monsterGenderSplit = $(".fooinfo").eq(3).text().replace("%", "% "); // put a space between Male ♂:0%Female ♀:100%
         const monsterWeight = $(".fooinfo").eq(8).text();
         const monsterHeight = $(".fooinfo").eq(7).text().replace("'", "' "); // put a space between 2'10"
+        const monsterAbilityData = $(".fooinfo").eq(5).text().split("\n");
+        const monsterDexEntry = $(".heartgold").eq(0).next(".fooinfo").text().trim();
+        monsterAbilityData.shift();
+        const monsterAbility = monsterAbilityData.map((ability, index) => {
+          const abilityParts = ability.split(": "); //break on the "Name: Text"
+          return {
+            abilityName: abilityParts[0],
+            abilityDescription: abilityParts[1].trim()
+          }
+        });
         /* End Name + Info */
 
         /* Types and forms */
@@ -127,10 +137,12 @@ const getPokemon = (id) => {
         for (let i = 0; i < statElemChildren.eq(1).children(".fooevo").length; i++) {
           const statName = statElemChildren.eq(1).children(".fooevo").eq(i).text();
           const statValue = parseInt(statElemChildren.eq(2).children(".fooinfo").eq(i+1).text(), 10); //make the value a numbah
+          const statLabel = `${statName} (${statValue})`; // useful for the radar chart because I can't seem to dynamically build the label?
 
           monsterStats.push({
             statName,
-            statValue
+            statValue,
+            statLabel
           });
         }
         /* End Base Stats */
@@ -213,6 +225,8 @@ const getPokemon = (id) => {
           monsterSpecies,
           monsterWeight,
           monsterHeight,
+          monsterDexEntry,
+          monsterAbility,
           monsterCatchRate,
           monsterBaseHappiness,
           monsterHatchSteps,
