@@ -152,5 +152,4 @@ MonsterPage.defaultProps = {
   }
 };
 
-
 export default MonsterPage;
