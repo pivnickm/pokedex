@@ -5,12 +5,12 @@
 
 @media (max-width: 600px) {
   .MonsterList__sprite {
-    height: 75px;
-    width: 75px;
+    height: 115px;
+    width: 115px;
   }
 
   .MonsterList__sprite_wrapper {
-    flex: 1 auto%;
+    flex: 0 auto;
     order: 2;
   }
 

@@ -10,12 +10,11 @@ const VitalInfo = ({ monsterInfo }) => {
     monsterWeight,
     monsterBaseHappiness,
     monsterCatchRate,
-    monsterHatchSteps
+    monsterHatchSteps,
+    monsterGenderSplit
   } = monsterInfo;
   return (
-    <div
-      className="VitalInfo"
-    >
+    <div className="VitalInfo">
       <div className="VitalInfo__row">
         <div className="VitalInfo__species">
           <div className="VitalInfo__value">
@@ -25,22 +24,32 @@ const VitalInfo = ({ monsterInfo }) => {
               Species
             </div>
         </div>
-        <div className="VitalInfo__sizing">
-          <div className="VitalInfo__height">
-            <div className="VitalInfo__value">
-              {monsterHeight}
-            </div>
-            <div className="VitalInfo__label">
-              Height
-            </div>
+      </div>
+      <div className="VitalInfo__row">
+        <div className="VitalInfo__height">
+          <div className="VitalInfo__value">
+            {monsterHeight}
           </div>
-          <div className="VitalInfo__weight">
-            <div className="VitalInfo__value">
-              {monsterWeight}
-            </div>
-            <div className="VitalInfo__label">
-              Weight
-            </div>
+          <div className="VitalInfo__label">
+            Height
+          </div>
+        </div>
+        <div className="VitalInfo__weight">
+          <div className="VitalInfo__value">
+            {monsterWeight}
+          </div>
+          <div className="VitalInfo__label">
+            Weight
+          </div>
+        </div>
+      </div>
+      <div className="VitalInfo__row">
+        <div className="VitalInfo__gender">
+          <div className="VitalInfo__value">
+            {monsterGenderSplit}
+          </div>
+          <div className="VitalInfo__label">
+            Gender Split
           </div>
         </div>
       </div>

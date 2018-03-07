@@ -1,5 +1,5 @@
 .VitalInfo{
-  flex: 4 4 40px;
+  flex: 0 50%;
   display: flex;
   flex-flow: row wrap;
 }
@@ -18,7 +18,7 @@
 
 .VitalInfo__row {
   display: flex;
-  flex: 1 1 100%;
+  flex: 1 100%;
 }
 
 .VitalInfo__row:not(:first-child) {
@@ -42,6 +42,7 @@
 .VitalInfo__height,
 .VitalInfo__weight {
   flex: 1 1 50%;
+  text-align: center;
 }
 
 .VitalInfo__base {
@@ -50,7 +51,14 @@
   font-size: .8rem;
 }
 
+.VitalInfo__gender {
+  flex: 1 1 100%;
+  text-align: center;
+  font-size: .8rem;
+}
+
 .VitalInfo__species .VitalInfo__label,
+.VitalInfo__gender .VitalInfo__label,
 .VitalInfo__base .VitalInfo__label,
 .VitalInfo__height .VitalInfo__label,
 .VitalInfo__weight .VitalInfo__label {
@@ -59,7 +67,7 @@
 }
 
 .VitalInfo__value {
-  font-size: 1rem;
+  font-size: .9rem;
   margin-bottom: .25rem;
 }
 

@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { PropTypes } from 'prop-types';
-import { Link, browserHistory } from "react-router";
+import { browserHistory } from "react-router";
 import Hammer from "react-hammerjs";
 
 import Header from "../header";
 import Image from "../image";
-import MonsterTabs from "./monster-tabs";
+import VitalInfo from "./vital-info";
+import BaseStats from "./base-stats";
+import DefensiveInfo from "./defensive-info";
+import MoveList from "./move-list";
+// import MonsterTabs from "./monster-tabs";
 import TypeIndicator from "../type-indicator"
 import { getPokemonPath } from "../../routes";
 
@@ -54,14 +58,14 @@ class MonsterPage extends Component {
     const monster = data[this.props.params.id - 1];
     const pageBackgroundColor = monster.monsterHasMultiform ?
       `${monster.monsterTypes[0][0]}Lighten` : `${monster.monsterTypes[0][0]}Lighten`;
-    const childrenWithProps = React.Children.map(this.props.children,
-      (child) => React.cloneElement(child, {
-        monsterInfo: monster
-      })
-    );
+    // const childrenWithProps = React.Children.map(this.props.children,
+    //   (child) => React.cloneElement(child, {
+    //     monsterInfo: monster
+    //   })
+    // );
     const showType = monster.monsterTypes.length > 1 ? this.state.form : 0;
-    const numMonsterId = parseInt(monster.id, 10);
-    const currPath = this.props.routes[2].path; //basic-info, moves, etc
+    // const numMonsterId = parseInt(monster.id, 10);
+    // const currPath = this.props.routes[2].path; //basic-info, moves, etc
     console.log(monster);
     return (
       <div>
@@ -72,68 +76,86 @@ class MonsterPage extends Component {
         <Hammer onSwipe={this.handleSwipe}>
           <div
             className="MonsterPage"
-            style={{
-              backgroundColor: `${colors[pageBackgroundColor]}`,
-            }}
           >
-            <MonsterTabs
-              id={monster.id}
-            />
             <div className="MonsterPage__basic">
-              <div
-                className="MonsterPage__nav"
-              >
-                { numMonsterId > 1 &&
-                  <Link
-                    className="MonsterPage__nav_back"
-                    to={getPokemonPath(numMonsterId - 1, currPath)}
+              <VitalInfo
+                monsterInfo={monster}
+              />
+              <div className="MonsterPage__visualInfo">
+                <Image
+                  id={monster.id}
+                  form={this.state.form}
+                />
+                { monster.monsterHasMultiform &&
+                  <div className="MonsterPage__formChanger">
+                    <select
+                      className="MonsterPage__formSelect"
+                      onChange={this.changeForm}
+                      value={this.state.form}
                     >
-                    <i className="icon icon-left-open" />
-                  </Link>
+                      { monster.monsterForms.map((form, index) =>
+                        <option value={index} key={form}>{form}</option>
+                      )}
+                    </select>
+                  </div>
                 }
-              </div>
-              <div
-                className="VisualInfo__type_wrapper"
-              >
-                {monster.monsterTypes[showType].map((type, index) => (
-                  <TypeIndicator
+                <div
+                  className="VisualInfo__type_wrapper"
+                  >
+                  {monster.monsterTypes[showType].map((type, index) => (
+                    <TypeIndicator
                     key={type}
                     type={type}
-                  />
-                ))}
-                <div className="VisualInfo__gender_wrapper">
-                  { monster.monsterGenderSplit}
+                    />
+                  ))}
                 </div>
-                { monster.monsterHasMultiform &&
-                  <select id="lang" onChange={this.changeForm} value={this.state.form}>
-                    { monster.monsterForms.map((form, index) =>
-                      <option value={index} key={form}>{form}</option>
-                    )}
-                  </select>
-                }
-                <div>
-                  {monster.monsterDexEntry}
-                </div>
-              </div>
-              <Image
-                id={monster.id}
-                form={this.state.form}
-              />
-              <div
-                className="MonsterPage__nav"
-              >
-                { numMonsterId < 493 &&
-                  <Link
-                    className="MonsterPage__nav_forward"
-                    to={getPokemonPath(numMonsterId + 1, currPath)}
-                  >
-                    <i className="icon icon-right-open" />
-                  </Link>
-                }
               </div>
             </div>
             <div className="MonsterPage__tabContent">
-              {childrenWithProps}
+              <p
+                className="MonsterPage__sectionHeader"
+                style={{
+                  backgroundColor: `${colors[pageBackgroundColor]}`,
+                }}
+              >
+                Pokedex Entry
+              </p>
+              <p className="dexEntry__text">
+                {monster.monsterDexEntry}
+              </p>
+              <p
+                className="MonsterPage__sectionHeader"
+                style={{
+                  backgroundColor: `${colors[pageBackgroundColor]}`,
+                }}
+              >
+                Base Stats
+              </p>
+              <BaseStats
+                monsterInfo={monster}
+              />
+              <p
+                className="MonsterPage__sectionHeader"
+                style={{
+                  backgroundColor: `${colors[pageBackgroundColor]}`,
+                }}
+              >
+                Defensive Info
+              </p>
+              <DefensiveInfo
+                monsterInfo={monster}
+              />
+              <p
+                className="MonsterPage__sectionHeader"
+                style={{
+                  backgroundColor: `${colors[pageBackgroundColor]}`,
+                }}
+              >
+                Movesets
+              </p>
+              <MoveList
+                monsterInfo={monster}
+              />
             </div>
           </div>
         </Hammer>

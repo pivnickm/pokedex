@@ -1,5 +1,4 @@
 .BaseStats {
-  display: flex;
-  flex-flow: row wrap;
   font-size: .8rem;
+  margin: -2rem 0; /*I don't like it, but recharts has too much space above it, it looks weird */
 }
