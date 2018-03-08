@@ -128,6 +128,22 @@ class MonsterPage extends Component {
                     backgroundColor: `${colors[pageBackgroundColor]}`,
                   }}
                 >
+                  Abilities
+                </p>
+                {monster.monsterAbility.map((ability, index) =>
+                  <p
+                    className="dexEntry__text"
+                    key={`${ability.abilityName}_${index}`}
+                  >
+                    <span className="ability_name">{ability.abilityName}</span>: {ability.abilityDescription}
+                  </p>
+                )}
+                <p
+                  className="MonsterPage__sectionHeader"
+                  style={{
+                    backgroundColor: `${colors[pageBackgroundColor]}`,
+                  }}
+                >
                   Base Stats
                 </p>
                 <BaseStats

@@ -59,6 +59,10 @@
   display: flex;
 }
 
+.ability_name {
+  font-weight: bold;
+}
+
 .MonsterPage__EvolutionInfo {
   background: #eee;
   padding: .5rem .25rem .25rem;
