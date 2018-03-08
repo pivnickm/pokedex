@@ -9,7 +9,7 @@ const MoveIndicator = ({ type }) => {
     <div
       className={`MoveType MoveType__${type.substr(0, 4)}`}
     >
-      <img src={require(`../../images/${type}.png`)} alt={type} />
+      <img src={require(`../../images/${type.toLowerCase()}.png`)} alt={type} />
     </div>
   );
 };

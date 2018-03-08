@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import LazyLoad, { forceCheck } from "react-lazyload";
-
+import { Link } from "react-router";
 import Header from "../header";
 //import Spinner from "../spinner";
 import Item from "./item";
@@ -53,6 +53,8 @@ class List extends Component {
           onSearch={this.onSearch}
           onClick={this.openTray}
         />
+        <Link to="/types">TypeDex</Link>
+        <Link to="/movedex">MoveDex</Link>
         <ul className="MonsterList">
           { monsters.map((item) =>
             <Item

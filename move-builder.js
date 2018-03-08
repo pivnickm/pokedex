@@ -21,7 +21,7 @@ const allTypes = [
   "ice",
   "normal",
   "poison",
-  "psychic",
+  "psychict", //psychic is also a move, psychict refers to the page...
   "rock",
   "steel",
   "water"
@@ -75,7 +75,7 @@ const getMoveData = (name, id) => {
 
           const moveTable = $("[name=details]").next(".dextable").children().children();
 
-          const moveName = moveTable.eq(1).children().eq(0).text().trim().replace(/\s[^\x00-\x7F]+/, "");
+          const moveName = moveTable.eq(1).children().eq(0).text().trim().replace(/\s([0-9]*)[^\x00-\x7F]+/, "");
           const moveType = editType(moveTable.eq(1).children().eq(1).children().eq(0).attr("href"));
           const moveCategory = editType(moveTable.eq(1).children().eq(2).children().eq(0).attr("href"));
           const movePP = moveTable.eq(3).children().eq(0).text().trim();

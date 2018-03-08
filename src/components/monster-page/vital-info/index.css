@@ -56,12 +56,13 @@
   text-align: center;
   font-size: .8rem;
 }
-
+/*
 .VitalInfo__species .VitalInfo__label,
 .VitalInfo__gender .VitalInfo__label,
 .VitalInfo__base .VitalInfo__label,
 .VitalInfo__height .VitalInfo__label,
-.VitalInfo__weight .VitalInfo__label {
+.VitalInfo__weight  */
+.VitalInfo__label {
   padding-bottom: .25rem;
   font-size: .65rem;
 }
@@ -77,13 +78,7 @@
 }
 
 @media (max-width: 600px) {
-  .VitalInfo__label {
-    font-weight: normal;
-    font-size: initial;
-  }
-
   .VitalInfo__label.name {
     font-weight: 700;
   }
-
 }
