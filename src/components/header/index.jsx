@@ -14,13 +14,17 @@ const Header = ({ isHome, onSearch, text, onClick }) => {
       <div
         className="Header__inner"
       >
-        <i
-          className="icon icon-menu icon-big"
-          onClick={onClick}
-        />
         <Filter
           onSearch={onSearch}
         />
+        <Link className="Header__inner_appLink types" to="/types">
+          <i className="icon icon-fire icon-big" />
+          <span className="Header__inner_appLinkText">TypeDex</span>
+        </Link>
+        <Link className="Header__inner_appLink" to="/movedex">
+          <i className="icon icon-hand-grab-o icon-big" />
+          <span className="Header__inner_appLinkText">MoveDex</span>
+        </Link>
       </div>
     :
       <div
@@ -35,6 +39,14 @@ const Header = ({ isHome, onSearch, text, onClick }) => {
         <div className="Header__inner_text">
           {text}
         </div>
+        <Link className="Header__inner_appLink types" to="/types">
+          <i className="icon icon-fire icon-big" />
+          <span className="Header__inner_appLinkText">TypeDex</span>
+        </Link>
+        <Link className="Header__inner_appLink" to="/movedex">
+          <i className="icon icon-hand-grab-o icon-big" />
+          <span className="Header__inner_appLinkText">MoveDex</span>
+        </Link>
       </div>
     }
   </div>

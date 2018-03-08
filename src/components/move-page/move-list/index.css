@@ -8,6 +8,10 @@
   flex-flow: wrap;
 }
 
+.MoveList__item:last-child {
+  margin-bottom: 1rem;
+}
+
 .MoveList__item_name {
   flex: 1 100%;
   text-align: left;
@@ -22,7 +26,7 @@
   flex: 1 100%;
   text-align: center;
   border-top: 1px solid #c0c0c0;
-  padding: 1rem .5rem 0;
+  padding: .5rem;
 }
 
 .MoveList__item_description {

@@ -1,6 +1,7 @@
 
 .icon-right-big:before { content: '\e800'; } /* '' */
 .icon-left-open:before { content: '\e801'; } /* '' */
+.icon-fire:before { content: '\e802'; } /* '' */
 .icon-dwolla:before { content: '\e803'; } /* '' */
 .icon-certificate:before { content: '\e804'; } /* '' */
 .icon-right-open:before { content: '\e85d'; } /* '' */
@@ -14,3 +15,4 @@
 .icon-sort-number-up:before { content: '\f162'; } /* '' */
 .icon-dot-circled:before { content: '\f192'; } /* '' */
 .icon-heartbeat:before { content: '\f21e'; } /* '' */
+.icon-hand-grab-o:before { content: '\f255'; } /* '' */

@@ -17,7 +17,6 @@ class TypePage extends Component {
   }
 
   render() {
-    console.log(typeData);
     return (
       <div>
         <Header

@@ -34,26 +34,28 @@ const MoveList = ({ ...props }) => {
               </div>
             </div>
           </div>
-          {item.moveEffect &&
             <div className="MonsterList__row">
-              <div className="MoveList__item_moveBasics">
-                <div className="VitalInfo__value">
-                  {item.moveEffect}
+              {item.moveEffect &&
+                <div className="MoveList__item_moveBasics">
+                  <div className="VitalInfo__value">
+                    {item.moveEffect}
+                  </div>
+                  <div className="VitalInfo__label">
+                    Secondary Effect
+                  </div>
                 </div>
-                <div className="VitalInfo__label">
-                  Secondary Effect
+              }
+              { item.moveEffectPercent &&
+                <div className="MoveList__item_moveBasics">
+                  <div className="VitalInfo__value">
+                    {item.moveEffectPercent}
+                  </div>
+                  <div className="VitalInfo__label">
+                    Secondary Effect Percentage
+                  </div>
                 </div>
-              </div>
-              <div className="MoveList__item_moveBasics">
-                <div className="VitalInfo__value">
-                  {item.moveEffectPercent}
-                </div>
-                <div className="VitalInfo__label">
-                  Secondary Effect Percentage
-                </div>
-              </div>
+              }
             </div>
-          }
           <div className="MonsterList__row">
             <div className="MoveList__item_moveBasics">
               <div className="VitalInfo__value">

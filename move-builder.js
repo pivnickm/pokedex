@@ -33,6 +33,62 @@ const editType = (type) => {
   return makeCapital(type.split("/")[2].split(".shtml")[0]);
 }
 
+const editEffect = (moveName, effect) => {
+  let newEffect = effect;
+
+  if (moveName === "Crush Grip") {
+    newEffect = "Base Power = 110 * (Opponent's Current HP / Opponent's Max HP)";
+  } else if (moveName === "Spit Up") {
+    newEffect = "Releases power from Stockpile.	Base Power = (Stockpiles * 100)";
+  } else if (moveName === "Swallow") {
+    newEffect = "Absorbs power from Stockpile and recovers HP. 1 Stockpile = 1/4HP, 2 Stockpile = 1/2 HP, 3 Stockpile = full HP";
+  } else if (moveName === "Trump Card") {
+    newEffect = "Base power is dependant on the amount of PP that it has left. 1PP = 190, 2PP = 75, 3PP = 60, 4PP = 50, 5-8PP = 40";
+  } else if (moveName === "Wring Out") {
+    newEffect = "Base Power = 110 * (Opponent's Current HP / Opponent's Max HP)";
+  } else if (moveName === "Water Spout") {
+    newEffect = "Base Power = (Current HP * 150) / Max HP, max power is 150, min power is 1";
+  } else if (moveName === "Eruption") {
+    newEffect = "Base Power = (Current HP * 150) / Max HP, max power is 150, min power is 1";
+  } else if (moveName === "Grass Knot") {
+    newEffect = "Base power is dependant on target's weight, max power is 120, min power is 20";
+  } else if (moveName === "Toxic Spikes") {
+    newEffect = "1 layer poisons enemy, 2 layers badly poisons. Does not affect Flying, Steel, Poison types or enemies with Levitate";
+  } else if (moveName === "Fling") {
+    newEffect = "Base power and secondary effects are dependant on the item flung";
+  } else if (moveName === "Punishment") {
+    newEffect = "Base power increases by 20 for each stat increase. Max power is 200, min power is 1";
+  } else if (moveName === "Magic Coat") {
+    newEffect = "Any special move is reflected back to the attacker.";
+  } else if (moveName === "Gyro Ball") {
+    newEffect = "Base Power = 25 * (TargetSpeed / UserSpeed), max power is 150, min power is 1";
+  } else if (moveName === "Low Kick") {
+    newEffect = "Base power is dependant on target's weight, max power is 120, min power is 20";
+  } else if (moveName === "Magnitude") {
+    newEffect = "Move power is random: 10/30/50/70/90/110/150";
+  } else if (moveName === "Spikes") {
+    newEffect = "1 layer = 1/8 enemy max HP, 2 layers = 1/6 enemy max HP, 3 layers = 1/4 enemy max HP";
+  } else if (moveName === "Stealth Rock") {
+    newEffect = "Does damage relative to type advantage, 1/32 max HP for .25x effective -> 1/2 max HP for 4x effective";
+  }
+
+  // clean up weird capitalizations
+  return newEffect
+    .replace("ATTRACT", "Attract")
+    .replace("ROLLOUT", "Rollout")
+    .replace("FLY", "Fly")
+    .replace("CONFUSION", "Confusion")
+    .replace("EVASIVENESS", "Evasiveness")
+    .replace("ACCURACY", "Accuracy")
+    .replace("ATTACK", "Attack")
+    .replace("SPEED", "Speed")
+    .replace("DEFENSE", "Defense")
+    .replace("SP. ATK", "Sp.Atk")
+    .replace("SP. DEF", "Sp.Def")
+    .replace("2VS2", "double")
+    .replace("No Effect", "")
+}
+
 const getMoveNames = (type) => {
   return new Promise((resolve, reject) => {
     return setTimeout(() => {
@@ -82,7 +138,7 @@ const getMoveData = (name, id) => {
           const movePower = moveTable.eq(3).children().eq(1).text().trim();
           const moveAccuracy = moveTable.eq(3).children().eq(2).text().trim();
           const moveDescription = moveTable.eq(5).children().eq(0).text().trim();
-          const moveEffect = moveTable.eq(7).children().eq(0).text().trim();
+          const moveEffect = editEffect(moveName, moveTable.eq(7).children().eq(0).text().trim());
           const moveEffectPercent = moveTable.eq(7).children().eq(1).text().trim();
           const moveTM = moveTable.eq(12).children().eq(0).text().trim();
           const movePriority = moveTable.eq(12).children().eq(1).text().trim();
