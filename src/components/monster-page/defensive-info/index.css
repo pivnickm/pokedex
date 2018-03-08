@@ -4,10 +4,6 @@
   justify-content: space-between;
 }
 
-.DefensiveInfo__header {
-  margin-bottom: .5rem;
-}
-
 .DefensiveInfo__item {
   flex: 0;
 }

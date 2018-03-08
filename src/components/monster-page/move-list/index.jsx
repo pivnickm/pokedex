@@ -31,19 +31,17 @@ const MoveList = ({ monsterInfo }) => {
   });
   return (
     <div className="MoveList">
-      <div className="MoveList__moves">
-        { enhancedMoves.map((moveSet, index) => (
-          <div className="MoveList__moves_wrapper" key={index}>
-            <h4>{moveSet.header}</h4>
-            { moveSet.moves.map((move, index) => (
-              <MoveListItem
-                move={move}
-                key={`${move.name}_${index}`}
-              />
-            ))}
-          </div>
-        ))}
-      </div>
+      { enhancedMoves.map((moveSet, index) => (
+        <div className="MoveList_wrapper" key={index}>
+          <h4 className="MoveList_header">{moveSet.header}</h4>
+          { moveSet.moves.map((move, index) => (
+            <MoveListItem
+              move={move}
+              key={`${move.name}_${index}`}
+            />
+          ))}
+        </div>
+      ))}
     </div>
   );
 }

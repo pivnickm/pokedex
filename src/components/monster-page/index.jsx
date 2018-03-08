@@ -37,6 +37,14 @@ class MonsterPage extends Component {
     this.scrollTop = 0;
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.params.id !== this.props.params.id) {
+      this.setState({
+        form: 0
+      });
+    }
+  }
+
   set scrollTop(x) {
     (document.scrollingElement || document.documentElement).scrollTop = x;
   }
@@ -56,11 +64,11 @@ class MonsterPage extends Component {
   render() {
     const monster = data[this.props.params.id - 1];
     let pageBackgroundColor;
-    let showType
+    //let showType
     if (monster) {
       pageBackgroundColor = monster && monster.monsterHasMultiform ?
         `${monster.monsterTypes[0][0]}Lighten` : `${monster.monsterTypes[0][0]}Lighten`;
-      showType = (monster && monster.monsterTypes.length > 1) ? this.state.form : 0;
+      //showType = (monster && monster.monsterTypes.length > 1) ? this.state.form : 0;
     }
 
     console.log(monster);
@@ -100,8 +108,8 @@ class MonsterPage extends Component {
                   }
                   <div
                     className="VisualInfo__type_wrapper"
-                    >
-                    {monster.monsterTypes[showType].map((type, index) => (
+                  >
+                    {monster.monsterTypes[(monster.monsterHasMultiform && monster.monsterTypes.length > 1) ? this.state.form : 0].map((type, index) => (
                       <TypeIndicator
                       key={type}
                       type={type}

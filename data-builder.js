@@ -49,6 +49,8 @@ const finalEdits = (id, types) => {
     newTypes = [[ "Normal" ], [ "Fire" ], [ "Water" ], [ "Ice" ]];
   } else if (id === 479) {
     newTypes = [[ "Electric", "Ghost" ], [ "Electric", "Flying" ], [ "Electric", "Ice" ], [ "Electric", "Fire" ], [ "Electric", "Grass" ], [ "Electric", "Water" ]];
+  } else if (id === 493) {
+    newTypes = [[ "Normal" ], [ "Bug" ], [ "Dark" ], [ "Dragon" ], [ "Electric" ], [ "Fighting" ], [ "Fire" ], [ "Flying" ], [ "Ghost" ], [ "Grass" ], [ "Ground" ], [ "Ice" ], [ "Poison" ], [ "Psychic" ], [ "Rock" ], [ "Steel" ], [ "Water" ]];
   } else {
     newTypes = types;
   }
