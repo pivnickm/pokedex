@@ -45,7 +45,7 @@ const MoveList = ({ ...props }) => {
                   </div>
                 </div>
               }
-              { item.moveEffectPercent &&
+              {item.moveEffectPercent &&
                 <div className="MoveList__item_moveBasics">
                   <div className="VitalInfo__value">
                     {item.moveEffectPercent}

@@ -3,7 +3,7 @@
 }
 
 .MoveList__item {
-  border: 1px solid #c0c0c0;
+  /* border: 1px solid #c0c0c0; */
   display: flex;
   flex-flow: wrap;
 }
@@ -27,6 +27,7 @@
   text-align: center;
   border-top: 1px solid #c0c0c0;
   padding: .5rem;
+  align-items: center;
 }
 
 .MoveList__item_description {

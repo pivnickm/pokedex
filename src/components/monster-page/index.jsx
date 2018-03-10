@@ -54,7 +54,7 @@ class MonsterPage extends Component {
     const LEFT = 2;
     const RIGHT = 4;
 
-    if (direction === LEFT && numMonsterId < 494) {
+    if (direction === LEFT && numMonsterId < 493) {
       browserHistory.push(getPokemonPath(numMonsterId + 1));
     } else if (direction === RIGHT && numMonsterId > 1) {
       browserHistory.push(getPokemonPath(numMonsterId - 1));

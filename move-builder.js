@@ -2,6 +2,8 @@ const fs = require('fs');
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
+const irregularMoves = require("./src/data/move-info.js");
+
 const url = 'https://www.serebii.net/attackdex-dp/'; // `/bug.shtml`, etc
 const allPromises = [];
 const allMovePromises = [];
@@ -89,6 +91,10 @@ const editEffect = (moveName, effect) => {
     .replace("No Effect", "")
 }
 
+const finalEdits = (moveInfo) => {
+  return Object.assign({}, moveInfo, irregularMoves[moveInfo.moveName]);
+}
+
 const getMoveNames = (type) => {
   return new Promise((resolve, reject) => {
     return setTimeout(() => {
@@ -138,14 +144,14 @@ const getMoveData = (name, id) => {
           const movePower = moveTable.eq(3).children().eq(1).text().trim();
           const moveAccuracy = moveTable.eq(3).children().eq(2).text().trim();
           const moveDescription = moveTable.eq(5).children().eq(0).text().trim();
-          const moveEffect = editEffect(moveName, moveTable.eq(7).children().eq(0).text().trim());
+          const moveEffect = moveTable.eq(7).children().eq(0).text().trim();
           const moveEffectPercent = moveTable.eq(7).children().eq(1).text().trim();
           const moveTM = moveTable.eq(12).children().eq(0).text().trim();
           const movePriority = moveTable.eq(12).children().eq(1).text().trim();
           const moveTarget = moveTable.eq(12).children().eq(2).text().trim();
           const moveContact = moveTable.eq(14).children().eq(2).text().trim();
 
-          resolve({
+          resolve(finalEdits({
             id,
             moveName,
             moveType,
@@ -160,7 +166,7 @@ const getMoveData = (name, id) => {
             movePriority,
             moveTarget,
             moveContact
-          });
+          }));
         } catch (e) {
           console.log("err?", e); // eslint-disable-line
           reject(e);

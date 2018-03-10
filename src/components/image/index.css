@@ -1,6 +1,6 @@
 .MonsterList__sprite {
-  height: 150px;
-  width: auto;
+  width: 150px;
+  height: auto;
 }
 
 .MonsterList__sprite_wrapper {
@@ -20,7 +20,7 @@
 
 @media (min-width: 600px) {
   .MonsterList__sprite {
-    height: 225px;
-    width: auto;
+    height: auto;
+    width: 225px;
   }
 }
