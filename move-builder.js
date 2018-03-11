@@ -36,44 +36,8 @@ const editType = (type) => {
 }
 
 const editEffect = (moveName, effect) => {
-  let newEffect = effect;
-
-  if (moveName === "Crush Grip") {
-    newEffect = "Base Power = 110 * (Opponent's Current HP / Opponent's Max HP)";
-  } else if (moveName === "Spit Up") {
-    newEffect = "Releases power from Stockpile.	Base Power = (Stockpiles * 100)";
-  } else if (moveName === "Swallow") {
-    newEffect = "Absorbs power from Stockpile and recovers HP. 1 Stockpile = 1/4HP, 2 Stockpile = 1/2 HP, 3 Stockpile = full HP";
-  } else if (moveName === "Trump Card") {
-    newEffect = "Base power is dependant on the amount of PP that it has left. 1PP = 190, 2PP = 75, 3PP = 60, 4PP = 50, 5-8PP = 40";
-  } else if (moveName === "Wring Out") {
-    newEffect = "Base Power = 110 * (Opponent's Current HP / Opponent's Max HP)";
-  } else if (moveName === "Water Spout") {
-    newEffect = "Base Power = (Current HP * 150) / Max HP, max power is 150, min power is 1";
-  } else if (moveName === "Eruption") {
-    newEffect = "Base Power = (Current HP * 150) / Max HP, max power is 150, min power is 1";
-  } else if (moveName === "Grass Knot") {
-    newEffect = "Base power is dependant on target's weight, max power is 120, min power is 20";
-  } else if (moveName === "Toxic Spikes") {
-    newEffect = "1 layer poisons enemy, 2 layers badly poisons. Does not affect Flying, Steel, Poison types or enemies with Levitate";
-  } else if (moveName === "Fling") {
-    newEffect = "Base power and secondary effects are dependant on the item flung";
-  } else if (moveName === "Punishment") {
-    newEffect = "Base power increases by 20 for each stat increase. Max power is 200, min power is 1";
-  } else if (moveName === "Magic Coat") {
-    newEffect = "Any special move is reflected back to the attacker.";
-  } else if (moveName === "Gyro Ball") {
-    newEffect = "Base Power = 25 * (TargetSpeed / UserSpeed), max power is 150, min power is 1";
-  } else if (moveName === "Low Kick") {
-    newEffect = "Base power is dependant on target's weight, max power is 120, min power is 20";
-  } else if (moveName === "Magnitude") {
-    newEffect = "Move power is random: 10/30/50/70/90/110/150";
-  } else if (moveName === "Spikes") {
-    newEffect = "1 layer = 1/8 enemy max HP, 2 layers = 1/6 enemy max HP, 3 layers = 1/4 enemy max HP";
-  } else if (moveName === "Stealth Rock") {
-    newEffect = "Does damage relative to type advantage, 1/32 max HP for .25x effective -> 1/2 max HP for 4x effective";
-  }
-
+  // return new effect text if found in file, otherwise, just clean up the existing
+  const newEffect = irregularMoves[moveName] ? irregularMoves[moveName].newEffectText : effect;
   // clean up weird capitalizations
   return newEffect
     .replace("ATTRACT", "Attract")
@@ -89,10 +53,6 @@ const editEffect = (moveName, effect) => {
     .replace("SP. DEF", "Sp.Def")
     .replace("2VS2", "double")
     .replace("No Effect", "")
-}
-
-const finalEdits = (moveInfo) => {
-  return Object.assign({}, moveInfo, irregularMoves[moveInfo.moveName]);
 }
 
 const getMoveNames = (type) => {
@@ -144,14 +104,31 @@ const getMoveData = (name, id) => {
           const movePower = moveTable.eq(3).children().eq(1).text().trim();
           const moveAccuracy = moveTable.eq(3).children().eq(2).text().trim();
           const moveDescription = moveTable.eq(5).children().eq(0).text().trim();
-          const moveEffect = moveTable.eq(7).children().eq(0).text().trim();
-          const moveEffectPercent = moveTable.eq(7).children().eq(1).text().trim();
-          const moveTM = moveTable.eq(12).children().eq(0).text().trim();
-          const movePriority = moveTable.eq(12).children().eq(1).text().trim();
-          const moveTarget = moveTable.eq(12).children().eq(2).text().trim();
-          const moveContact = moveTable.eq(14).children().eq(2).text().trim();
+          let moveEffect;
+          let moveEffectPercent;
+          let moveTM;
+          let movePriority;
+          let moveTarget;
+          let moveContact;
 
-          resolve(finalEdits({
+          if (moveTable.eq(6).children().eq(0).text() === "In-Depth Effect:") {
+            //move has battle effects, so we need to skip about a little to get the correct rows.
+            moveEffect = editEffect(moveName, moveTable.eq(9).children().eq(0).text().trim());
+            moveEffectPercent = moveTable.eq(9).children().eq(1).text().trim();
+            moveTM = moveTable.eq(14).children().eq(0).text().trim();
+            movePriority = moveTable.eq(14).children().eq(1).text().trim();
+            moveTarget = moveTable.eq(14).children().eq(2).text().trim();
+            moveContact = moveTable.eq(16).children().eq(2).text().trim();
+          } else {
+            moveEffect = editEffect(moveName, moveTable.eq(7).children().eq(0).text().trim());
+            moveEffectPercent = moveTable.eq(7).children().eq(1).text().trim();
+            moveTM = moveTable.eq(12).children().eq(0).text().trim();
+            movePriority = moveTable.eq(12).children().eq(1).text().trim();
+            moveTarget = moveTable.eq(12).children().eq(2).text().trim();
+            moveContact = moveTable.eq(14).children().eq(2).text().trim()
+          }
+
+          resolve({
             id,
             moveName,
             moveType,
@@ -166,7 +143,7 @@ const getMoveData = (name, id) => {
             movePriority,
             moveTarget,
             moveContact
-          }));
+          });
         } catch (e) {
           console.log("err?", e); // eslint-disable-line
           reject(e);
