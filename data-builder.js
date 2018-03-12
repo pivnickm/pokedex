@@ -7,6 +7,7 @@ const allPromises = [];
 const errors = [];
 
 const irregularMoves = require("./src/data/move-info.js");
+const evoGroups = require("./src/data/evoGroups.json");
 
 const makeCapital = (name) => name.replace(/\b\w/g, l => l.toUpperCase());
 
@@ -81,6 +82,7 @@ const getPokemon = (id) => {
         const monsterHeight = $(".fooinfo").eq(7).text().replace("'", "' "); // put a space between 2'10"
         const monsterAbilityData = $(".fooinfo").eq(5).text().split("\n");
         const monsterDexEntry = $(".heartgold").eq(0).next(".fooinfo").text().trim();
+        const evoGroup = evoGroups[monsterName] ? evoGroups[monsterName].evoGroup : undefined;
         monsterAbilityData.shift();
         const monsterAbility = monsterAbilityData.map((ability, index) => {
           const abilityParts = ability.split(": "); //break on the "Name: Text"
@@ -227,6 +229,7 @@ const getPokemon = (id) => {
           monsterSpecies,
           monsterWeight,
           monsterHeight,
+          evoGroup,
           monsterDexEntry,
           monsterAbility,
           monsterCatchRate,
