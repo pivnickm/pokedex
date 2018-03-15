@@ -1,17 +1,16 @@
 import React from "react";
-import { PropTypes } from 'prop-types';
-import EvolutionInfoItem from "./item";
+import { PropTypes } from "prop-types";
+import EvolutionItem from "./item";
 
 import "./index.css";
 
-const EvolutionInfo = ({ monsterInfo  }) => {
-  const { monsterEvolutions } = monsterInfo;
+const EvolutionInfo = ({ monsterEvolutions  }) => {
+  console.log(monsterEvolutions); // eslint-disable-line
   return (
-    <div className="MonsterPage__EvolutionInfo_wrap">
-      { monsterEvolutions.map((evoStage, index) =>
-        <EvolutionInfoItem
-          key={`${evoStage[0].name}_wrap`}
-          evolutions={evoStage}
+    <div className="EvolutionInfo__wrap">
+      { monsterEvolutions.map((stageItems, index) =>
+        <EvolutionItem
+          stage={stageItems}
         />
       )}
     </div>
@@ -19,11 +18,11 @@ const EvolutionInfo = ({ monsterInfo  }) => {
 }
 
 EvolutionInfo.propTypes = {
-  monsterInfo: PropTypes.object.isRequired
+  monsterEvolutions: PropTypes.array.isRequired
 }
 
 EvolutionInfo.defaultProps = {
-  monsterInfo: {}
+  monsterEvolutions: []
 }
 
 export default EvolutionInfo;

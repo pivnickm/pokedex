@@ -1,53 +1,41 @@
-.EvolutionInfo {
-  display: -ms-flexbox;
-  /* display: flex; */
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -ms-flex-flow: row wrap;
-  /* flex-flow: row wrap; */
-  align-self: center;
-}
-
-.EvolutionInfo__item {
-  -ms-flex: 3 3 30px;
-  /* flex: 3 3 30px; */
+.EvolutionInfo__wrap {
   display: flex;
-  flex-flow: row;
-  padding: .5rem;
-}
-
-.EvolutionInfo__sprite {
-  height: 50px;
-  width: 50px;
-}
-
-.EvolutionInfo__item_link {
-  text-decoration: none;
-  color: #333;
-  display: flex;
-  flex-flow: column;
   align-items: center;
-  flex: 1 1 10px;
 }
 
-.EvolutionInfo__item_text {
-  align-self: center;
-  font-size: .75rem;
-  padding: 0 .5rem;
-  max-width: 70px;
+.EvolutionInfo {
+  flex: 1 auto;
 }
 
-.EvolutionInfo__item_method {
-  align-self: center;
-  font-size: .75rem;
-  padding: 0 .5rem;
-  width: 75px;
-  flex: 1 1 10px;
+.EvolutionInfo__wrap .sub_stage {
+  flex: 0 1 50%;
+  height: 100%;
 }
 
-.MonsterPage__EvolutionInfo_wrap {
+.EvolutionInfo__wrap_item {
   display: flex;
-  flex-flow: row;
-  flex: 8 8 100%;
+  flex: 0 1 auto;
+  width: auto;
+  align-items: flex-end;
   justify-content: center;
+  /* border: 1px solid black; */
+}
+
+.EvolutionInfo__wrap_image {
+  width: 75px;
+  height: auto;
+}
+
+.EvolutionInfo__stage_wrap {
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.EvolutionInfo__wrap_method {
+  flex: 0 1 50%;
+  align-self: center;
+  padding: 0 .5rem;
 }

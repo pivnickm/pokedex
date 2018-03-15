@@ -103,19 +103,48 @@ const getEvolutions = () => {
           //for each .infocard-tall subitem, get the name
           const methods = $(evoList).eq(i).find(".small");
           const pokemonName = $(evoList).eq(i).find(".ent-name");
+          const pokemonId = $(evoList).eq(i).find("small");
 
-          allEvos[`evoGroup${i}`] = Object.assign({}, {
+/*           allEvos[`evoGroup${i}`] = [Object.assign({}, {
             name: pokemonName.eq(0).text(),
+            id: parseInt(pokemonId.eq(0).text().split("#")[1], 10),
             stages: [{
               name: pokemonName.eq(1).text(),
+              id: parseInt(pokemonId.eq(2).text().split("#")[1], 10),
               method: editMethod(methods.eq(0).text().trim()),
               stages: pokemonName.eq(2).text() ? [{
                 name: pokemonName.eq(2).text(),
+                id: parseInt(pokemonId.eq(4).text().split("#")[1], 10),
                 method: editMethod(methods.eq(1).text().trim())
               }] : undefined
             }]
-          }, evoInfo[`evoGroup${i}`]);
+          }, evoInfo[`evoGroup${i}`])]; */
+
+          allEvos[`evoGroup${i}`] = [];
+          allEvos[`evoGroup${i}`].push([
+            Object.assign({}, {
+              name: pokemonName.eq(0).text(),
+              id: parseInt(pokemonId.eq(0).text().split("#")[1], 10)
+            }, evoInfo[`evoGroup${i}`][0])
+          ]);
+          allEvos[`evoGroup${i}`].push([
+            Object.assign({}, {
+              name: pokemonName.eq(1).text(),
+              id: parseInt(pokemonId.eq(2).text().split("#")[1], 10),
+              method: editMethod(methods.eq(0).text().trim())
+            }, evoInfo[`evoGroup${i}`][1])
+          ]);
+          if (pokemonName.eq(2).text()) {
+            allEvos[`evoGroup${i}`].push([
+              Object.assign({}, {
+                name: pokemonName.eq(2).text(),
+                id: parseInt(pokemonId.eq(4).text().split("#")[1], 10),
+                method: editMethod(methods.eq(1).text().trim())
+              }, evoInfo[`evoGroup${i}`][2])
+            ]);
+          }
         }
+
 
         resolve(allEvos);
       })}, 500);

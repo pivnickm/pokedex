@@ -8,6 +8,7 @@ import Image from "../image";
 import VitalInfo from "./vital-info";
 import BaseStats from "./base-stats";
 import DefensiveInfo from "./defensive-info";
+import EvolutionInfo from "./evolution-info";
 import MoveList from "./move-list";
 import TypeIndicator from "../type-indicator"
 import FourOhFour from '../four-oh-four';
@@ -15,6 +16,7 @@ import { getPokemonPath } from "../../routes";
 
 import * as colors from "../../data/colors.js";
 import data from "../../data/monsters2.json";
+import evolutionData from "../../data/evolutions.json";
 import "./index.css";
 
 class MonsterPage extends Component {
@@ -63,6 +65,7 @@ class MonsterPage extends Component {
 
   render() {
     const monster = data[this.props.params.id - 1];
+    const evolutions = monster.evoGroup ? evolutionData[monster.evoGroup] : undefined;
     let pageBackgroundColor;
     //let showType
     if (monster) {
@@ -146,6 +149,21 @@ class MonsterPage extends Component {
                     <span className="ability_name">{ability.abilityName}</span>: {ability.abilityDescription}
                   </p>
                 )}
+                {evolutions &&
+                  <p
+                    className="MonsterPage__sectionHeader"
+                    style={{
+                      backgroundColor: `${colors[pageBackgroundColor]}`,
+                    }}
+                  >
+                    Evolutions
+                  </p>
+                }
+                {evolutions &&
+                  <EvolutionInfo
+                    monsterEvolutions={evolutions}
+                  />
+                }
                 <p
                   className="MonsterPage__sectionHeader"
                   style={{
