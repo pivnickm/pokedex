@@ -16,5 +16,4 @@ const FourOhFour = () => {
   );
 };
 
-
 export default FourOhFour;

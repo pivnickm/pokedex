@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { Link } from "react-router";
-import LazyLoad, { forceCheck } from "react-lazyload";
+import LazyLoad from "react-lazyload";
 import { getPokemonPath } from "../../../routes";
 
 import TypeIndicator from "../../type-indicator"
@@ -10,21 +10,18 @@ import Image from "../../image";
 import "./index.css";
 
 class Item extends Component {
-  componentDidUpdate(prevProps, prevState) {
-    forceCheck();
-  }
 
   render() {
     const { monsterName, monsterNumber, monsterTypes } = this.props
     return (
-      <li
-        className="MonsterList__item_wrapper"
+      <LazyLoad
+        height={200}
+        placeholder={<p className="placeholder">Loading...</p>}
+        unmountIfInvisible={true}
+        offset={165}
       >
-        <LazyLoad
-          height={200}
-          placeholder={<p className="placeholder" />}
-          unmountIfInvisible={true}
-          offset={165}
+        <li
+          className="MonsterList__item_wrapper"
         >
           <Link
             className="MonsterList__item_link"
@@ -52,8 +49,8 @@ class Item extends Component {
               </div>
             </div>
           </Link>
-        </LazyLoad>
-      </li>
+        </li>
+      </LazyLoad>
     );
   }
 }

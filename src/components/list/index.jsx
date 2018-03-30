@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 // import LazyLoad, { forceCheck } from "react-lazyload";
+import Sidebar from 'react-sidebar';
 import Header from "../header";
+import SidebarContent from "../sidebar";
 //import Spinner from "../spinner";
 import Item from "./item";
+import { forceCheck } from "react-lazyload";
 
 import data from "../../data/monsters2.json";
 import "./index.css";
@@ -13,12 +16,12 @@ class List extends Component {
 
     this.state= {
       term: "",
-      isTrayOpen: false
+      sidebarOpen: false
     };
 
 		this.filterMonsters = this.filterMonsters.bind(this);
 		this.onSearch = this.onSearch.bind(this);
-		this.openTray = this.openTray.bind(this);
+    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
   }
 
   onSearch(evt) {
@@ -27,10 +30,8 @@ class List extends Component {
     });
   }
 
-  openTray() {
-    this.setState((prevState) => ({
-      isTrayOpen: !prevState.isTrayOpen
-    }))
+  onSetSidebarOpen(open) {
+    this.setState({sidebarOpen: open});
   }
 
   filterMonsters(data) {
@@ -43,15 +44,24 @@ class List extends Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    forceCheck();
+  }
+
   render() {
     const monsters = this.filterMonsters(data);
     return (
-      <div>
+      <Sidebar
+        sidebar={SidebarContent}
+        open={this.state.sidebarOpen}
+        onSetOpen={this.onSetSidebarOpen}
+      >
         <Header
           isHome={true}
           onSearch={this.onSearch}
           onClick={this.openTray}
         />
+        <a onClick={() => this.onSetSidebarOpen(!this.state.sidebarOpen)}>HI</a>
         <ul className="MonsterList">
           { monsters.map((item) =>
             <Item
@@ -63,7 +73,7 @@ class List extends Component {
             />
           )}
         </ul>
-      </div>
+      </Sidebar>
     );
   }
 }
