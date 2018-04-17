@@ -33,6 +33,20 @@
   align-items: center;
 }
 
+.EvolutionInfo__stage_name {
+  padding: .5rem 0;
+}
+
+.EvolutionInfo__stage_id {
+  padding-top: .5rem;
+  font-size: .8rem;
+}
+
+.EvolutionInfo__wrap_method {
+  font-size: .8rem;
+  font-weight: 700;
+}
+
 .EvolutionInfo__wrap_method {
   flex: 0 1 50%;
   align-self: center;

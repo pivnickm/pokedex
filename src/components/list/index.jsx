@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-// import LazyLoad, { forceCheck } from "react-lazyload";
-import Sidebar from 'react-sidebar';
+
 import Header from "../header";
-import SidebarContent from "../sidebar";
-//import Spinner from "../spinner";
 import Item from "./item";
-import { forceCheck } from "react-lazyload";
 
 import data from "../../data/monsters2.json";
 import "./index.css";
+
 
 class List extends Component {
 	constructor(props) {
@@ -16,12 +13,13 @@ class List extends Component {
 
     this.state= {
       term: "",
-      sidebarOpen: false
+      generations: [1, 2, 3, 4, 10],
+      filteredGeneration: 1
     };
 
 		this.filterMonsters = this.filterMonsters.bind(this);
 		this.onSearch = this.onSearch.bind(this);
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this);
+		this.onFilterGen = this.onFilterGen.bind(this);
   }
 
   onSearch(evt) {
@@ -30,38 +28,49 @@ class List extends Component {
     });
   }
 
-  onSetSidebarOpen(open) {
-    this.setState({sidebarOpen: open});
+  onFilterGen(evt) {
+    const { value } = evt.target;
+    this.setState({
+      filteredGeneration: parseInt(value, 10)
+    })
   }
 
   filterMonsters(data) {
     const term = this.state.term;
+    const { filteredGeneration } = this.state;
+    let generationArray;
 
-    return data.filter(monster => {
+    if (filteredGeneration === 1) {
+      generationArray = data.slice(0, 151);
+    } else if (filteredGeneration === 2) {
+      generationArray = data.slice(151, 251);
+    } else if (filteredGeneration === 3) {
+      generationArray = data.slice(251, 386);
+    } else if (filteredGeneration === 4) {
+      generationArray = data.slice(386, 493);
+    } else if (filteredGeneration === 10) {
+      generationArray = data;
+    }
+
+    return generationArray.filter(monster => {
       const { monsterName } = monster;
 
       return monsterName.toLowerCase().startsWith(term.toLowerCase())
     });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    forceCheck();
-  }
-
   render() {
     const monsters = this.filterMonsters(data);
     return (
-      <Sidebar
-        sidebar={SidebarContent}
-        open={this.state.sidebarOpen}
-        onSetOpen={this.onSetSidebarOpen}
-      >
+      <div id="outer-container">
         <Header
           isHome={true}
           onSearch={this.onSearch}
-          onClick={this.openTray}
+          onClick={this.onSetSidebarOpen}
+          generations={this.state.generations}
+          filteredGeneration={this.state.filteredGeneration}
+          onFilterGen={this.onFilterGen}
         />
-        <a onClick={() => this.onSetSidebarOpen(!this.state.sidebarOpen)}>HI</a>
         <ul className="MonsterList">
           { monsters.map((item) =>
             <Item
@@ -73,7 +82,7 @@ class List extends Component {
             />
           )}
         </ul>
-      </Sidebar>
+      </div>
     );
   }
 }

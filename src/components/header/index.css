@@ -10,6 +10,7 @@
 .Header__inner {
   display: flex;
   align-items: center;
+  margin-bottom: .25rem;
 }
 
 .Header__inner_link {
@@ -41,6 +42,22 @@
   margin-left: 1rem;
   font-size: 1.2rem;
   width: calc(100% - 4rem);
+}
+
+.GenFilter__wrapper {
+  padding: .25rem;
+}
+
+.GenFilter__wrapper:first-of-type {
+  padding-left: 0;
+}
+
+.GenFilter__input {
+  display: none;
+}
+
+.GenFilter__input:checked + .GenFilter__label {
+  color: red;
 }
 
 @media (min-width: 600px) {

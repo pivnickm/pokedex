@@ -6,49 +6,61 @@ import Filter from "../filter";
 import "./index.css";
 import "../../fontello/css/fontello.css";
 
-const Header = ({ isHome, onSearch, text, onClick }) => {
+const Header = ({
+  isHome,
+  onSearch,
+  text,
+  onClick,
+  generations,
+  filteredGeneration,
+  onFilterGen
+}) => {
   return (
   <div className="Header">
-    { isHome
-    ?
-      <div
-        className="Header__inner"
-      >
+    <div
+      className="Header__inner"
+    >
+      { isHome
+      ?
         <Filter
           onSearch={onSearch}
         />
-        <Link className="Header__inner_appLink types" to="/types">
-          <i className="icon icon-fire icon-big" />
-          <span className="Header__inner_appLinkText">TypeDex</span>
-        </Link>
-        <Link className="Header__inner_appLink" to="/movedex">
-          <i className="icon icon-hand-grab-o icon-big" />
-          <span className="Header__inner_appLinkText">MoveDex</span>
-        </Link>
-      </div>
-    :
-      <div
-        className="Header__inner"
-      >
-        <Link
-          className="Header__inner_link"
-          to={"/"}
-        >
-          <i className="icon icon-left-big icon-big" />
-        </Link>
-        <div className="Header__inner_text">
-          {text}
-        </div>
-        <Link className="Header__inner_appLink types" to="/types">
-          <i className="icon icon-fire icon-big" />
-          <span className="Header__inner_appLinkText">TypeDex</span>
-        </Link>
-        <Link className="Header__inner_appLink" to="/movedex">
-          <i className="icon icon-hand-grab-o icon-big" />
-          <span className="Header__inner_appLinkText">MoveDex</span>
-        </Link>
-      </div>
-    }
+      :
+        <React.Fragment>
+          <Link
+            className="Header__inner_link"
+            to={"/"}
+          >
+            <i className="icon icon-left-big icon-big" />
+          </Link>
+          <div className="Header__inner_text">
+            {text}
+          </div>
+        </React.Fragment>
+      }
+      <Link className="Header__inner_appLink types" to="/types">
+        <i className="icon icon-fire icon-big" />
+        <span className="Header__inner_appLinkText">TypeDex</span>
+      </Link>
+      <Link className="Header__inner_appLink" to="/movedex">
+        <i className="icon icon-hand-grab-o icon-big" />
+        <span className="Header__inner_appLinkText">MoveDex</span>
+      </Link>
+    </div>
+    {generations && generations.map(gen => (
+      <label className="GenFilter__wrapper" key={gen}>
+        <input
+          className="GenFilter__input"
+          type="radio"
+          value={gen}
+          checked={filteredGeneration === gen}
+          onChange={onFilterGen}
+        />
+        <span className="GenFilter__label">
+          {gen === 10 ? "All" : `Gen ${gen}`}
+        </span>
+      </label>
+    ))}
   </div>
   );
 };

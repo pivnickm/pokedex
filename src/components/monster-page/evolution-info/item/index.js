@@ -20,7 +20,12 @@ const EvolutionItem = ({ stage  }) => {
               src={require(`../../../../data/images/svg/${evoStage.id}.svg`)}
               alt={evoStage.id}
             />
-            <p>{evoStage.name}</p>
+            <span className="EvolutionInfo__stage_id">
+              {`#${("0000" + evoStage.id).substr(-3, 3)}`}
+            </span>
+            <div className="EvolutionInfo__stage_name">
+              {evoStage.name}
+            </div>
           </div>
         </div>
       )}

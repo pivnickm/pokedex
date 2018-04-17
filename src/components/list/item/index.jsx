@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { Link } from "react-router";
-import LazyLoad from "react-lazyload";
+import { browserHistory } from "react-router";
 import { getPokemonPath } from "../../../routes";
 
 import TypeIndicator from "../../type-indicator"
@@ -14,43 +13,22 @@ class Item extends Component {
   render() {
     const { monsterName, monsterNumber, monsterTypes } = this.props
     return (
-      <LazyLoad
-        height={200}
-        placeholder={<p className="placeholder">Loading...</p>}
-        unmountIfInvisible={true}
-        offset={165}
+      <li
+        className="MonsterList__item_wrapper"
+        onClick={() => { browserHistory.push(getPokemonPath(monsterNumber))} }
       >
-        <li
-          className="MonsterList__item_wrapper"
-        >
-          <Link
-            className="MonsterList__item_link"
-            to={getPokemonPath(monsterNumber)}
-          >
-            <div
-              className="MonsterList__item"
-            >
-              <Image
-                className="MonsterList__item_image"
-                id={monsterNumber}
-              />
-              <div
-                className="MonsterList__label"
-              >
-                {monsterName}
-                <div className="MonsterList__types">
-                  {monsterTypes[0].map((type, index) => (
-                    <TypeIndicator
-                      key={type}
-                      type={type}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </Link>
-        </li>
-      </LazyLoad>
+        <Image
+          className="MonsterList__item_image"
+          id={monsterNumber}
+        />
+        <span className="MonsterList__label">{monsterName}</span>
+        {monsterTypes[0].map((type, index) => (
+          <TypeIndicator
+            key={type}
+            type={type}
+          />
+        ))}
+      </li>
     );
   }
 }

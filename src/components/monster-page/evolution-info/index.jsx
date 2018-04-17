@@ -10,6 +10,7 @@ const EvolutionInfo = ({ monsterEvolutions  }) => {
     <div className="EvolutionInfo__wrap">
       { monsterEvolutions.map((stageItems, index) =>
         <EvolutionItem
+          key={index}
           stage={stageItems}
         />
       )}
