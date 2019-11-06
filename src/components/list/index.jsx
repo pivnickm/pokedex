@@ -36,8 +36,7 @@ class List extends Component {
   }
 
   filterMonsters(data) {
-    const term = this.state.term;
-    const { filteredGeneration } = this.state;
+    const { term, filteredGeneration } = this.state;
     let generationArray;
 
     if (filteredGeneration === 1) {
@@ -72,7 +71,7 @@ class List extends Component {
           onFilterGen={this.onFilterGen}
         />
         <ul className="MonsterList">
-          { monsters.map((item) =>
+          {monsters.map((item) =>
             <Item
               key={item.monsterName}
               monsterName={item.monsterName}
