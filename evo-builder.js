@@ -151,7 +151,7 @@ const getEvolutions = () => {
   });
 };
 getEvolutions().then(values => {
-  fs.writeFile("src/data/evolutions.json", JSON.stringify(values), err => {
+  fs.writeFile("src/data/evolutionsGen7.json", JSON.stringify(values), err => {
     if (err) return console.log(err);
     console.log("evolutions.json written successfully");
   });

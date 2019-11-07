@@ -2,7 +2,7 @@ const fs = require('fs');
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-const url = 'https://www.serebii.net/pokedex-dp/';
+const url = 'https://www.serebii.net/pokedex-sm/';
 const allPromises = [];
 const errors = [];
 
@@ -72,16 +72,16 @@ const getPokemon = (id) => {
 
         console.log(`Building info for ${id}`);
         /* Name + Info*/
-        const monsterName = $(".fooinfo").eq(0).text();
-        const monsterSpecies = $(".fooinfo").eq(6).text();
-        const monsterCatchRate = $(".fooinfo").eq(9).text();
+        const monsterName = $(".fooinfo").eq(1).text();
+        const monsterSpecies = $(".cen").eq(0).text();
+        const monsterCatchRate = $(".fooinfo").eq(8).text();
         const monsterBaseHappiness = $(".fooinfo").eq(12).text();
-        const monsterHatchSteps = $(".fooinfo").eq(10).text();
+        const monsterHatchSteps = $(".fooinfo").eq(9).text();
         const monsterGenderSplit = $(".fooinfo").eq(3).text().replace("%", "% "); // put a space between Male ♂:0%Female ♀:100%
-        const monsterWeight = $(".fooinfo").eq(8).text();
-        const monsterHeight = $(".fooinfo").eq(7).text().replace("'", "' "); // put a space between 2'10"
-        const monsterAbilityData = $(".fooinfo").eq(5).text().split("\n");
-        const monsterDexEntry = $(".heartgold").eq(0).next(".fooinfo").text().trim();
+        const monsterWeight = $(".fooinfo").eq(7).text();
+        const monsterHeight = $(".fooinfo").eq(6).text().replace("'", "' "); // put a space between 2'10"
+        const monsterAbilityData = $(".fooinfo").eq(10).text().split("\n");
+        const monsterDexEntry = $(".heartgold").eq(1).next(".fooinfo").text().trim();
         const evoGroup = evoGroups[monsterName] ? evoGroups[monsterName].evoGroup : undefined;
         monsterAbilityData.shift();
         const monsterAbility = monsterAbilityData.map((ability, index) => {
@@ -98,8 +98,8 @@ const getPokemon = (id) => {
         let firstType;
         let secondType;
 
-        if ($(".fooinfo").eq(4).children().children().children().length > 1) {
-          $(".fooinfo").eq(4).children().children().children().each((i, elem) => {
+        if ($(".cen").eq(0).children().children().children().length > 1) {
+          $(".cen").eq(0).children().children().children().each((i, elem) => {
             firstType = editType($(elem).children().eq(1).children().eq(0).attr("href"));
             secondType = editType($(elem).children().eq(1).children().eq(1).attr("href"));
             if (secondType !== "") {
@@ -109,8 +109,8 @@ const getPokemon = (id) => {
             }
           });
         } else {
-          firstType = editType($(".fooinfo").eq(4).children().eq(0).attr("href"));
-          secondType = editType($(".fooinfo").eq(4).children().eq(1).attr("href"));
+          firstType = editType($(".cen").eq(0).children().eq(0).attr("href"));
+          secondType = editType($(".cen").eq(0).children().eq(1).attr("href"));
           if (secondType !== "") {
             monsterTypes.push([firstType, secondType]);
           } else {
@@ -121,9 +121,14 @@ const getPokemon = (id) => {
         let monsterHasMultiform = false;
         let monsterForms = [];
         const altFormElemHeader = $('.fooevo:contains("Alternate Forms")')
+        // const altFormElem = $(".fooevo").eq(7).text();
+        // const altFormElemHeader = "Alternate Forms";
+        // if(altFormElem === altFormElemHeader) {
         if(altFormElemHeader.text()) {
           monsterHasMultiform = true;
           const altFormElems = altFormElemHeader.parent().next().find($(".fooinfo")).children().eq(0).children().children().eq(0).children(); //this is gross?
+          // const altFormElems = $(".fooinfo").eq(17).find("table");
+
 
           altFormElems.each((i, elem) => {
             monsterForms.push($(elem).text());
@@ -248,13 +253,15 @@ const getPokemon = (id) => {
 };
 
 
-for (let i = 1; i < 494; i++) {
+// for (let i = 1; i < 494; i++) {
+for (let i = 1; i < 809; i++) {
   const id = ("0000" + i).substr(-3, 3);
   allPromises.push(getPokemon(id));
 }
 
 Promise.all(allPromises).then(values => {
-  fs.writeFile("src/data/monsters2.json", JSON.stringify(values), err => {
+  // fs.writeFile("src/data/monsters2.json", JSON.stringify(values), err => {
+  fs.writeFile("src/data/monstersGen7.json", JSON.stringify(values), err => {
     if (err) return console.log(err);
     console.log("Monsters.json written successfully");
   });

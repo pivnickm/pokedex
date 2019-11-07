@@ -15,7 +15,8 @@ import FourOhFour from '../four-oh-four';
 import { getPokemonPath } from "../../routes";
 
 import * as colors from "../../data/colors.js";
-import data from "../../data/monsters2.json";
+// import data from "../../data/monsters2.json";
+import data from "../../data/monstersGen7.json";
 import evolutionData from "../../data/evolutions.json";
 import "./index.css";
 
@@ -65,7 +66,8 @@ class MonsterPage extends Component {
 
   render() {
     const monster = data[this.props.params.id - 1];
-    const evolutions = monster.evoGroup ? evolutionData[monster.evoGroup] : undefined;
+    console.log(monster, this.props.params.id - 1); // eslint-disable-line
+    // const evolutions = monster.evoGroup ? evolutionData[monster.evoGroup] : undefined;
     let pageBackgroundColor;
     //let showType
     if (monster) {
@@ -149,7 +151,7 @@ class MonsterPage extends Component {
                     <span className="ability_name">{ability.abilityName}</span>: {ability.abilityDescription}
                   </p>
                 )}
-                {evolutions &&
+                {/* {evolutions &&
                   <p
                     className="MonsterPage__sectionHeader"
                     style={{
@@ -158,12 +160,12 @@ class MonsterPage extends Component {
                   >
                     Evolutions
                   </p>
-                }
-                {evolutions &&
+                } */}
+                {/* {evolutions &&
                   <EvolutionInfo
                     monsterEvolutions={evolutions}
                   />
-                }
+                } */}
                 <p
                   className="MonsterPage__sectionHeader"
                   style={{

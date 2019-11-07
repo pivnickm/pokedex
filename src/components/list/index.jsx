@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import Header from "../header";
 import Item from "./item";
 
-import data from "../../data/monsters2.json";
+// import data from "../../data/monsters2.json";
+import data from "../../data/monstersGen7.json";
 import "./index.css";
 
 
@@ -13,8 +14,8 @@ class List extends Component {
 
     this.state= {
       term: "",
-      generations: [1, 2, 3, 4, 10],
-      filteredGeneration: 1
+      generations: [10, 1, 2, 3, 4],
+      filteredGeneration: 10
     };
 
 		this.filterMonsters = this.filterMonsters.bind(this);
