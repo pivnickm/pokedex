@@ -57,7 +57,7 @@
 }
 
 .GenFilter__input:checked + .GenFilter__label {
-  color: red;
+  color: #415b98;
 }
 
 @media (min-width: 600px) {

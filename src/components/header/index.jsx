@@ -48,18 +48,19 @@ const Header = ({
       </Link>
     </div>
     {generations && generations.map(gen => (
-      <label className="GenFilter__wrapper" key={gen}>
+      <span className="GenFilter__wrapper" key={gen}>
         <input
           className="GenFilter__input"
           type="radio"
+          id={`gen${gen}`}
           value={gen}
           checked={filteredGeneration === gen}
           onChange={onFilterGen}
         />
-        <span className="GenFilter__label">
+        <label className="GenFilter__label" for={`gen${gen}`}>
           {gen === 10 ? "All" : `Gen ${gen}`}
-        </span>
-      </label>
+        </label>
+      </span>
     ))}
   </div>
   );

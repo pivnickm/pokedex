@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
-import { browserHistory } from "react-router";
+import { browserHistory, Link } from "react-router";
 import { getPokemonPath } from "../../../routes";
 
 import TypeIndicator from "../../type-indicator"
@@ -15,8 +15,9 @@ class Item extends Component {
     return (
       <li
         className="MonsterList__item_wrapper"
-        onClick={() => { browserHistory.push(getPokemonPath(monsterNumber))} }
+        // onClick={() => { browserHistory.push(getPokemonPath(monsterNumber))} }
       >
+        <Link className="MonsterList__item_link" to={getPokemonPath(monsterNumber)}>
         <Image
           className="MonsterList__item_image"
           id={monsterNumber}
@@ -28,6 +29,7 @@ class Item extends Component {
             type={type}
           />
         ))}
+        </Link>
       </li>
     );
   }

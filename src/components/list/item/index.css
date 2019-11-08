@@ -1,13 +1,26 @@
 .MonsterList__item_wrapper {
   list-style: none;
   color: #fff;
-  background: #ccc;
+  background: #d9dadb;
   padding: .25rem;
   margin-bottom: .5rem;
   font-weight: 600;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.MonsterList__item_wrapper:hover {
+  background: #b8bbbf;
+}
+
+.MonsterList__item_link {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%
 }
 
 .MonsterList__label {
