@@ -14,7 +14,7 @@ class List extends Component {
 
     this.state= {
       term: "",
-      generations: [10, 1, 2, 3, 4],
+      generations: [10, 1, 2, 3, 4,5, 6,7],
       filteredGeneration: 10
     };
 
@@ -48,6 +48,12 @@ class List extends Component {
       generationArray = data.slice(251, 386);
     } else if (filteredGeneration === 4) {
       generationArray = data.slice(386, 493);
+    } else if (filteredGeneration === 5) {
+      generationArray = data.slice(493, 649);
+    } else if (filteredGeneration === 6) {
+      generationArray = data.slice(649, 721);
+    } else if (filteredGeneration === 7) {
+      generationArray = data.slice(721, 809);
     } else if (filteredGeneration === 10) {
       generationArray = data;
     }

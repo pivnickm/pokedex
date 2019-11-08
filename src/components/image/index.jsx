@@ -9,13 +9,12 @@ const  Image = ({ id, form, className }) => {
   if (form > 0) {
     formName = `-${form}`
   }
-  const myId = id < 722 ? id : 350;
   return (
     <ErrorBoundary>
       <img
         className={`MonsterList__sprite ${className}`}
         // src={require(`../../data/images/svg/${parseInt(id, 10)}${formName}.svg`)}
-        src={require(`../../data/images/png/${parseInt(myId, 10)}${formName}.png`)}
+        src={require(`../../data/images/png/${parseInt(id, 10)}${formName}.png`)}
         onError={() => { throw new Error("image not found"); }}
         alt={id}
       />

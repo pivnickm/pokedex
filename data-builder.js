@@ -12,7 +12,10 @@ const evoGroups = require("./src/data/evoGroups.json");
 const makeCapital = (name) => name.replace(/\b\w/g, l => l.toUpperCase());
 
 const editType = (type) => {
-  return type ? makeCapital(type.split("/")[2].split(".shtml")[0]) : "";
+  let editType;
+  editType = (type && type.indexOf("psychict") > 0) ? type.replace("psychict", "psychic") : type
+
+  return editType ? makeCapital(editType.split("/")[2].split(".shtml")[0]) : "";
 }
 
 const editMovePower = (moveName, movePower) => {
@@ -73,15 +76,16 @@ const getPokemon = (id) => {
         console.log(`Building info for ${id}`);
         /* Name + Info*/
         const monsterName = $(".fooinfo").eq(1).text();
-        const monsterSpecies = $(".cen").eq(0).text();
+        const monsterSpecies = $(".fooinfo").eq(5).text();
         const monsterCatchRate = $(".fooinfo").eq(8).text();
         const monsterBaseHappiness = $(".fooinfo").eq(12).text();
         const monsterHatchSteps = $(".fooinfo").eq(9).text();
-        const monsterGenderSplit = $(".fooinfo").eq(3).text().replace("%", "% "); // put a space between Male ♂:0%Female ♀:100%
+        const monsterGenderSplit = $(".fooinfo").eq(4).text().replace("%", "% "); // put a space between Male ♂:0%Female ♀:100%
         const monsterWeight = $(".fooinfo").eq(7).text();
         const monsterHeight = $(".fooinfo").eq(6).text().replace("'", "' "); // put a space between 2'10"
         const monsterAbilityData = $(".fooinfo").eq(10).text().split("\n");
-        const monsterDexEntry = $(".heartgold").eq(1).next(".fooinfo").text().trim();
+        // const monsterDexEntry = $(".heartgold").eq(1).next(".fooinfo").text().trim(); //$$(".fooinfo")[22]
+        const monsterDexEntry = $(".dextable").eq(7).find($(".fooinfo")).text().trim();
         const evoGroup = evoGroups[monsterName] ? evoGroups[monsterName].evoGroup : undefined;
         monsterAbilityData.shift();
         const monsterAbility = monsterAbilityData.map((ability, index) => {
@@ -158,12 +162,15 @@ const getPokemon = (id) => {
 
         /* Defensive Strengths/Weaknesses */
         let monsterDefensive = [];
-        const defElem = $("[name=general]").next(".dextable").next(".dextable").children().children();
-        const types = defElem.eq(1).children();
-        const multipliers = defElem.eq(2).children();
+        // const defElem = $("[name=general]").next(".dextable").next(".dextable").children().children();
+        // const types = defElem.eq(1).children();
+        const types = $(".dextable>tbody").eq(3).children().eq(1).children().children();
+        // const multipliers = defElem.eq(2).children();
+        const multipliers = $(".dextable>tbody").eq(3).children().eq(2).children();
         types.each((i, elem) => {
-          const typeName = editType($(elem).children().eq(0).attr("href"));
+          const typeName = editType($(elem).attr("href"));
           const dmgMultiplier = parseFloat(multipliers.eq(i).text().split("*")[1], 10);
+
           if (dmgMultiplier !== 1) {
             monsterDefensive.push({
               typeName,
@@ -254,7 +261,7 @@ const getPokemon = (id) => {
 
 
 // for (let i = 1; i < 494; i++) {
-for (let i = 1; i < 809; i++) {
+for (let i = 1; i <= 809; i++) {
   const id = ("0000" + i).substr(-3, 3);
   allPromises.push(getPokemon(id));
 }
