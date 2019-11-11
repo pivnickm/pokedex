@@ -1,6 +1,12 @@
-.MoveList__wrapper {
+.MoveList__wrapper,
+.MoveList__heading {
   padding: 0 .5rem;
 }
+
+/* .MoveList__wrapper {
+  display: flex;
+  flex-direction: column;
+} */
 
 .MoveList__item {
   /* border: 1px solid #c0c0c0; */
