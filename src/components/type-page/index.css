@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: row wrap;
   text-align: center;
+  padding: 1rem .5rem 0;
 }
 
 .typeWrapper__section {
@@ -20,6 +21,7 @@
 
 .typeWrapper__section_wrap {
   display: flex;
+  margin: .5rem 0;
 }
 
 .typeWrapper__section_value {

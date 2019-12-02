@@ -1,0 +1,1253 @@
+{
+  "Bulbasaur": {
+    "evoGroup": "evoGroup0"
+  },
+  "Ivysaur": {
+    "evoGroup": "evoGroup0"
+  },
+  "Venusaur": {
+    "evoGroup": "evoGroup0"
+  },
+  "Charmander": {
+    "evoGroup": "evoGroup1"
+  },
+  "Charmeleon": {
+    "evoGroup": "evoGroup1"
+  },
+  "Charizard": {
+    "evoGroup": "evoGroup1"
+  },
+  "Squirtle": {
+    "evoGroup": "evoGroup2"
+  },
+  "Wartortle": {
+    "evoGroup": "evoGroup2"
+  },
+  "Blastoise": {
+    "evoGroup": "evoGroup2"
+  },
+  "Caterpie": {
+    "evoGroup": "evoGroup3"
+  },
+  "Metapod": {
+    "evoGroup": "evoGroup3"
+  },
+  "Butterfree": {
+    "evoGroup": "evoGroup3"
+  },
+  "Weedle": {
+    "evoGroup": "evoGroup4"
+  },
+  "Kakuna": {
+    "evoGroup": "evoGroup4"
+  },
+  "Beedrill": {
+    "evoGroup": "evoGroup4"
+  },
+  "Pidgey": {
+    "evoGroup": "evoGroup5"
+  },
+  "Pidgeotto": {
+    "evoGroup": "evoGroup5"
+  },
+  "Pidgeot": {
+    "evoGroup": "evoGroup5"
+  },
+  "Rattata": {
+    "evoGroup": "evoGroup6"
+  },
+  "Raticate": {
+    "evoGroup": "evoGroup6"
+  },
+  "Spearow": {
+    "evoGroup": "evoGroup7"
+  },
+  "Fearow": {
+    "evoGroup": "evoGroup7"
+  },
+  "Ekans": {
+    "evoGroup": "evoGroup8"
+  },
+  "Arbok": {
+    "evoGroup": "evoGroup8"
+  },
+  "Pichu": {
+    "evoGroup": "evoGroup9"
+  },
+  "Pikachu": {
+    "evoGroup": "evoGroup9"
+  },
+  "Raichu": {
+    "evoGroup": "evoGroup9"
+  },
+  "Sandshrew": {
+    "evoGroup": "evoGroup10"
+  },
+  "Sandslash": {
+    "evoGroup": "evoGroup10"
+  },
+  "Nidoranâ": {
+    "evoGroup": "evoGroup11"
+  },
+  "Nidorina": {
+    "evoGroup": "evoGroup11"
+  },
+  "Nidoqueen": {
+    "evoGroup": "evoGroup11"
+  },
+  "Nidoranâ": {
+    "evoGroup": "evoGroup12"
+  },
+  "Nidorino": {
+    "evoGroup": "evoGroup12"
+  },
+  "Nidoking": {
+    "evoGroup": "evoGroup12"
+  },
+  "Cleffa": {
+    "evoGroup": "evoGroup13"
+  },
+  "Clefairy": {
+    "evoGroup": "evoGroup13"
+  },
+  "Clefable": {
+    "evoGroup": "evoGroup13"
+  },
+  "Vulpix": {
+    "evoGroup": "evoGroup14"
+  },
+  "Ninetales": {
+    "evoGroup": "evoGroup14"
+  },
+  "Igglybuff": {
+    "evoGroup": "evoGroup15"
+  },
+  "Jigglypuff": {
+    "evoGroup": "evoGroup15"
+  },
+  "Wigglytuff": {
+    "evoGroup": "evoGroup15"
+  },
+  "Zubat": {
+    "evoGroup": "evoGroup16"
+  },
+  "Golbat": {
+    "evoGroup": "evoGroup16"
+  },
+  "Crobat": {
+    "evoGroup": "evoGroup16"
+  },
+  "Oddish": {
+    "evoGroup": "evoGroup17"
+  },
+  "Gloom": {
+    "evoGroup": "evoGroup17"
+  },
+  "Vileplume": {
+    "evoGroup": "evoGroup17"
+  },
+  "Bellossom": {
+    "evoGroup": "evoGroup17"
+  },
+  "Paras": {
+    "evoGroup": "evoGroup18"
+  },
+  "Parasect": {
+    "evoGroup": "evoGroup18"
+  },
+  "Venonat": {
+    "evoGroup": "evoGroup19"
+  },
+  "Venomoth": {
+    "evoGroup": "evoGroup19"
+  },
+  "Diglett": {
+    "evoGroup": "evoGroup20"
+  },
+  "Dugtrio": {
+    "evoGroup": "evoGroup20"
+  },
+  "Meowth": {
+    "evoGroup": "evoGroup21"
+  },
+  "Persian": {
+    "evoGroup": "evoGroup21"
+  },
+  "Psyduck": {
+    "evoGroup": "evoGroup22"
+  },
+  "Golduck": {
+    "evoGroup": "evoGroup22"
+  },
+  "Mankey": {
+    "evoGroup": "evoGroup23"
+  },
+  "Primeape": {
+    "evoGroup": "evoGroup23"
+  },
+  "Growlithe": {
+    "evoGroup": "evoGroup24"
+  },
+  "Arcanine": {
+    "evoGroup": "evoGroup24"
+  },
+  "Poliwag": {
+    "evoGroup": "evoGroup25"
+  },
+  "Poliwhirl": {
+    "evoGroup": "evoGroup25"
+  },
+  "Poliwrath": {
+    "evoGroup": "evoGroup25"
+  },
+  "Politoed": {
+    "evoGroup": "evoGroup25"
+  },
+  "Abra": {
+    "evoGroup": "evoGroup26"
+  },
+  "Kadabra": {
+    "evoGroup": "evoGroup26"
+  },
+  "Alakazam": {
+    "evoGroup": "evoGroup26"
+  },
+  "Machop": {
+    "evoGroup": "evoGroup27"
+  },
+  "Machoke": {
+    "evoGroup": "evoGroup27"
+  },
+  "Machamp": {
+    "evoGroup": "evoGroup27"
+  },
+  "Bellsprout": {
+    "evoGroup": "evoGroup28"
+  },
+  "Weepinbell": {
+    "evoGroup": "evoGroup28"
+  },
+  "Victreebel": {
+    "evoGroup": "evoGroup28"
+  },
+  "Tentacool": {
+    "evoGroup": "evoGroup29"
+  },
+  "Tentacruel": {
+    "evoGroup": "evoGroup29"
+  },
+  "Geodude": {
+    "evoGroup": "evoGroup30"
+  },
+  "Graveler": {
+    "evoGroup": "evoGroup30"
+  },
+  "Golem": {
+    "evoGroup": "evoGroup30"
+  },
+  "Ponyta": {
+    "evoGroup": "evoGroup31"
+  },
+  "Rapidash": {
+    "evoGroup": "evoGroup31"
+  },
+  "Slowpoke": {
+    "evoGroup": "evoGroup32"
+  },
+  "Slowbro": {
+    "evoGroup": "evoGroup32"
+  },
+  "Slowking": {
+    "evoGroup": "evoGroup32"
+  },
+  "Magnemite": {
+    "evoGroup": "evoGroup33"
+  },
+  "Magneton": {
+    "evoGroup": "evoGroup33"
+  },
+  "Magnezone": {
+    "evoGroup": "evoGroup33"
+  },
+  "Doduo": {
+    "evoGroup": "evoGroup34"
+  },
+  "Dodrio": {
+    "evoGroup": "evoGroup34"
+  },
+  "Seel": {
+    "evoGroup": "evoGroup35"
+  },
+  "Dewgong": {
+    "evoGroup": "evoGroup35"
+  },
+  "Grimer": {
+    "evoGroup": "evoGroup36"
+  },
+  "Muk": {
+    "evoGroup": "evoGroup36"
+  },
+  "Shellder": {
+    "evoGroup": "evoGroup37"
+  },
+  "Cloyster": {
+    "evoGroup": "evoGroup37"
+  },
+  "Gastly": {
+    "evoGroup": "evoGroup38"
+  },
+  "Haunter": {
+    "evoGroup": "evoGroup38"
+  },
+  "Gengar": {
+    "evoGroup": "evoGroup38"
+  },
+  "Onix": {
+    "evoGroup": "evoGroup39"
+  },
+  "Steelix": {
+    "evoGroup": "evoGroup39"
+  },
+  "Drowzee": {
+    "evoGroup": "evoGroup40"
+  },
+  "Hypno": {
+    "evoGroup": "evoGroup40"
+  },
+  "Krabby": {
+    "evoGroup": "evoGroup41"
+  },
+  "Kingler": {
+    "evoGroup": "evoGroup41"
+  },
+  "Voltorb": {
+    "evoGroup": "evoGroup42"
+  },
+  "Electrode": {
+    "evoGroup": "evoGroup42"
+  },
+  "Exeggcute": {
+    "evoGroup": "evoGroup43"
+  },
+  "Exeggutor": {
+    "evoGroup": "evoGroup43"
+  },
+  "Cubone": {
+    "evoGroup": "evoGroup44"
+  },
+  "Marowak": {
+    "evoGroup": "evoGroup44"
+  },
+  "Tyrogue": {
+    "evoGroup": "evoGroup45"
+  },
+  "Hitmonlee": {
+    "evoGroup": "evoGroup45"
+  },
+  "Hitmonchan": {
+    "evoGroup": "evoGroup45"
+  },
+  "Hitmontop": {
+    "evoGroup": "evoGroup45"
+  },
+  "Lickitung": {
+    "evoGroup": "evoGroup46"
+  },
+  "Lickilicky": {
+    "evoGroup": "evoGroup46"
+  },
+  "Koffing": {
+    "evoGroup": "evoGroup47"
+  },
+  "Weezing": {
+    "evoGroup": "evoGroup47"
+  },
+  "Rhyhorn": {
+    "evoGroup": "evoGroup48"
+  },
+  "Rhydon": {
+    "evoGroup": "evoGroup48"
+  },
+  "Rhyperior": {
+    "evoGroup": "evoGroup48"
+  },
+  "Happiny": {
+    "evoGroup": "evoGroup49"
+  },
+  "Chansey": {
+    "evoGroup": "evoGroup49"
+  },
+  "Blissey": {
+    "evoGroup": "evoGroup49"
+  },
+  "Tangela": {
+    "evoGroup": "evoGroup50"
+  },
+  "Tangrowth": {
+    "evoGroup": "evoGroup50"
+  },
+  "Horsea": {
+    "evoGroup": "evoGroup51"
+  },
+  "Seadra": {
+    "evoGroup": "evoGroup51"
+  },
+  "Kingdra": {
+    "evoGroup": "evoGroup51"
+  },
+  "Goldeen": {
+    "evoGroup": "evoGroup52"
+  },
+  "Seaking": {
+    "evoGroup": "evoGroup52"
+  },
+  "Staryu": {
+    "evoGroup": "evoGroup53"
+  },
+  "Starmie": {
+    "evoGroup": "evoGroup53"
+  },
+  "Mime Jr.": {
+    "evoGroup": "evoGroup54"
+  },
+  "Mr. Mime": {
+    "evoGroup": "evoGroup54"
+  },
+  "Scyther": {
+    "evoGroup": "evoGroup55"
+  },
+  "Scizor": {
+    "evoGroup": "evoGroup55"
+  },
+  "Smoochum": {
+    "evoGroup": "evoGroup56"
+  },
+  "Jynx": {
+    "evoGroup": "evoGroup56"
+  },
+  "Elekid": {
+    "evoGroup": "evoGroup57"
+  },
+  "Electabuzz": {
+    "evoGroup": "evoGroup57"
+  },
+  "Electivire": {
+    "evoGroup": "evoGroup57"
+  },
+  "Magby": {
+    "evoGroup": "evoGroup58"
+  },
+  "Magmar": {
+    "evoGroup": "evoGroup58"
+  },
+  "Magmortar": {
+    "evoGroup": "evoGroup58"
+  },
+  "Magikarp": {
+    "evoGroup": "evoGroup59"
+  },
+  "Gyarados": {
+    "evoGroup": "evoGroup59"
+  },
+  "Vaporeon": {
+    "evoGroup": "evoGroup60"
+  },
+  "Jolteon": {
+    "evoGroup": "evoGroup60"
+  },
+  "Flareon": {
+    "evoGroup": "evoGroup60"
+  },
+  "Sylveon": {
+    "evoGroup": "evoGroup60"
+  },
+  "Eevee": {
+    "evoGroup": "evoGroup60"
+  },
+  "Espeon": {
+    "evoGroup": "evoGroup60"
+  },
+  "Umbreon": {
+    "evoGroup": "evoGroup60"
+  },
+  "Leafeon": {
+    "evoGroup": "evoGroup60"
+  },
+  "Glaceon": {
+    "evoGroup": "evoGroup60"
+  },
+  "Porygon": {
+    "evoGroup": "evoGroup61"
+  },
+  "Porygon2": {
+    "evoGroup": "evoGroup61"
+  },
+  "Porygon-Z": {
+    "evoGroup": "evoGroup61"
+  },
+  "Omanyte": {
+    "evoGroup": "evoGroup62"
+  },
+  "Omastar": {
+    "evoGroup": "evoGroup62"
+  },
+  "Kabuto": {
+    "evoGroup": "evoGroup63"
+  },
+  "Kabutops": {
+    "evoGroup": "evoGroup63"
+  },
+  "Munchlax": {
+    "evoGroup": "evoGroup64"
+  },
+  "Snorlax": {
+    "evoGroup": "evoGroup64"
+  },
+  "Dratini": {
+    "evoGroup": "evoGroup65"
+  },
+  "Dragonair": {
+    "evoGroup": "evoGroup65"
+  },
+  "Dragonite": {
+    "evoGroup": "evoGroup65"
+  },
+  "Chikorita": {
+    "evoGroup": "evoGroup66"
+  },
+  "Bayleef": {
+    "evoGroup": "evoGroup66"
+  },
+  "Meganium": {
+    "evoGroup": "evoGroup66"
+  },
+  "Cyndaquil": {
+    "evoGroup": "evoGroup67"
+  },
+  "Quilava": {
+    "evoGroup": "evoGroup67"
+  },
+  "Typhlosion": {
+    "evoGroup": "evoGroup67"
+  },
+  "Totodile": {
+    "evoGroup": "evoGroup68"
+  },
+  "Croconaw": {
+    "evoGroup": "evoGroup68"
+  },
+  "Feraligatr": {
+    "evoGroup": "evoGroup68"
+  },
+  "Sentret": {
+    "evoGroup": "evoGroup69"
+  },
+  "Furret": {
+    "evoGroup": "evoGroup69"
+  },
+  "Hoothoot": {
+    "evoGroup": "evoGroup70"
+  },
+  "Noctowl": {
+    "evoGroup": "evoGroup70"
+  },
+  "Ledyba": {
+    "evoGroup": "evoGroup71"
+  },
+  "Ledian": {
+    "evoGroup": "evoGroup71"
+  },
+  "Spinarak": {
+    "evoGroup": "evoGroup72"
+  },
+  "Ariados": {
+    "evoGroup": "evoGroup72"
+  },
+  "Chinchou": {
+    "evoGroup": "evoGroup73"
+  },
+  "Lanturn": {
+    "evoGroup": "evoGroup73"
+  },
+  "Togepi": {
+    "evoGroup": "evoGroup74"
+  },
+  "Togetic": {
+    "evoGroup": "evoGroup74"
+  },
+  "Togekiss": {
+    "evoGroup": "evoGroup74"
+  },
+  "Natu": {
+    "evoGroup": "evoGroup75"
+  },
+  "Xatu": {
+    "evoGroup": "evoGroup75"
+  },
+  "Mareep": {
+    "evoGroup": "evoGroup76"
+  },
+  "Flaaffy": {
+    "evoGroup": "evoGroup76"
+  },
+  "Ampharos": {
+    "evoGroup": "evoGroup76"
+  },
+  "Azurill": {
+    "evoGroup": "evoGroup77"
+  },
+  "Marill": {
+    "evoGroup": "evoGroup77"
+  },
+  "Azumarill": {
+    "evoGroup": "evoGroup77"
+  },
+  "Bonsly": {
+    "evoGroup": "evoGroup78"
+  },
+  "Sudowoodo": {
+    "evoGroup": "evoGroup78"
+  },
+  "Hoppip": {
+    "evoGroup": "evoGroup79"
+  },
+  "Skiploom": {
+    "evoGroup": "evoGroup79"
+  },
+  "Jumpluff": {
+    "evoGroup": "evoGroup79"
+  },
+  "Aipom": {
+    "evoGroup": "evoGroup80"
+  },
+  "Ambipom": {
+    "evoGroup": "evoGroup80"
+  },
+  "Sunkern": {
+    "evoGroup": "evoGroup81"
+  },
+  "Sunflora": {
+    "evoGroup": "evoGroup81"
+  },
+  "Yanma": {
+    "evoGroup": "evoGroup82"
+  },
+  "Yanmega": {
+    "evoGroup": "evoGroup82"
+  },
+  "Wooper": {
+    "evoGroup": "evoGroup83"
+  },
+  "Quagsire": {
+    "evoGroup": "evoGroup83"
+  },
+  "Murkrow": {
+    "evoGroup": "evoGroup84"
+  },
+  "Honchkrow": {
+    "evoGroup": "evoGroup84"
+  },
+  "Misdreavus": {
+    "evoGroup": "evoGroup85"
+  },
+  "Mismagius": {
+    "evoGroup": "evoGroup85"
+  },
+  "Wynaut": {
+    "evoGroup": "evoGroup86"
+  },
+  "Wobbuffet": {
+    "evoGroup": "evoGroup86"
+  },
+  "Pineco": {
+    "evoGroup": "evoGroup87"
+  },
+  "Forretress": {
+    "evoGroup": "evoGroup87"
+  },
+  "Gligar": {
+    "evoGroup": "evoGroup88"
+  },
+  "Gliscor": {
+    "evoGroup": "evoGroup88"
+  },
+  "Snubbull": {
+    "evoGroup": "evoGroup89"
+  },
+  "Granbull": {
+    "evoGroup": "evoGroup89"
+  },
+  "Sneasel": {
+    "evoGroup": "evoGroup90"
+  },
+  "Weavile": {
+    "evoGroup": "evoGroup90"
+  },
+  "Teddiursa": {
+    "evoGroup": "evoGroup91"
+  },
+  "Ursaring": {
+    "evoGroup": "evoGroup91"
+  },
+  "Slugma": {
+    "evoGroup": "evoGroup92"
+  },
+  "Magcargo": {
+    "evoGroup": "evoGroup92"
+  },
+  "Swinub": {
+    "evoGroup": "evoGroup93"
+  },
+  "Piloswine": {
+    "evoGroup": "evoGroup93"
+  },
+  "Mamoswine": {
+    "evoGroup": "evoGroup93"
+  },
+  "Remoraid": {
+    "evoGroup": "evoGroup94"
+  },
+  "Octillery": {
+    "evoGroup": "evoGroup94"
+  },
+  "Mantyke": {
+    "evoGroup": "evoGroup95"
+  },
+  "Mantine": {
+    "evoGroup": "evoGroup95"
+  },
+  "Houndour": {
+    "evoGroup": "evoGroup96"
+  },
+  "Houndoom": {
+    "evoGroup": "evoGroup96"
+  },
+  "Phanpy": {
+    "evoGroup": "evoGroup97"
+  },
+  "Donphan": {
+    "evoGroup": "evoGroup97"
+  },
+  "Larvitar": {
+    "evoGroup": "evoGroup98"
+  },
+  "Pupitar": {
+    "evoGroup": "evoGroup98"
+  },
+  "Tyranitar": {
+    "evoGroup": "evoGroup98"
+  },
+  "Treecko": {
+    "evoGroup": "evoGroup99"
+  },
+  "Grovyle": {
+    "evoGroup": "evoGroup99"
+  },
+  "Sceptile": {
+    "evoGroup": "evoGroup99"
+  },
+  "Torchic": {
+    "evoGroup": "evoGroup100"
+  },
+  "Combusken": {
+    "evoGroup": "evoGroup100"
+  },
+  "Blaziken": {
+    "evoGroup": "evoGroup100"
+  },
+  "Mudkip": {
+    "evoGroup": "evoGroup101"
+  },
+  "Marshtomp": {
+    "evoGroup": "evoGroup101"
+  },
+  "Swampert": {
+    "evoGroup": "evoGroup101"
+  },
+  "Poochyena": {
+    "evoGroup": "evoGroup102"
+  },
+  "Mightyena": {
+    "evoGroup": "evoGroup102"
+  },
+  "Zigzagoon": {
+    "evoGroup": "evoGroup103"
+  },
+  "Linoone": {
+    "evoGroup": "evoGroup103"
+  },
+  "Wurmple": {
+    "evoGroup": "evoGroup104"
+  },
+  "Silcoon": {
+    "evoGroup": "evoGroup104"
+  },
+  "Beautifly": {
+    "evoGroup": "evoGroup104"
+  },
+  "Cascoon": {
+    "evoGroup": "evoGroup104"
+  },
+  "Dustox": {
+    "evoGroup": "evoGroup104"
+  },
+  "Lotad": {
+    "evoGroup": "evoGroup105"
+  },
+  "Lombre": {
+    "evoGroup": "evoGroup105"
+  },
+  "Ludicolo": {
+    "evoGroup": "evoGroup105"
+  },
+  "Seedot": {
+    "evoGroup": "evoGroup106"
+  },
+  "Nuzleaf": {
+    "evoGroup": "evoGroup106"
+  },
+  "Shiftry": {
+    "evoGroup": "evoGroup106"
+  },
+  "Taillow": {
+    "evoGroup": "evoGroup107"
+  },
+  "Swellow": {
+    "evoGroup": "evoGroup107"
+  },
+  "Wingull": {
+    "evoGroup": "evoGroup108"
+  },
+  "Pelipper": {
+    "evoGroup": "evoGroup108"
+  },
+  "Ralts": {
+    "evoGroup": "evoGroup109"
+  },
+  "Kirlia": {
+    "evoGroup": "evoGroup109"
+  },
+  "Gardevoir": {
+    "evoGroup": "evoGroup109"
+  },
+  "Gallade": {
+    "evoGroup": "evoGroup109"
+  },
+  "Surskit": {
+    "evoGroup": "evoGroup110"
+  },
+  "Masquerain": {
+    "evoGroup": "evoGroup110"
+  },
+  "Shroomish": {
+    "evoGroup": "evoGroup111"
+  },
+  "Breloom": {
+    "evoGroup": "evoGroup111"
+  },
+  "Slakoth": {
+    "evoGroup": "evoGroup112"
+  },
+  "Vigoroth": {
+    "evoGroup": "evoGroup112"
+  },
+  "Slaking": {
+    "evoGroup": "evoGroup112"
+  },
+  "Nincada": {
+    "evoGroup": "evoGroup113"
+  },
+  "Ninjask": {
+    "evoGroup": "evoGroup113"
+  },
+  "Shedinja": {
+    "evoGroup": "evoGroup113"
+  },
+  "Whismur": {
+    "evoGroup": "evoGroup114"
+  },
+  "Loudred": {
+    "evoGroup": "evoGroup114"
+  },
+  "Exploud": {
+    "evoGroup": "evoGroup114"
+  },
+  "Makuhita": {
+    "evoGroup": "evoGroup115"
+  },
+  "Hariyama": {
+    "evoGroup": "evoGroup115"
+  },
+  "Nosepass": {
+    "evoGroup": "evoGroup116"
+  },
+  "Probopass": {
+    "evoGroup": "evoGroup116"
+  },
+  "Skitty": {
+    "evoGroup": "evoGroup117"
+  },
+  "Delcatty": {
+    "evoGroup": "evoGroup117"
+  },
+  "Aron": {
+    "evoGroup": "evoGroup118"
+  },
+  "Lairon": {
+    "evoGroup": "evoGroup118"
+  },
+  "Aggron": {
+    "evoGroup": "evoGroup118"
+  },
+  "Meditite": {
+    "evoGroup": "evoGroup119"
+  },
+  "Medicham": {
+    "evoGroup": "evoGroup119"
+  },
+  "Electrike": {
+    "evoGroup": "evoGroup120"
+  },
+  "Manectric": {
+    "evoGroup": "evoGroup120"
+  },
+  "Budew": {
+    "evoGroup": "evoGroup121"
+  },
+  "Roselia": {
+    "evoGroup": "evoGroup121"
+  },
+  "Roserade": {
+    "evoGroup": "evoGroup121"
+  },
+  "Gulpin": {
+    "evoGroup": "evoGroup122"
+  },
+  "Swalot": {
+    "evoGroup": "evoGroup122"
+  },
+  "Carvanha": {
+    "evoGroup": "evoGroup123"
+  },
+  "Sharpedo": {
+    "evoGroup": "evoGroup123"
+  },
+  "Wailmer": {
+    "evoGroup": "evoGroup124"
+  },
+  "Wailord": {
+    "evoGroup": "evoGroup124"
+  },
+  "Numel": {
+    "evoGroup": "evoGroup125"
+  },
+  "Camerupt": {
+    "evoGroup": "evoGroup125"
+  },
+  "Spoink": {
+    "evoGroup": "evoGroup126"
+  },
+  "Grumpig": {
+    "evoGroup": "evoGroup126"
+  },
+  "Trapinch": {
+    "evoGroup": "evoGroup127"
+  },
+  "Vibrava": {
+    "evoGroup": "evoGroup127"
+  },
+  "Flygon": {
+    "evoGroup": "evoGroup127"
+  },
+  "Cacnea": {
+    "evoGroup": "evoGroup128"
+  },
+  "Cacturne": {
+    "evoGroup": "evoGroup128"
+  },
+  "Swablu": {
+    "evoGroup": "evoGroup129"
+  },
+  "Altaria": {
+    "evoGroup": "evoGroup129"
+  },
+  "Barboach": {
+    "evoGroup": "evoGroup130"
+  },
+  "Whiscash": {
+    "evoGroup": "evoGroup130"
+  },
+  "Corphish": {
+    "evoGroup": "evoGroup131"
+  },
+  "Crawdaunt": {
+    "evoGroup": "evoGroup131"
+  },
+  "Baltoy": {
+    "evoGroup": "evoGroup132"
+  },
+  "Claydol": {
+    "evoGroup": "evoGroup132"
+  },
+  "Lileep": {
+    "evoGroup": "evoGroup133"
+  },
+  "Cradily": {
+    "evoGroup": "evoGroup133"
+  },
+  "Anorith": {
+    "evoGroup": "evoGroup134"
+  },
+  "Armaldo": {
+    "evoGroup": "evoGroup134"
+  },
+  "Feebas": {
+    "evoGroup": "evoGroup135"
+  },
+  "Milotic": {
+    "evoGroup": "evoGroup135"
+  },
+  "Shuppet": {
+    "evoGroup": "evoGroup136"
+  },
+  "Banette": {
+    "evoGroup": "evoGroup136"
+  },
+  "Duskull": {
+    "evoGroup": "evoGroup137"
+  },
+  "Dusclops": {
+    "evoGroup": "evoGroup137"
+  },
+  "Dusknoir": {
+    "evoGroup": "evoGroup137"
+  },
+  "Chingling": {
+    "evoGroup": "evoGroup138"
+  },
+  "Chimecho": {
+    "evoGroup": "evoGroup138"
+  },
+  "Snorunt": {
+    "evoGroup": "evoGroup139"
+  },
+  "Glalie": {
+    "evoGroup": "evoGroup139"
+  },
+  "Froslass": {
+    "evoGroup": "evoGroup139"
+  },
+  "Spheal": {
+    "evoGroup": "evoGroup140"
+  },
+  "Sealeo": {
+    "evoGroup": "evoGroup140"
+  },
+  "Walrein": {
+    "evoGroup": "evoGroup140"
+  },
+  "Clamperl": {
+    "evoGroup": "evoGroup141"
+  },
+  "Huntail": {
+    "evoGroup": "evoGroup141"
+  },
+  "Gorebyss": {
+    "evoGroup": "evoGroup141"
+  },
+  "Bagon": {
+    "evoGroup": "evoGroup142"
+  },
+  "Shelgon": {
+    "evoGroup": "evoGroup142"
+  },
+  "Salamence": {
+    "evoGroup": "evoGroup142"
+  },
+  "Beldum": {
+    "evoGroup": "evoGroup143"
+  },
+  "Metang": {
+    "evoGroup": "evoGroup143"
+  },
+  "Metagross": {
+    "evoGroup": "evoGroup143"
+  },
+  "Turtwig": {
+    "evoGroup": "evoGroup144"
+  },
+  "Grotle": {
+    "evoGroup": "evoGroup144"
+  },
+  "Torterra": {
+    "evoGroup": "evoGroup144"
+  },
+  "Chimchar": {
+    "evoGroup": "evoGroup145"
+  },
+  "Monferno": {
+    "evoGroup": "evoGroup145"
+  },
+  "Infernape": {
+    "evoGroup": "evoGroup145"
+  },
+  "Piplup": {
+    "evoGroup": "evoGroup146"
+  },
+  "Prinplup": {
+    "evoGroup": "evoGroup146"
+  },
+  "Empoleon": {
+    "evoGroup": "evoGroup146"
+  },
+  "Starly": {
+    "evoGroup": "evoGroup147"
+  },
+  "Staravia": {
+    "evoGroup": "evoGroup147"
+  },
+  "Staraptor": {
+    "evoGroup": "evoGroup147"
+  },
+  "Bidoof": {
+    "evoGroup": "evoGroup148"
+  },
+  "Bibarel": {
+    "evoGroup": "evoGroup148"
+  },
+  "Kricketot": {
+    "evoGroup": "evoGroup149"
+  },
+  "Kricketune": {
+    "evoGroup": "evoGroup149"
+  },
+  "Shinx": {
+    "evoGroup": "evoGroup150"
+  },
+  "Luxio": {
+    "evoGroup": "evoGroup150"
+  },
+  "Luxray": {
+    "evoGroup": "evoGroup150"
+  },
+  "Cranidos": {
+    "evoGroup": "evoGroup151"
+  },
+  "Rampardos": {
+    "evoGroup": "evoGroup151"
+  },
+  "Shieldon": {
+    "evoGroup": "evoGroup152"
+  },
+  "Bastiodon": {
+    "evoGroup": "evoGroup152"
+  },
+  "Burmy": {
+    "evoGroup": "evoGroup153"
+  },
+  "Mothim": {
+    "evoGroup": "evoGroup153"
+  },
+  "Wormadam": {
+    "evoGroup": "evoGroup153"
+  },
+  "Combee": {
+    "evoGroup": "evoGroup154"
+  },
+  "Vespiquen": {
+    "evoGroup": "evoGroup154"
+  },
+  "Buizel": {
+    "evoGroup": "evoGroup155"
+  },
+  "Floatzel": {
+    "evoGroup": "evoGroup155"
+  },
+  "Cherubi": {
+    "evoGroup": "evoGroup156"
+  },
+  "Cherrim": {
+    "evoGroup": "evoGroup156"
+  },
+  "Shellos": {
+    "evoGroup": "evoGroup157"
+  },
+  "Gastrodon": {
+    "evoGroup": "evoGroup157"
+  },
+  "Drifloon": {
+    "evoGroup": "evoGroup158"
+  },
+  "Drifblim": {
+    "evoGroup": "evoGroup158"
+  },
+  "Buneary": {
+    "evoGroup": "evoGroup159"
+  },
+  "Lopunny": {
+    "evoGroup": "evoGroup159"
+  },
+  "Glameow": {
+    "evoGroup": "evoGroup160"
+  },
+  "Purugly": {
+    "evoGroup": "evoGroup160"
+  },
+  "Stunky": {
+    "evoGroup": "evoGroup161"
+  },
+  "Skuntank": {
+    "evoGroup": "evoGroup161"
+  },
+  "Bronzor": {
+    "evoGroup": "evoGroup162"
+  },
+  "Bronzong": {
+    "evoGroup": "evoGroup162"
+  },
+  "Gible": {
+    "evoGroup": "evoGroup163"
+  },
+  "Gabite": {
+    "evoGroup": "evoGroup163"
+  },
+  "Garchomp": {
+    "evoGroup": "evoGroup163"
+  },
+  "Riolu": {
+    "evoGroup": "evoGroup164"
+  },
+  "Lucario": {
+    "evoGroup": "evoGroup164"
+  },
+  "Hippopotas": {
+    "evoGroup": "evoGroup165"
+  },
+  "Hippowdon": {
+    "evoGroup": "evoGroup165"
+  },
+  "Skorupi": {
+    "evoGroup": "evoGroup166"
+  },
+  "Drapion": {
+    "evoGroup": "evoGroup166"
+  },
+  "Croagunk": {
+    "evoGroup": "evoGroup167"
+  },
+  "Toxicroak": {
+    "evoGroup": "evoGroup167"
+  },
+  "Finneon": {
+    "evoGroup": "evoGroup168"
+  },
+  "Lumineon": {
+    "evoGroup": "evoGroup168"
+  },
+  "Snover": {
+    "evoGroup": "evoGroup169"
+  },
+  "Abomasnow": {
+    "evoGroup": "evoGroup169"
+  }
+}

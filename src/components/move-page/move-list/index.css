@@ -1,0 +1,51 @@
+.MoveList__wrapper,
+.MoveList__heading {
+  padding: 0 .5rem;
+}
+
+/* .MoveList__wrapper {
+  display: flex;
+  flex-direction: column;
+} */
+
+.MoveList__item {
+  /* border: 1px solid #c0c0c0; */
+  display: flex;
+  flex-flow: wrap;
+}
+
+.MoveList__item:last-child {
+  margin-bottom: 1rem;
+}
+
+.MoveList__item_name {
+  flex: 1 100%;
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: .8rem;
+  padding: .5rem;
+}
+
+.MonsterList__row {
+  display: flex;
+  flex: 1 100%;
+  text-align: center;
+  border-top: 1px solid #c0c0c0;
+  padding: .5rem;
+  align-items: center;
+}
+
+.MoveList__item_description {
+  flex: 1 100%;
+  text-align: left;
+  padding: 0 .5rem;
+}
+
+.MoveList__item_moveBasics {
+  flex: 1 100%;
+}
+
+.MoveList__item:not(:first-child) {
+  margin-top: .5rem;
+}

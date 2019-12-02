@@ -10,14 +10,59 @@
 .Header__inner {
   display: flex;
   align-items: center;
+  margin-bottom: .25rem;
 }
 
 .Header__inner_link {
   color: #fff;
 }
 
+.Header__inner_appLink {
+  color: #fff;
+}
+
+.Header__inner_appLinkText {
+  display: none;
+}
+
+.Header__inner_appLink.types{
+  margin: 0 .5rem;
+}
+
+.Header__inner_appLink {
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
 .Header__inner_text {
   height: 20px;
   margin-left: 1rem;
   font-size: 1.2rem;
+  width: calc(100% - 4rem);
+}
+
+.GenFilter__wrapper {
+  padding: .25rem;
+}
+
+.GenFilter__wrapper:first-of-type {
+  padding-left: 0;
+}
+
+.GenFilter__input {
+  display: none;
+}
+
+.GenFilter__input:checked + .GenFilter__label {
+  color: #415b98;
+}
+
+@media (min-width: 600px) {
+  .Header__inner_appLinkText {
+    padding-top: .25rem;
+    display: initial;
+  }
 }

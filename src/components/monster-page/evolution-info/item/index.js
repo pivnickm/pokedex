@@ -1,56 +1,44 @@
 import React from "react";
 import { PropTypes } from 'prop-types';
-import { Link } from "react-router";
 
-import data from "../../../../data/monsters.json";
-
-const EvolutionInfo = ({ evolutions  }) => {
-  const newItems = evolutions.filter((item) => {
-    return data.find((innerItem) => {
-      return innerItem.id === parseInt(item.id, 10);
-    });
-  });
+const EvolutionItem = ({ stage  }) => {
   return (
     <div className="EvolutionInfo">
-      { newItems.map((evolution, index) =>
+      {stage.map((evoStage, index) =>
         <div
-          key={evolution.name}
-          className="EvolutionInfo__item"
+          className="EvolutionInfo__wrap_item"
+          key={evoStage.name}
         >
-        { evolution.method && evolution.method.length > 0 &&
-          <span
-            className="EvolutionInfo__item_method"
+          { evoStage.method &&
+            <p className="EvolutionInfo__wrap_method">{evoStage.method}</p>
+          }
+          <div
+            className="EvolutionInfo__stage_wrap"
           >
-            {evolution.method}
-          </span>
-        }
-        <Link
-          className="EvolutionInfo__item_link"
-          to={`/${evolution.id}`}
-        >
-          <img
-            className="EvolutionInfo__sprite"
-            src={require(`../../../../data/images/hi_res/${evolution.id}.png`)}
-            alt={evolution.id}
-          />
-          <span
-            className="EvolutionInfo__item_text"
-          >
-            {evolution.name}
-          </span>
-        </Link>
+            <img
+              className="EvolutionInfo__wrap_image"
+              src={require(`../../../../data/images/svg/${evoStage.id}.svg`)}
+              alt={evoStage.id}
+            />
+            <span className="EvolutionInfo__stage_id">
+              {`#${("0000" + evoStage.id).substr(-3, 3)}`}
+            </span>
+            <div className="EvolutionInfo__stage_name">
+              {evoStage.name}
+            </div>
+          </div>
         </div>
       )}
     </div>
   );
 }
 
-EvolutionInfo.propTypes = {
-  evolutions: PropTypes.array
+EvolutionItem.propTypes = {
+  stage: PropTypes.array
 }
 
-EvolutionInfo.defaultProps = {
-  evolutions: []
+EvolutionItem.defaultProps = {
+  stage: []
 }
 
-export default EvolutionInfo;
+export default EvolutionItem;

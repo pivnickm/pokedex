@@ -1,0 +1,3050 @@
+{
+  "evoGroup0": [
+    [
+      {
+        "name": "Bulbasaur",
+        "id": 1
+      }
+    ],
+    [
+      {
+        "name": "Ivysaur",
+        "id": 2,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Venusaur",
+        "id": 3,
+        "method": "Level 32"
+      }
+    ]
+  ],
+  "evoGroup1": [
+    [
+      {
+        "name": "Charmander",
+        "id": 4
+      }
+    ],
+    [
+      {
+        "name": "Charmeleon",
+        "id": 5,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Charizard",
+        "id": 6,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup2": [
+    [
+      {
+        "name": "Squirtle",
+        "id": 7
+      }
+    ],
+    [
+      {
+        "name": "Wartortle",
+        "id": 8,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Blastoise",
+        "id": 9,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup3": [
+    [
+      {
+        "name": "Caterpie",
+        "id": 10
+      }
+    ],
+    [
+      {
+        "name": "Metapod",
+        "id": 11,
+        "method": "Level 7"
+      }
+    ],
+    [
+      {
+        "name": "Butterfree",
+        "id": 12,
+        "method": "Level 10"
+      }
+    ]
+  ],
+  "evoGroup4": [
+    [
+      {
+        "name": "Weedle",
+        "id": 13
+      }
+    ],
+    [
+      {
+        "name": "Kakuna",
+        "id": 14,
+        "method": "Level 7"
+      }
+    ],
+    [
+      {
+        "name": "Beedrill",
+        "id": 15,
+        "method": "Level 10"
+      }
+    ]
+  ],
+  "evoGroup5": [
+    [
+      {
+        "name": "Pidgey",
+        "id": 16
+      }
+    ],
+    [
+      {
+        "name": "Pidgeotto",
+        "id": 17,
+        "method": "Level 18"
+      }
+    ],
+    [
+      {
+        "name": "Pidgeot",
+        "id": 18,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup6": [
+    [
+      {
+        "name": "Rattata",
+        "id": 19
+      }
+    ],
+    [
+      {
+        "name": "Raticate",
+        "id": 20,
+        "method": "Level 20"
+      }
+    ]
+  ],
+  "evoGroup7": [
+    [
+      {
+        "name": "Spearow",
+        "id": 21
+      }
+    ],
+    [
+      {
+        "name": "Fearow",
+        "id": 22,
+        "method": "Level 20"
+      }
+    ]
+  ],
+  "evoGroup8": [
+    [
+      {
+        "name": "Ekans",
+        "id": 23
+      }
+    ],
+    [
+      {
+        "name": "Arbok",
+        "id": 24,
+        "method": "Level 22"
+      }
+    ]
+  ],
+  "evoGroup9": [
+    [
+      {
+        "name": "Pichu",
+        "id": 172
+      }
+    ],
+    [
+      {
+        "name": "Pikachu",
+        "id": 25,
+        "method": "Happiness"
+      }
+    ],
+    [
+      {
+        "name": "Raichu",
+        "id": 26,
+        "method": "use Thunder Stone, outside Alola or in Ultra Space"
+      }
+    ]
+  ],
+  "evoGroup10": [
+    [
+      {
+        "name": "Sandshrew",
+        "id": 27
+      }
+    ],
+    [
+      {
+        "name": "Sandslash",
+        "id": 28,
+        "method": "Level 22"
+      }
+    ]
+  ],
+  "evoGroup11": [
+    [
+      {
+        "name": "Nidoran ♀",
+        "id": 29
+      }
+    ],
+    [
+      {
+        "name": "Nidorina",
+        "id": 30,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Nidoqueen",
+        "id": 31,
+        "method": "use Moon Stone"
+      }
+    ]
+  ],
+  "evoGroup12": [
+    [
+      {
+        "name": "Nidoran ♂",
+        "id": 32
+      }
+    ],
+    [
+      {
+        "name": "Nidorino",
+        "id": 33,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Nidoking",
+        "id": 34,
+        "method": "use Moon Stone"
+      }
+    ]
+  ],
+  "evoGroup13": [
+    [
+      {
+        "name": "Cleffa",
+        "id": 173
+      }
+    ],
+    [
+      {
+        "name": "Clefairy",
+        "id": 35,
+        "method": "Happiness"
+      }
+    ],
+    [
+      {
+        "name": "Clefable",
+        "id": 36,
+        "method": "use Moon Stone"
+      }
+    ]
+  ],
+  "evoGroup14": [
+    [
+      {
+        "name": "Vulpix",
+        "id": 37
+      }
+    ],
+    [
+      {
+        "name": "Ninetales",
+        "id": 38,
+        "method": "use Fire Stone"
+      }
+    ]
+  ],
+  "evoGroup15": [
+    [
+      {
+        "name": "Igglybuff",
+        "id": 174
+      }
+    ],
+    [
+      {
+        "name": "Jigglypuff",
+        "id": 39,
+        "method": "Happiness"
+      }
+    ],
+    [
+      {
+        "name": "Wigglytuff",
+        "id": 40,
+        "method": "use Moon Stone"
+      }
+    ]
+  ],
+  "evoGroup16": [
+    [
+      {
+        "name": "Zubat",
+        "id": 41
+      }
+    ],
+    [
+      {
+        "name": "Golbat",
+        "id": 42,
+        "method": "Level 22"
+      }
+    ],
+    [
+      {
+        "name": "Crobat",
+        "id": 169,
+        "method": "Happiness"
+      }
+    ]
+  ],
+  "evoGroup17": [
+    [
+      {
+        "name": "Oddish",
+        "id": 43
+      }
+    ],
+    [
+      {
+        "name": "Gloom",
+        "id": 44,
+        "method": "Level 21"
+      }
+    ],
+    [
+      {
+        "name": "Vileplume",
+        "id": 45,
+        "method": "use Leaf Stone"
+      },
+      {
+        "name": "Bellossom",
+        "id": 182,
+        "method": "use Sun Stone"
+      }
+    ]
+  ],
+  "evoGroup18": [
+    [
+      {
+        "name": "Paras",
+        "id": 46
+      }
+    ],
+    [
+      {
+        "name": "Parasect",
+        "id": 47,
+        "method": "Level 24"
+      }
+    ]
+  ],
+  "evoGroup19": [
+    [
+      {
+        "name": "Venonat",
+        "id": 48
+      }
+    ],
+    [
+      {
+        "name": "Venomoth",
+        "id": 49,
+        "method": "Level 31"
+      }
+    ]
+  ],
+  "evoGroup20": [
+    [
+      {
+        "name": "Diglett",
+        "id": 50
+      }
+    ],
+    [
+      {
+        "name": "Dugtrio",
+        "id": 51,
+        "method": "Level 26"
+      }
+    ]
+  ],
+  "evoGroup21": [
+    [
+      {
+        "name": "Meowth",
+        "id": 52
+      }
+    ],
+    [
+      {
+        "name": "Persian",
+        "id": 53,
+        "method": "Level 28"
+      }
+    ]
+  ],
+  "evoGroup22": [
+    [
+      {
+        "name": "Psyduck",
+        "id": 54
+      }
+    ],
+    [
+      {
+        "name": "Golduck",
+        "id": 55,
+        "method": "Level 33"
+      }
+    ]
+  ],
+  "evoGroup23": [
+    [
+      {
+        "name": "Mankey",
+        "id": 56
+      }
+    ],
+    [
+      {
+        "name": "Primeape",
+        "id": 57,
+        "method": "Level 28"
+      }
+    ]
+  ],
+  "evoGroup24": [
+    [
+      {
+        "name": "Growlithe",
+        "id": 58
+      }
+    ],
+    [
+      {
+        "name": "Arcanine",
+        "id": 59,
+        "method": "use Fire Stone"
+      }
+    ]
+  ],
+  "evoGroup25":  [
+    [
+      {
+        "name": "Poliwag",
+        "id": 60
+      }
+    ],
+    [
+      {
+        "name": "Poliwhirl",
+        "id": 61,
+        "method": "Level 25"
+      }
+    ],
+    [
+      {
+        "name": "Poliwrath",
+        "id": 62,
+        "method": "use Water Stone"
+      },
+      {
+        "name": "Politoed",
+        "id": 186,
+        "method": "trade holding  King's Rock"
+      }
+    ]
+  ],
+  "evoGroup26": [
+    [
+      {
+        "name": "Abra",
+        "id": 63
+      }
+    ],
+    [
+      {
+        "name": "Kadabra",
+        "id": 64,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Alakazam",
+        "id": 65,
+        "method": "Trade"
+      }
+    ]
+  ],
+  "evoGroup27": [
+    [
+      {
+        "name": "Machop",
+        "id": 66
+      }
+    ],
+    [
+      {
+        "name": "Machoke",
+        "id": 67,
+        "method": "Level 28"
+      }
+    ],
+    [
+      {
+        "name": "Machamp",
+        "id": 68,
+        "method": "Trade"
+      }
+    ]
+  ],
+  "evoGroup28": [
+    [
+      {
+        "name": "Bellsprout",
+        "id": 69
+      }
+    ],
+    [
+      {
+        "name": "Weepinbell",
+        "id": 70,
+        "method": "Level 21"
+      }
+    ],
+    [
+      {
+        "name": "Victreebel",
+        "id": 71,
+        "method": "use Leaf Stone"
+      }
+    ]
+  ],
+  "evoGroup29": [
+    [
+      {
+        "name": "Tentacool",
+        "id": 72
+      }
+    ],
+    [
+      {
+        "name": "Tentacruel",
+        "id": 73,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup30": [
+    [
+      {
+        "name": "Geodude",
+        "id": 74
+      }
+    ],
+    [
+      {
+        "name": "Graveler",
+        "id": 75,
+        "method": "Level 25"
+      }
+    ],
+    [
+      {
+        "name": "Golem",
+        "id": 76,
+        "method": "Trade"
+      }
+    ]
+  ],
+  "evoGroup31": [
+    [
+      {
+        "name": "Ponyta",
+        "id": 77
+      }
+    ],
+    [
+      {
+        "name": "Rapidash",
+        "id": 78,
+        "method": "Level 40"
+      }
+    ]
+  ],
+  "evoGroup32": [
+    [
+      {
+        "name": "Slowpoke",
+        "id": 79
+      }
+    ],
+    [
+      {
+        "name": "Slowbro",
+        "id": 80,
+        "method": "Level 37"
+      }
+    ],
+    [
+      {
+        "name": "Slowking",
+        "id": 199,
+        "method": "trade holding King's Rock"
+      }
+    ]
+  ],
+  "evoGroup33": [
+    [
+      {
+        "name": "Magnemite",
+        "id": 81
+      }
+    ],
+    [
+      {
+        "name": "Magneton",
+        "id": 82,
+        "method": "Level 30"
+      }
+    ],
+    [
+      {
+        "name": "Magnezone",
+        "id": 462,
+        "method": "level up in a Magnetic Field area"
+      }
+    ]
+  ],
+  "evoGroup34": [
+    [
+      {
+        "name": "Doduo",
+        "id": 84
+      }
+    ],
+    [
+      {
+        "name": "Dodrio",
+        "id": 85,
+        "method": "Level 31"
+      }
+    ]
+  ],
+  "evoGroup35": [
+    [
+      {
+        "name": "Seel",
+        "id": 86
+      }
+    ],
+    [
+      {
+        "name": "Dewgong",
+        "id": 87,
+        "method": "Level 34"
+      }
+    ]
+  ],
+  "evoGroup36": [
+    [
+      {
+        "name": "Grimer",
+        "id": 88
+      }
+    ],
+    [
+      {
+        "name": "Muk",
+        "id": 89,
+        "method": "Level 38"
+      }
+    ]
+  ],
+  "evoGroup37": [
+    [
+      {
+        "name": "Shellder",
+        "id": 90
+      }
+    ],
+    [
+      {
+        "name": "Cloyster",
+        "id": 91,
+        "method": "use Water Stone"
+      }
+    ]
+  ],
+  "evoGroup38": [
+    [
+      {
+        "name": "Gastly",
+        "id": 92
+      }
+    ],
+    [
+      {
+        "name": "Haunter",
+        "id": 93,
+        "method": "Level 25"
+      }
+    ],
+    [
+      {
+        "name": "Gengar",
+        "id": 94,
+        "method": "Trade"
+      }
+    ]
+  ],
+  "evoGroup39": [
+    [
+      {
+        "name": "Onix",
+        "id": 95
+      }
+    ],
+    [
+      {
+        "name": "Steelix",
+        "id": 208,
+        "method": "trade holding Metal Coat"
+      }
+    ]
+  ],
+  "evoGroup40": [
+    [
+      {
+        "name": "Drowzee",
+        "id": 96
+      }
+    ],
+    [
+      {
+        "name": "Hypno",
+        "id": 97,
+        "method": "Level 26"
+      }
+    ]
+  ],
+  "evoGroup41": [
+    [
+      {
+        "name": "Krabby",
+        "id": 98
+      }
+    ],
+    [
+      {
+        "name": "Kingler",
+        "id": 99,
+        "method": "Level 28"
+      }
+    ]
+  ],
+  "evoGroup42": [
+    [
+      {
+        "name": "Voltorb",
+        "id": 100
+      }
+    ],
+    [
+      {
+        "name": "Electrode",
+        "id": 101,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup43": [
+    [
+      {
+        "name": "Exeggcute",
+        "id": 102
+      }
+    ],
+    [
+      {
+        "name": "Exeggutor",
+        "id": 103,
+        "method": "use Leaf Stone, outside Alola or in Ultra Space"
+      }
+    ]
+  ],
+  "evoGroup44": [
+    [
+      {
+        "name": "Cubone",
+        "id": 104
+      }
+    ],
+    [
+      {
+        "name": "Marowak",
+        "id": 105,
+        "method": "Level 28, outside Alola or in Ultra Space"
+      }
+    ]
+  ],
+  "evoGroup45": [
+    [
+      {
+        "name": "Tyrogue",
+        "id": 236
+      }
+    ],
+    [
+      {
+        "name": "Hitmonlee",
+        "id": 106,
+        "method": "Level 20, Attack > Defense"
+      },
+      {
+        "name": "Hitmonchan",
+        "id": 107,
+        "method": "Level 20, Attack < Defense"
+      },
+      {
+        "name": "Hitmontop",
+        "id": 237,
+        "method": "Level 20, Attack = Defense"
+      }
+    ]
+  ],
+  "evoGroup46": [
+    [
+      {
+        "name": "Lickitung",
+        "id": 108
+      }
+    ],
+    [
+      {
+        "name": "Lickilicky",
+        "id": 463,
+        "method": "after Rolloutlearned"
+      }
+    ]
+  ],
+  "evoGroup47": [
+    [
+      {
+        "name": "Koffing",
+        "id": 109
+      }
+    ],
+    [
+      {
+        "name": "Weezing",
+        "id": 110,
+        "method": "Level 35"
+      }
+    ]
+  ],
+  "evoGroup48": [
+    [
+      {
+        "name": "Rhyhorn",
+        "id": 111
+      }
+    ],
+    [
+      {
+        "name": "Rhydon",
+        "id": 112,
+        "method": "Level 42"
+      }
+    ],
+    [
+      {
+        "name": "Rhyperior",
+        "id": 464,
+        "method": "trade holding Protector"
+      }
+    ]
+  ],
+  "evoGroup49": [
+    [
+      {
+        "name": "Happiny",
+        "id": 440
+      }
+    ],
+    [
+      {
+        "name": "Chansey",
+        "id": 113,
+        "method": "hold Oval Stone, Daytime"
+      }
+    ],
+    [
+      {
+        "name": "Blissey",
+        "id": 242,
+        "method": "Happiness"
+      }
+    ]
+  ],
+  "evoGroup50": [
+    [
+      {
+        "name": "Tangela",
+        "id": 114
+      }
+    ],
+    [
+      {
+        "name": "Tangrowth",
+        "id": 465,
+        "method": "after Ancient Power learned"
+      }
+    ]
+  ],
+  "evoGroup51": [
+    [
+      {
+        "name": "Horsea",
+        "id": 116
+      }
+    ],
+    [
+      {
+        "name": "Seadra",
+        "id": 117,
+        "method": "Level 32"
+      }
+    ],
+    [
+      {
+        "name": "Kingdra",
+        "id": 230,
+        "method": "trade holding Dragon Scale"
+      }
+    ]
+  ],
+  "evoGroup52": [
+    [
+      {
+        "name": "Goldeen",
+        "id": 118
+      }
+    ],
+    [
+      {
+        "name": "Seaking",
+        "id": 119,
+        "method": "Level 33"
+      }
+    ]
+  ],
+  "evoGroup53": [
+    [
+      {
+        "name": "Staryu",
+        "id": 120
+      }
+    ],
+    [
+      {
+        "name": "Starmie",
+        "id": 121,
+        "method": "use Water Stone"
+      }
+    ]
+  ],
+  "evoGroup54": [
+    [
+      {
+        "name": "Mime Jr.",
+        "id": 439
+      }
+    ],
+    [
+      {
+        "name": "Mr. Mime",
+        "id": 122,
+        "method": "after Mimic learned"
+      }
+    ]
+  ],
+  "evoGroup55": [
+    [
+      {
+        "name": "Scyther",
+        "id": 123
+      }
+    ],
+    [
+      {
+        "name": "Scizor",
+        "id": 212,
+        "method": "trade holding Metal Coat"
+      }
+    ]
+  ],
+  "evoGroup56": [
+    [
+      {
+        "name": "Smoochum",
+        "id": 238
+      }
+    ],
+    [
+      {
+        "name": "Jynx",
+        "id": 124,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup57": [
+    [
+      {
+        "name": "Elekid",
+        "id": 239
+      }
+    ],
+    [
+      {
+        "name": "Electabuzz",
+        "id": 125,
+        "method": "Level 30"
+      }
+    ],
+    [
+      {
+        "name": "Electivire",
+        "id": 466,
+        "method": "trade holding Electrizer"
+      }
+    ]
+  ],
+  "evoGroup58": [
+    [
+      {
+        "name": "Magby",
+        "id": 240
+      }
+    ],
+    [
+      {
+        "name": "Magmar",
+        "id": 126,
+        "method": "Level 30"
+      }
+    ],
+    [
+      {
+        "name": "Magmortar",
+        "id": 467,
+        "method": "trade holding Magmarizer"
+      }
+    ]
+  ],
+  "evoGroup59": [
+    [
+      {
+        "name": "Magikarp",
+        "id": 129
+      }
+    ],
+    [
+      {
+        "name": "Gyarados",
+        "id": 130,
+        "method": "Level 20"
+      }
+    ]
+  ],
+  "evoGroup60": [
+    [
+      {
+        "name": "Eevee",
+        "id": 133
+      }
+    ],
+    [
+      {
+        "name": "Vaporeon",
+        "id": 134,
+        "method": "use Water Stone"
+      },
+      {
+        "name": "Jolteon",
+        "id": 135,
+        "method": "use Thunder Stone"
+      },
+      {
+        "name": "Flareon",
+        "id": 136,
+        "method": "use Fire Stone"
+      },
+      {
+        "name": "Espeon",
+        "id": 196,
+        "method": "Happiness, Daytime"
+      },
+      {
+        "name": "Umbreon",
+        "id": 197,
+        "method": "Happiness, Nighttime"
+      },
+      {
+        "name": "Leafeon",
+        "id": 470,
+        "method": "level up near a mossy rock"
+      },
+      {
+        "name": "Glaceon",
+        "id": 471,
+        "method": "level up near an icy rock"
+      }
+    ]
+  ],
+  "evoGroup61": [
+    [
+      {
+        "name": "Porygon",
+        "id": 137
+      }
+    ],
+    [
+      {
+        "name": "Porygon2",
+        "id": 233,
+        "method": "trade holding Up-Grade"
+      }
+    ],
+    [
+      {
+        "name": "Porygon-Z",
+        "id": 474,
+        "method": "trade holding Dubious Disc"
+      }
+    ]
+  ],
+  "evoGroup62": [
+    [
+      {
+        "name": "Omanyte",
+        "id": 138
+      }
+    ],
+    [
+      {
+        "name": "Omastar",
+        "id": 139,
+        "method": "Level 40"
+      }
+    ]
+  ],
+  "evoGroup63": [
+    [
+      {
+        "name": "Kabuto",
+        "id": 140
+      }
+    ],
+    [
+      {
+        "name": "Kabutops",
+        "id": 141,
+        "method": "Level 40"
+      }
+    ]
+  ],
+  "evoGroup64": [
+    [
+      {
+        "name": "Munchlax",
+        "id": 446
+      }
+    ],
+    [
+      {
+        "name": "Snorlax",
+        "id": 143,
+        "method": "Happiness"
+      }
+    ]
+  ],
+  "evoGroup65": [
+    [
+      {
+        "name": "Dratini",
+        "id": 147
+      }
+    ],
+    [
+      {
+        "name": "Dragonair",
+        "id": 148,
+        "method": "Level 30"
+      }
+    ],
+    [
+      {
+        "name": "Dragonite",
+        "id": 149,
+        "method": "Level 55"
+      }
+    ]
+  ],
+  "evoGroup66": [
+    [
+      {
+        "name": "Chikorita",
+        "id": 152
+      }
+    ],
+    [
+      {
+        "name": "Bayleef",
+        "id": 153,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Meganium",
+        "id": 154,
+        "method": "Level 32"
+      }
+    ]
+  ],
+  "evoGroup67": [
+    [
+      {
+        "name": "Cyndaquil",
+        "id": 155
+      }
+    ],
+    [
+      {
+        "name": "Quilava",
+        "id": 156,
+        "method": "Level 14"
+      }
+    ],
+    [
+      {
+        "name": "Typhlosion",
+        "id": 157,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup68": [
+    [
+      {
+        "name": "Totodile",
+        "id": 158
+      }
+    ],
+    [
+      {
+        "name": "Croconaw",
+        "id": 159,
+        "method": "Level 18"
+      }
+    ],
+    [
+      {
+        "name": "Feraligatr",
+        "id": 160,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup69": [
+    [
+      {
+        "name": "Sentret",
+        "id": 161
+      }
+    ],
+    [
+      {
+        "name": "Furret",
+        "id": 162,
+        "method": "Level 15"
+      }
+    ]
+  ],
+  "evoGroup70": [
+    [
+      {
+        "name": "Hoothoot",
+        "id": 163
+      }
+    ],
+    [
+      {
+        "name": "Noctowl",
+        "id": 164,
+        "method": "Level 20"
+      }
+    ]
+  ],
+  "evoGroup71": [
+    [
+      {
+        "name": "Ledyba",
+        "id": 165
+      }
+    ],
+    [
+      {
+        "name": "Ledian",
+        "id": 166,
+        "method": "Level 18"
+      }
+    ]
+  ],
+  "evoGroup72": [
+    [
+      {
+        "name": "Spinarak",
+        "id": 167
+      }
+    ],
+    [
+      {
+        "name": "Ariados",
+        "id": 168,
+        "method": "Level 22"
+      }
+    ]
+  ],
+  "evoGroup73": [
+    [
+      {
+        "name": "Chinchou",
+        "id": 170
+      }
+    ],
+    [
+      {
+        "name": "Lanturn",
+        "id": 171,
+        "method": "Level 27"
+      }
+    ]
+  ],
+  "evoGroup74": [
+    [
+      {
+        "name": "Togepi",
+        "id": 175
+      }
+    ],
+    [
+      {
+        "name": "Togetic",
+        "id": 176,
+        "method": "Happiness"
+      }
+    ],
+    [
+      {
+        "name": "Togekiss",
+        "id": 468,
+        "method": "use Shiny Stone"
+      }
+    ]
+  ],
+  "evoGroup75": [
+    [
+      {
+        "name": "Natu",
+        "id": 177
+      }
+    ],
+    [
+      {
+        "name": "Xatu",
+        "id": 178,
+        "method": "Level 25"
+      }
+    ]
+  ],
+  "evoGroup76": [
+    [
+      {
+        "name": "Mareep",
+        "id": 179
+      }
+    ],
+    [
+      {
+        "name": "Flaaffy",
+        "id": 180,
+        "method": "Level 15"
+      }
+    ],
+    [
+      {
+        "name": "Ampharos",
+        "id": 181,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup77": [
+    [
+      {
+        "name": "Azurill",
+        "id": 298
+      }
+    ],
+    [
+      {
+        "name": "Marill",
+        "id": 183,
+        "method": "Happiness"
+      }
+    ],
+    [
+      {
+        "name": "Azumarill",
+        "id": 184,
+        "method": "Level 18"
+      }
+    ]
+  ],
+  "evoGroup78": [
+    [
+      {
+        "name": "Bonsly",
+        "id": 438
+      }
+    ],
+    [
+      {
+        "name": "Sudowoodo",
+        "id": 185,
+        "method": "after Mimic learned"
+      }
+    ]
+  ],
+  "evoGroup79": [
+    [
+      {
+        "name": "Hoppip",
+        "id": 187
+      }
+    ],
+    [
+      {
+        "name": "Skiploom",
+        "id": 188,
+        "method": "Level 18"
+      }
+    ],
+    [
+      {
+        "name": "Jumpluff",
+        "id": 189,
+        "method": "Level 27"
+      }
+    ]
+  ],
+  "evoGroup80": [
+    [
+      {
+        "name": "Aipom",
+        "id": 190
+      }
+    ],
+    [
+      {
+        "name": "Ambipom",
+        "id": 424,
+        "method": "after Double Hit learned"
+      }
+    ]
+  ],
+  "evoGroup81": [
+    [
+      {
+        "name": "Sunkern",
+        "id": 191
+      }
+    ],
+    [
+      {
+        "name": "Sunflora",
+        "id": 192,
+        "method": "use Sun Stone"
+      }
+    ]
+  ],
+  "evoGroup82": [
+    [
+      {
+        "name": "Yanma",
+        "id": 193
+      }
+    ],
+    [
+      {
+        "name": "Yanmega",
+        "id": 469,
+        "method": "after Ancient Power learned"
+      }
+    ]
+  ],
+  "evoGroup83": [
+    [
+      {
+        "name": "Wooper",
+        "id": 194
+      }
+    ],
+    [
+      {
+        "name": "Quagsire",
+        "id": 195,
+        "method": "Level 20"
+      }
+    ]
+  ],
+  "evoGroup84": [
+    [
+      {
+        "name": "Murkrow",
+        "id": 198
+      }
+    ],
+    [
+      {
+        "name": "Honchkrow",
+        "id": 430,
+        "method": "use Dusk Stone"
+      }
+    ]
+  ],
+  "evoGroup85": [
+    [
+      {
+        "name": "Misdreavus",
+        "id": 200
+      }
+    ],
+    [
+      {
+        "name": "Mismagius",
+        "id": 429,
+        "method": "use Dusk Stone"
+      }
+    ]
+  ],
+  "evoGroup86": [
+    [
+      {
+        "name": "Wynaut",
+        "id": 360
+      }
+    ],
+    [
+      {
+        "name": "Wobbuffet",
+        "id": 202,
+        "method": "Level 15"
+      }
+    ]
+  ],
+  "evoGroup87": [
+    [
+      {
+        "name": "Pineco",
+        "id": 204
+      }
+    ],
+    [
+      {
+        "name": "Forretress",
+        "id": 205,
+        "method": "Level 31"
+      }
+    ]
+  ],
+  "evoGroup88": [
+    [
+      {
+        "name": "Gligar",
+        "id": 207
+      }
+    ],
+    [
+      {
+        "name": "Gliscor",
+        "id": 472,
+        "method": "hold Razor Fang, Nighttime"
+      }
+    ]
+  ],
+  "evoGroup89": [
+    [
+      {
+        "name": "Snubbull",
+        "id": 209
+      }
+    ],
+    [
+      {
+        "name": "Granbull",
+        "id": 210,
+        "method": "Level 23"
+      }
+    ]
+  ],
+  "evoGroup90": [
+    [
+      {
+        "name": "Sneasel",
+        "id": 215
+      }
+    ],
+    [
+      {
+        "name": "Weavile",
+        "id": 461,
+        "method": "hold Razor Claw, Nighttime"
+      }
+    ]
+  ],
+  "evoGroup91": [
+    [
+      {
+        "name": "Teddiursa",
+        "id": 216
+      }
+    ],
+    [
+      {
+        "name": "Ursaring",
+        "id": 217,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup92": [
+    [
+      {
+        "name": "Slugma",
+        "id": 218
+      }
+    ],
+    [
+      {
+        "name": "Magcargo",
+        "id": 219,
+        "method": "Level 38"
+      }
+    ]
+  ],
+  "evoGroup93": [
+    [
+      {
+        "name": "Swinub",
+        "id": 220
+      }
+    ],
+    [
+      {
+        "name": "Piloswine",
+        "id": 221,
+        "method": "Level 33"
+      }
+    ],
+    [
+      {
+        "name": "Mamoswine",
+        "id": 473,
+        "method": "after Ancient Power learned"
+      }
+    ]
+  ],
+  "evoGroup94": [
+    [
+      {
+        "name": "Remoraid",
+        "id": 223
+      }
+    ],
+    [
+      {
+        "name": "Octillery",
+        "id": 224,
+        "method": "Level 25"
+      }
+    ]
+  ],
+  "evoGroup95": [
+    [
+      {
+        "name": "Mantyke",
+        "id": 458
+      }
+    ],
+    [
+      {
+        "name": "Mantine",
+        "id": 226,
+        "method": "with Remoraid in party"
+      }
+    ]
+  ],
+  "evoGroup96": [
+    [
+      {
+        "name": "Houndour",
+        "id": 228
+      }
+    ],
+    [
+      {
+        "name": "Houndoom",
+        "id": 229,
+        "method": "Level 24"
+      }
+    ]
+  ],
+  "evoGroup97": [
+    [
+      {
+        "name": "Phanpy",
+        "id": 231
+      }
+    ],
+    [
+      {
+        "name": "Donphan",
+        "id": 232,
+        "method": "Level 25"
+      }
+    ]
+  ],
+  "evoGroup98": [
+    [
+      {
+        "name": "Larvitar",
+        "id": 246
+      }
+    ],
+    [
+      {
+        "name": "Pupitar",
+        "id": 247,
+        "method": "Level 30"
+      }
+    ],
+    [
+      {
+        "name": "Tyranitar",
+        "id": 248,
+        "method": "Level 55"
+      }
+    ]
+  ],
+  "evoGroup99": [
+    [
+      {
+        "name": "Treecko",
+        "id": 252
+      }
+    ],
+    [
+      {
+        "name": "Grovyle",
+        "id": 253,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Sceptile",
+        "id": 254,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup100": [
+    [
+      {
+        "name": "Torchic",
+        "id": 255
+      }
+    ],
+    [
+      {
+        "name": "Combusken",
+        "id": 256,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Blaziken",
+        "id": 257,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup101": [
+    [
+      {
+        "name": "Mudkip",
+        "id": 258
+      }
+    ],
+    [
+      {
+        "name": "Marshtomp",
+        "id": 259,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Swampert",
+        "id": 260,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup102": [
+    [
+      {
+        "name": "Poochyena",
+        "id": 261
+      }
+    ],
+    [
+      {
+        "name": "Mightyena",
+        "id": 262,
+        "method": "Level 18"
+      }
+    ]
+  ],
+  "evoGroup103": [
+    [
+      {
+        "name": "Zigzagoon",
+        "id": 263
+      }
+    ],
+    [
+      {
+        "name": "Linoone",
+        "id": 264,
+        "method": "Level 20"
+      }
+    ]
+  ],
+  "evoGroup104": [
+    [
+      {
+        "name": "Wurmple",
+        "id": 265
+       }
+    ],
+    [
+      {
+        "name": "Silcoon",
+        "id": 266,
+        "method": "Level 7, randomly"
+      },
+      {
+        "name": "Cascoon",
+        "id": 268,
+        "method": "Level 7, randomly"
+      }
+    ],
+    [
+      {
+        "name": "Beautifly",
+        "id": 267,
+        "method": "Level 10"
+      },
+      {
+        "name": "Dustox",
+        "id": 269,
+        "method": "Level 10"
+      }
+    ]
+  ],
+  "evoGroup105": [
+    [
+      {
+        "name": "Lotad",
+        "id": 270
+      }
+    ],
+    [
+      {
+        "name": "Lombre",
+        "id": 271,
+        "method": "Level 14"
+      }
+    ],
+    [
+      {
+        "name": "Ludicolo",
+        "id": 272,
+        "method": "use Water Stone"
+      }
+    ]
+  ],
+  "evoGroup106": [
+    [
+      {
+        "name": "Seedot",
+        "id": 273
+      }
+    ],
+    [
+      {
+        "name": "Nuzleaf",
+        "id": 274,
+        "method": "Level 14"
+      }
+    ],
+    [
+      {
+        "name": "Shiftry",
+        "id": 275,
+        "method": "use Leaf Stone"
+      }
+    ]
+  ],
+  "evoGroup107": [
+    [
+      {
+        "name": "Taillow",
+        "id": 276
+      }
+    ],
+    [
+      {
+        "name": "Swellow",
+        "id": 277,
+        "method": "Level 22"
+      }
+    ]
+  ],
+  "evoGroup108": [
+    [
+      {
+        "name": "Wingull",
+        "id": 278
+      }
+    ],
+    [
+      {
+        "name": "Pelipper",
+        "id": 279,
+        "method": "Level 25"
+      }
+    ]
+  ],
+  "evoGroup109": [
+    [
+      {
+        "name": "Ralts",
+        "id": 280
+      }
+    ],
+    [
+      {
+        "name": "Kirlia",
+        "id": 281,
+        "method": "Level 20"
+      }
+    ],
+    [
+      {
+        "name": "Gardevoir",
+        "id": 282,
+        "method": "Level 30"
+      },
+      {
+        "name": "Gallade",
+        "id": 475,
+        "method": "use Dawn Stone on Male"
+      }
+    ]
+  ],
+  "evoGroup110": [
+    [
+      {
+        "name": "Surskit",
+        "id": 283
+      }
+    ],
+    [
+      {
+        "name": "Masquerain",
+        "id": 284,
+        "method": "Level 22"
+      }
+    ]
+  ],
+  "evoGroup111": [
+    [
+      {
+        "name": "Shroomish",
+        "id": 285
+      }
+    ],
+    [
+      {
+        "name": "Breloom",
+        "id": 286,
+        "method": "Level 23"
+      }
+    ]
+  ],
+  "evoGroup112": [
+    [
+      {
+        "name": "Slakoth",
+        "id": 287
+      }
+    ],
+    [
+      {
+        "name": "Vigoroth",
+        "id": 288,
+        "method": "Level 18"
+      }
+    ],
+    [
+      {
+        "name": "Slaking",
+        "id": 289,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup113": [
+    [
+      {
+        "name": "Nincada",
+        "id": 290
+      }
+    ],
+    [
+      {
+        "name": "Ninjask",
+        "id": 291,
+        "method": "Level 20"
+      },
+      {
+        "name": "Shedinja",
+        "id": 292,
+        "method": "Level 20, open spot in party, pokeball in bag"
+      }
+    ]
+  ],
+  "evoGroup114": [
+    [
+      {
+        "name": "Whismur",
+        "id": 293
+      }
+    ],
+    [
+      {
+        "name": "Loudred",
+        "id": 294,
+        "method": "Level 20"
+      }
+    ],
+    [
+      {
+        "name": "Exploud",
+        "id": 295,
+        "method": "Level 40"
+      }
+    ]
+  ],
+  "evoGroup115": [
+    [
+      {
+        "name": "Makuhita",
+        "id": 296
+      }
+    ],
+    [
+      {
+        "name": "Hariyama",
+        "id": 297,
+        "method": "Level 24"
+      }
+    ]
+  ],
+  "evoGroup116": [
+    [
+      {
+        "name": "Nosepass",
+        "id": 299
+      }
+    ],
+    [
+      {
+        "name": "Probopass",
+        "id": 476,
+        "method": "level up in a Magnetic Field area"
+      }
+    ]
+  ],
+  "evoGroup117": [
+    [
+      {
+        "name": "Skitty",
+        "id": 300
+      }
+    ],
+    [
+      {
+        "name": "Delcatty",
+        "id": 301,
+        "method": "use Moon Stone"
+      }
+    ]
+  ],
+  "evoGroup118": [
+    [
+      {
+        "name": "Aron",
+        "id": 304
+      }
+    ],
+    [
+      {
+        "name": "Lairon",
+        "id": 305,
+        "method": "Level 32"
+      }
+    ],
+    [
+      {
+        "name": "Aggron",
+        "id": 306,
+        "method": "Level 42"
+      }
+    ]
+  ],
+  "evoGroup119": [
+    [
+      {
+        "name": "Meditite",
+        "id": 307
+      }
+    ],
+    [
+      {
+        "name": "Medicham",
+        "id": 308,
+        "method": "Level 37"
+      }
+    ]
+  ],
+  "evoGroup120": [
+    [
+      {
+        "name": "Electrike",
+        "id": 309
+      }
+    ],
+    [
+      {
+        "name": "Manectric",
+        "id": 310,
+        "method": "Level 26"
+      }
+    ]
+  ],
+  "evoGroup121": [
+    [
+      {
+        "name": "Budew",
+        "id": 406
+      }
+    ],
+    [
+      {
+        "name": "Roselia",
+        "id": 315,
+        "method": "Happiness, Daytime"
+      }
+    ],
+    [
+      {
+        "name": "Roserade",
+        "id": 407,
+        "method": "use Shiny Stone"
+      }
+    ]
+  ],
+  "evoGroup122": [
+    [
+      {
+        "name": "Gulpin",
+        "id": 316
+      }
+    ],
+    [
+      {
+        "name": "Swalot",
+        "id": 317,
+        "method": "Level 26"
+      }
+    ]
+  ],
+  "evoGroup123": [
+    [
+      {
+        "name": "Carvanha",
+        "id": 318
+      }
+    ],
+    [
+      {
+        "name": "Sharpedo",
+        "id": 319,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup124": [
+    [
+      {
+        "name": "Wailmer",
+        "id": 320
+      }
+    ],
+    [
+      {
+        "name": "Wailord",
+        "id": 321,
+        "method": "Level 40"
+      }
+    ]
+  ],
+  "evoGroup125": [
+    [
+      {
+        "name": "Numel",
+        "id": 322
+      }
+    ],
+    [
+      {
+        "name": "Camerupt",
+        "id": 323,
+        "method": "Level 33"
+      }
+    ]
+  ],
+  "evoGroup126": [
+    [
+      {
+        "name": "Spoink",
+        "id": 325
+      }
+    ],
+    [
+      {
+        "name": "Grumpig",
+        "id": 326,
+        "method": "Level 32"
+      }
+    ]
+  ],
+  "evoGroup127": [
+    [
+      {
+        "name": "Trapinch",
+        "id": 328
+      }
+    ],
+    [
+      {
+        "name": "Vibrava",
+        "id": 329,
+        "method": "Level 35"
+      }
+    ],
+    [
+      {
+        "name": "Flygon",
+        "id": 330,
+        "method": "Level 45"
+      }
+    ]
+  ],
+  "evoGroup128": [
+    [
+      {
+        "name": "Cacnea",
+        "id": 331
+      }
+    ],
+    [
+      {
+        "name": "Cacturne",
+        "id": 332,
+        "method": "Level 32"
+      }
+    ]
+  ],
+  "evoGroup129": [
+    [
+      {
+        "name": "Swablu",
+        "id": 333
+      }
+    ],
+    [
+      {
+        "name": "Altaria",
+        "id": 334,
+        "method": "Level 35"
+      }
+    ]
+  ],
+  "evoGroup130": [
+    [
+      {
+        "name": "Barboach",
+        "id": 339
+      }
+    ],
+    [
+      {
+        "name": "Whiscash",
+        "id": 340,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup131": [
+    [
+      {
+        "name": "Corphish",
+        "id": 341
+      }
+    ],
+    [
+      {
+        "name": "Crawdaunt",
+        "id": 342,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup132": [
+    [
+      {
+        "name": "Baltoy",
+        "id": 343
+      }
+    ],
+    [
+      {
+        "name": "Claydol",
+        "id": 344,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup133": [
+    [
+      {
+        "name": "Lileep",
+        "id": 345
+      }
+    ],
+    [
+      {
+        "name": "Cradily",
+        "id": 346,
+        "method": "Level 40"
+      }
+    ]
+  ],
+  "evoGroup134": [
+    [
+      {
+        "name": "Anorith",
+        "id": 347
+      }
+    ],
+    [
+      {
+        "name": "Armaldo",
+        "id": 348,
+        "method": "Level 40"
+      }
+    ]
+  ],
+  "evoGroup135": [
+    [
+      {
+        "name": "Feebas",
+        "id": 349
+      }
+    ],
+    [
+      {
+        "name": "Milotic",
+        "id": 350,
+        "method": "Max Beauty"
+      }
+    ]
+  ],
+  "evoGroup136": [
+    [
+      {
+        "name": "Shuppet",
+        "id": 353
+      }
+    ],
+    [
+      {
+        "name": "Banette",
+        "id": 354,
+        "method": "Level 37"
+      }
+    ]
+  ],
+  "evoGroup137": [
+    [
+      {
+        "name": "Duskull",
+        "id": 355
+      }
+    ],
+    [
+      {
+        "name": "Dusclops",
+        "id": 356,
+        "method": "Level 37"
+      }
+    ],
+    [
+      {
+        "name": "Dusknoir",
+        "id": 477,
+        "method": "trade holding Reaper Cloth"
+      }
+    ]
+  ],
+  "evoGroup138": [
+    [
+      {
+        "name": "Chingling",
+        "id": 433
+      }
+    ],
+    [
+      {
+        "name": "Chimecho",
+        "id": 358,
+        "method": "Happiness, Nighttime"
+      }
+    ]
+  ],
+  "evoGroup139": [
+    [
+      {
+        "name": "Snorunt",
+        "id": 361
+      }
+    ],
+    [
+      {
+        "name": "Glalie",
+        "id": 362,
+        "method": "Level 42"
+      },
+      {
+        "name": "Froslass",
+        "id": 478,
+        "method": "use Dawn Stone on Female"
+      }
+    ]
+  ],
+  "evoGroup140": [
+    [
+      {
+        "name": "Spheal",
+        "id": 363
+      }
+    ],
+    [
+      {
+        "name": "Sealeo",
+        "id": 364,
+        "method": "Level 32"
+      }
+    ],
+    [
+      {
+        "name": "Walrein",
+        "id": 365,
+        "method": "Level 44"
+      }
+    ]
+  ],
+  "evoGroup141": [
+    [
+      {
+        "name": "Clamperl",
+        "id": 366
+      }
+    ],
+    [
+      {
+        "name": "Huntail",
+        "id": 367,
+        "method": "trade holding Deepseatooth"
+      },
+      {
+        "name": "Gorebyss",
+        "id": 368,
+        "method": "trade holding Deepseascale"
+      }
+    ]
+  ],
+  "evoGroup142": [
+    [
+      {
+        "name": "Bagon",
+        "id": 371
+      }
+    ],
+    [
+      {
+        "name": "Shelgon",
+        "id": 372,
+        "method": "Level 30"
+      }
+    ],
+    [
+      {
+        "name": "Salamence",
+        "id": 373,
+        "method": "Level 50"
+      }
+    ]
+  ],
+  "evoGroup143": [
+    [
+      {
+        "name": "Beldum",
+        "id": 374
+      }
+    ],
+    [
+      {
+        "name": "Metang",
+        "id": 375,
+        "method": "Level 20"
+      }
+    ],
+    [
+      {
+        "name": "Metagross",
+        "id": 376,
+        "method": "Level 45"
+      }
+    ]
+  ],
+  "evoGroup144": [
+    [
+      {
+        "name": "Turtwig",
+        "id": 387
+      }
+    ],
+    [
+      {
+        "name": "Grotle",
+        "id": 388,
+        "method": "Level 18"
+      }
+    ],
+    [
+      {
+        "name": "Torterra",
+        "id": 389,
+        "method": "Level 32"
+      }
+    ]
+  ],
+  "evoGroup145": [
+    [
+      {
+        "name": "Chimchar",
+        "id": 390
+      }
+    ],
+    [
+      {
+        "name": "Monferno",
+        "id": 391,
+        "method": "Level 14"
+      }
+    ],
+    [
+      {
+        "name": "Infernape",
+        "id": 392,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup146": [
+    [
+      {
+        "name": "Piplup",
+        "id": 393
+      }
+    ],
+    [
+      {
+        "name": "Prinplup",
+        "id": 394,
+        "method": "Level 16"
+      }
+    ],
+    [
+      {
+        "name": "Empoleon",
+        "id": 395,
+        "method": "Level 36"
+      }
+    ]
+  ],
+  "evoGroup147": [
+    [
+      {
+        "name": "Starly",
+        "id": 396
+      }
+    ],
+    [
+      {
+        "name": "Staravia",
+        "id": 397,
+        "method": "Level 14"
+      }
+    ],
+    [
+      {
+        "name": "Staraptor",
+        "id": 398,
+        "method": "Level 34"
+      }
+    ]
+  ],
+  "evoGroup148": [
+    [
+      {
+        "name": "Bidoof",
+        "id": 399
+      }
+    ],
+    [
+      {
+        "name": "Bibarel",
+        "id": 400,
+        "method": "Level 15"
+      }
+    ]
+  ],
+  "evoGroup149": [
+    [
+      {
+        "name": "Kricketot",
+        "id": 401
+      }
+    ],
+    [
+      {
+        "name": "Kricketune",
+        "id": 402,
+        "method": "Level 10"
+      }
+    ]
+  ],
+  "evoGroup150": [
+    [
+      {
+        "name": "Shinx",
+        "id": 403
+      }
+    ],
+    [
+      {
+        "name": "Luxio",
+        "id": 404,
+        "method": "Level 15"
+      }
+    ],
+    [
+      {
+        "name": "Luxray",
+        "id": 405,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup151": [
+    [
+      {
+        "name": "Cranidos",
+        "id": 408
+      }
+    ],
+    [
+      {
+        "name": "Rampardos",
+        "id": 409,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup152": [
+    [
+      {
+        "name": "Shieldon",
+        "id": 410
+      }
+    ],
+    [
+      {
+        "name": "Bastiodon",
+        "id": 411,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup153": [
+    [
+      {
+        "name": "Burmy",
+        "id": 412
+      }
+    ],
+    [
+      {
+        "name": "Mothim",
+        "id": 414,
+        "method": "Level 20, Male"
+      },
+      {
+        "name": "Wormadam",
+        "id": 413,
+        "method": "Level 20,Female, in grass"
+      }
+    ]
+  ],
+  "evoGroup154": [
+    [
+      {
+        "name": "Combee",
+        "id": 415
+      }
+    ],
+    [
+      {
+        "name": "Vespiquen",
+        "id": 416,
+        "method": "Level 21, Female"
+      }
+    ]
+  ],
+  "evoGroup155": [
+    [
+      {
+        "name": "Buizel",
+        "id": 418
+      }
+    ],
+    [
+      {
+        "name": "Floatzel",
+        "id": 419,
+        "method": "Level 26"
+      }
+    ]
+  ],
+  "evoGroup156": [
+    [
+      {
+        "name": "Cherubi",
+        "id": 420
+      }
+    ],
+    [
+      {
+        "name": "Cherrim",
+        "id": 421,
+        "method": "Level 25"
+      }
+    ]
+  ],
+  "evoGroup157": [
+    [
+      {
+        "name": "Shellos",
+        "id": 422
+      }
+    ],
+    [
+      {
+        "name": "Gastrodon",
+        "id": 423,
+        "method": "Level 30"
+      }
+    ]
+  ],
+  "evoGroup158": [
+    [
+      {
+        "name": "Drifloon",
+        "id": 425
+      }
+    ],
+    [
+      {
+        "name": "Drifblim",
+        "id": 426,
+        "method": "Level 28"
+      }
+    ]
+  ],
+  "evoGroup159": [
+    [
+      {
+        "name": "Buneary",
+        "id": 427
+      }
+    ],
+    [
+      {
+        "name": "Lopunny",
+        "id": 428,
+        "method": "Happiness"
+      }
+    ]
+  ],
+  "evoGroup160": [
+    [
+      {
+        "name": "Glameow",
+        "id": 431
+      }
+    ],
+    [
+      {
+        "name": "Purugly",
+        "id": 432,
+        "method": "Level 38"
+      }
+    ]
+  ],
+  "evoGroup161": [
+    [
+      {
+        "name": "Stunky",
+        "id": 434
+      }
+    ],
+    [
+      {
+        "name": "Skuntank",
+        "id": 435,
+        "method": "Level 34"
+      }
+    ]
+  ],
+  "evoGroup162": [
+    [
+      {
+        "name": "Bronzor",
+        "id": 436
+      }
+    ],
+    [
+      {
+        "name": "Bronzong",
+        "id": 437,
+        "method": "Level 33"
+      }
+    ]
+  ],
+  "evoGroup163": [
+    [
+      {
+        "name": "Gible",
+        "id": 443
+      }
+    ],
+    [
+      {
+        "name": "Gabite",
+        "id": 444,
+        "method": "Level 24"
+      }
+    ],
+    [
+      {
+        "name": "Garchomp",
+        "id": 445,
+        "method": "Level 48"
+      }
+    ]
+  ],
+  "evoGroup164": [
+    [
+      {
+        "name": "Riolu",
+        "id": 447
+      }
+    ],
+    [
+      {
+        "name": "Lucario",
+        "id": 448,
+        "method": "Happiness, Daytime"
+      }
+    ]
+  ],
+  "evoGroup165": [
+    [
+      {
+        "name": "Hippopotas",
+        "id": 449
+      }
+    ],
+    [
+      {
+        "name": "Hippowdon",
+        "id": 450,
+        "method": "Level 34"
+      }
+    ]
+  ],
+  "evoGroup166": [
+    [
+      {
+        "name": "Skorupi",
+        "id": 451
+      }
+    ],
+    [
+      {
+        "name": "Drapion",
+        "id": 452,
+        "method": "Level 40"
+      }
+    ]
+  ],
+  "evoGroup167": [
+    [
+      {
+        "name": "Croagunk",
+        "id": 453
+      }
+    ],
+    [
+      {
+        "name": "Toxicroak",
+        "id": 454,
+        "method": "Level 37"
+      }
+    ]
+  ],
+  "evoGroup168": [
+    [
+      {
+        "name": "Finneon",
+        "id": 456
+      }
+    ],
+    [
+      {
+        "name": "Lumineon",
+        "id": 457,
+        "method": "Level 31"
+      }
+    ]
+  ],
+  "evoGroup169": [
+    [
+      {
+        "name": "Snover",
+        "id": 459
+      }
+    ],
+    [
+      {
+        "name": "Abomasnow",
+        "id": 460,
+        "method": "Level 40"
+      }
+    ]
+  ]
+}

@@ -2,63 +2,21 @@ const fs = require('fs');
 const request = require('request-promise');
 const cheerio = require('cheerio');
 
-const url = 'http://www.azurilland.com/pokedex/gen-2/';
+const url = 'https://www.serebii.net/pokedex-sm/';
 const allPromises = [];
+const errors = [];
 
 const irregularMoves = require("./src/data/move-info.js");
-const damages = require("./src/data/damages.js");
+const evoGroups = require("./src/data/evoGroups.json");
+
+const makeCapital = (name) => name.replace(/\b\w/g, l => l.toUpperCase());
 
 const editType = (type) => {
-  let newType;
-  const hashMap = {
-    Electr: "Electric",
-    Psychc: "Psychic",
-    Fight: "Fighting"
-  }
+  let editType;
+  editType = (type && type.indexOf("psychict") > 0) ? type.replace("psychict", "psychic") : type
 
-  if (type === "Fairy") {
-    type = "Normal";
-  }
-
-  if (hashMap[type]) {
-    newType = hashMap[type];
-  } else {
-    newType = type;
-  }
-
-  return newType;
+  return editType ? makeCapital(editType.split("/")[2].split(".shtml")[0]) : "";
 }
-
-const editDmgMultiplier = (multiplier) => {
-  if (!multiplier) {  // multiplier if not defined is just 1, neutral damage
-    return 1;
-  } else if(multiplier === "½") {
-    return 0.5;
-  } else if(multiplier === "¼") {
-    return 0.25;
-  } else if(multiplier === "2×") {
-    return 2;
-  } else if(multiplier === "4×") {
-    return 4;
-  } else if(multiplier === "immune") {
-    return 0;
-  }
-  return multiplier;
-}
-
-// const editDmgMultiplier = (types) => {
-//   const damageCollector = [];
-
-//   if (types.length < 2) {
-//     return damages[types[0]];
-//   } else {
-//     [types[0]].map((item) => {
-//       [types[1]].map((innerItem) => {
-//         console.log(item, innerItem);
-//       });
-//     });
-//   }
-// }
 
 const editMovePower = (moveName, movePower) => {
   if (irregularMoves[moveName]) {
@@ -89,64 +47,129 @@ const editEvolutionMethod = (methodText) => {
   }
 }
 
+const finalEdits = (id, types) => {
+  let newTypes;
+  if (id === 351) {
+    newTypes = [[ "Normal" ], [ "Fire" ], [ "Water" ], [ "Ice" ]];
+  } else if (id === 479) {
+    newTypes = [[ "Electric", "Ghost" ], [ "Electric", "Flying" ], [ "Electric", "Ice" ], [ "Electric", "Fire" ], [ "Electric", "Grass" ], [ "Electric", "Water" ]];
+  } else if (id === 493) {
+    newTypes = [[ "Normal" ], [ "Bug" ], [ "Dark" ], [ "Dragon" ], [ "Electric" ], [ "Fighting" ], [ "Fire" ], [ "Flying" ], [ "Ghost" ], [ "Grass" ], [ "Ground" ], [ "Ice" ], [ "Poison" ], [ "Psychic" ], [ "Rock" ], [ "Steel" ], [ "Water" ]];
+  } else {
+    newTypes = types;
+  }
+
+  return newTypes;
+}
+
 const getPokemon = (id) => {
   return new Promise((resolve, reject) => {
-    return request(`${url}${id}`, (error, response, html) => {
-      if(!error){
+    return setTimeout(() => {
+      return request({ uri: `${url}${id}.shtml`, encoding: "binary" }, (error, response, html) => {
+        if (error) {
+          console.log("error!!!!", `${url}${id}.shtml`, error); // eslint-disable-line
+          reject(error);
+        }
+
         const $ = cheerio.load(html);
 
         console.log(`Building info for ${id}`);
         /* Name + Info*/
-        const regExp = /\(([^)]+)\)/;
-        const monsterName = $(".primary-content .header").eq(0).text();
-        const monsterSpecies = $(".species td").eq(1).text();
-        const monsterCatchRate = $(".pokemon-catch-rate").children().eq(1).text();
-        const monsterBaseExp = $(".pokemon-base-xp").children().eq(1).text();
-        const monsterBaseHappiness = $(".pokemon-base-happiness").children().eq(1).text();
-        const monsterHatchSteps = $(".pokemon-hatch-steps").children().eq(1).text();
-        const monsterGenderSplit = $(".pokemon-gender-group").children().eq(1).text();
-        const monsterGrowth = $(".pokemon-level-rate").children().eq(1).text();
-        const monsterEffortValues = $(".pokemon-effort-values").children().eq(1).text();
-
-        const weightMatches = regExp.exec($(".pokemon-weight td").eq(1).text());
-        const monsterWeight = weightMatches[1];
-        // height needs some manipulation because it's 10x too big
-        const heightMatches = regExp.exec($(".pokemon-height td").eq(1).text()); // ex: "9m"
-        const monsterHeight = (parseInt(heightMatches[1], 10) / 10) + "m";
+        const monsterName = $(".fooinfo").eq(1).text();
+        const monsterSpecies = $(".fooinfo").eq(5).text();
+        const monsterCatchRate = $(".fooinfo").eq(8).text();
+        const monsterBaseHappiness = $(".fooinfo").eq(12).text();
+        const monsterHatchSteps = $(".fooinfo").eq(9).text();
+        const monsterGenderSplit = $(".fooinfo").eq(4).text().replace("%", "% "); // put a space between Male ♂:0%Female ♀:100%
+        const monsterWeight = $(".fooinfo").eq(7).text();
+        const monsterHeight = $(".fooinfo").eq(6).text().replace("'", "' "); // put a space between 2'10"
+        const monsterAbilityData = $(".fooinfo").eq(10).text().split("\n");
+        // const monsterDexEntry = $(".heartgold").eq(1).next(".fooinfo").text().trim(); //$$(".fooinfo")[22]
+        const monsterDexEntry = $(".dextable").eq(7).find($(".fooinfo")).text().trim();
+        const evoGroup = evoGroups[monsterName] ? evoGroups[monsterName].evoGroup : undefined;
+        monsterAbilityData.shift();
+        const monsterAbility = monsterAbilityData.map((ability, index) => {
+          const abilityParts = ability.split(": "); //break on the "Name: Text"
+          return {
+            abilityName: abilityParts[0],
+            abilityDescription: abilityParts[1].trim()
+          }
+        });
         /* End Name + Info */
 
-        /* Types */
+        /* Types and forms */
         let monsterTypes = [];
-        let firstType = editType($(".primary-content .details").children(".item").eq(0).children().eq(0).text());
-        let secondType = editType($(".primary-content .details").children(".item").eq(0).children().eq(1).text());
+        let firstType;
+        let secondType;
 
-        if (firstType !== secondType && secondType !== "") {
-          monsterTypes.push(firstType, secondType);
+        if ($(".cen").eq(0).children().children().children().length > 1) {
+          $(".cen").eq(0).children().children().children().each((i, elem) => {
+            firstType = editType($(elem).children().eq(1).children().eq(0).attr("href"));
+            secondType = editType($(elem).children().eq(1).children().eq(1).attr("href"));
+            if (secondType !== "") {
+              monsterTypes.push([firstType, secondType]);
+            } else {
+              monsterTypes.push([firstType]);
+            }
+          });
         } else {
-          monsterTypes.push(firstType);
+          firstType = editType($(".cen").eq(0).children().eq(0).attr("href"));
+          secondType = editType($(".cen").eq(0).children().eq(1).attr("href"));
+          if (secondType !== "") {
+            monsterTypes.push([firstType, secondType]);
+          } else {
+            monsterTypes.push([firstType]);
+          }
         }
-        /* End Types */
+
+        let monsterHasMultiform = false;
+        let monsterForms = [];
+        const altFormElemHeader = $('.fooevo:contains("Alternate Forms")')
+        // const altFormElem = $(".fooevo").eq(7).text();
+        // const altFormElemHeader = "Alternate Forms";
+        // if(altFormElem === altFormElemHeader) {
+        if(altFormElemHeader.text()) {
+          monsterHasMultiform = true;
+          const altFormElems = altFormElemHeader.parent().next().find($(".fooinfo")).children().eq(0).children().children().eq(0).children(); //this is gross?
+          // const altFormElems = $(".fooinfo").eq(17).find("table");
+
+
+          altFormElems.each((i, elem) => {
+            monsterForms.push($(elem).text());
+          })
+        }
+
+        monsterTypes = finalEdits(parseInt(id, 10), monsterTypes);
+        /* End Types and forms */
 
         /* Base Stats */
         let monsterStats = [];
-        const statElem = $(".primary-content .stats dl");
+        const statElem = $("[name=stats]").next(".dextable");
+        const statElemChildren = statElem.children().children();
 
-        for (let i = 0; i < statElem.children().length / 2; i++) {
-          const statName = statElem.children(".name").eq(i).text();
-          const statValue = statElem.children(".value").eq(i).text();
+        for (let i = 0; i < statElemChildren.eq(1).children(".fooevo").length; i++) {
+          const statName = statElemChildren.eq(1).children(".fooevo").eq(i).text();
+          const statValue = parseInt(statElemChildren.eq(2).children(".fooinfo").eq(i+1).text(), 10); //make the value a numbah
+          const statLabel = `${statName} (${statValue})`; // useful for the radar chart because I can't seem to dynamically build the label?
 
           monsterStats.push({
             statName,
-            statValue
+            statValue,
+            statLabel
           });
         }
         /* End Base Stats */
 
         /* Defensive Strengths/Weaknesses */
         let monsterDefensive = [];
-        $(".primary-content .weaknesses-resistances ul").children().each((i, elem) => {
-          const typeName = editType($(elem).children(".tag").text());
-          const dmgMultiplier = editDmgMultiplier($(elem).children(".multiplier").text());
+        // const defElem = $("[name=general]").next(".dextable").next(".dextable").children().children();
+        // const types = defElem.eq(1).children();
+        const types = $(".dextable>tbody").eq(3).children().eq(1).children().children();
+        // const multipliers = defElem.eq(2).children();
+        const multipliers = $(".dextable>tbody").eq(3).children().eq(2).children();
+        types.each((i, elem) => {
+          const typeName = editType($(elem).attr("href"));
+          const dmgMultiplier = parseFloat(multipliers.eq(i).text().split("*")[1], 10);
 
           if (dmgMultiplier !== 1) {
             monsterDefensive.push({
@@ -155,6 +178,7 @@ const getPokemon = (id) => {
             });
           }
         });
+
         // finally, sort by low => high
         monsterDefensive.sort((a, b) => {
           if (a.dmgMultiplier < b.dmgMultiplier) {
@@ -164,77 +188,52 @@ const getPokemon = (id) => {
           }
           return 0;
         });
-        // const monsterDefensive = editDmgMultiplier(monsterTypes);
         /* End Defensive Strengths/Weaknesses */
 
         /* Moveset */
         const monsterMoves = [];
-        for (let j = 0; j < $("#tab-moves").children(".listing-container").eq(0).find("tbody").children().length; j++ ) {
-          const elem = $("#tab-moves").children(".listing-container").eq(0).find("tbody").children().eq(j);
-          let moveData = {};
-          for (let i = 0; i < elem.children().length; i++) {
-            const moveName = elem.children().eq(1).text();
-            const movePowerInfo = editMovePower(moveName, elem.children().eq(4).text().trim());
-            //console.log(movePowerInfo);
-            moveData.level = elem.children().eq(0).text();
-            moveData.name = moveName;
-            moveData.type = editType(elem.children().eq(2).text());
-            moveData.category = elem.children().eq(3).text();
-            moveData.power = elem.children().eq(4).find("strong").text() || movePowerInfo.movePower;
-            moveData.accuracy = elem.children().eq(5).text();
-            moveData.pp = elem.children().eq(6).text();
-            if ( movePowerInfo.moveNote ) {
-              moveData.notes = movePowerInfo.moveNote;
-            }
+        const atkTables = $("[name=attacks]");
+        atkTables.each((i, elem) => {
+          const moveSet = {
+            header: "",
+            moves: []
+          };
+          const atkRows = $(elem).next(".dextable").children().children();
+          const numMoves = (atkRows.length - 2); //two headers and two rows per move
+          moveSet.header = atkRows.eq(0).text();
+
+          for (let j = 2; j <= numMoves; j+=2) {
+            let moveData = {};
+            atkRows.eq(j).each((i, elem) => {
+              try {
+                const moveName = $(elem).children().eq(1).children().eq(0).text();
+                const power = $(elem).children().eq(4).text();
+                const updatedMove = editMovePower(moveName, power);
+
+                moveData.name = moveName;
+                moveData.level = $(elem).children().eq(0).text();
+                moveData.type = makeCapital($(elem).children().eq(2).children().eq(0).attr("src").split("/")[3].split(".")[0]);
+                moveData.category = $(elem).children().eq(3).children().eq(0).attr("src").split("/")[3].split(".")[0];
+                moveData.accuracy = $(elem).children().eq(5).text();
+                moveData.pp = $(elem).children().eq(6).text();
+
+                moveData.power = updatedMove.movePower;
+                if (updatedMove.moveNote) {
+                  moveData.notes = updatedMove.moveNote;
+                }
+                moveSet.moves.push(moveData);
+              } catch (e) {
+                console.log("Move Error"); // eslint-disable-line
+                errors.push({
+                  pokemonId: id,
+                  error: e
+                });
+              }
+            });
           }
-
-          monsterMoves.push(moveData);
-        }
-        /* End Moveset */
-
-        // get evolutionary info =/
-        const evoList = $(".evolution");
-        const monsterEvolutions = [];
-        // there may be more than one evolution section if
-        // a pokemon mega evolves...
-        const evoTree = evoList.length > 1
-          ?
-            evoList.eq(1)
-          :
-            evoList;
-
-        monsterEvolutions.push([{
-          stage: 1,
-          name: evoTree.children(".base-evo").text().trim(), // "slowpoke",
-          id: evoTree.children(".base-evo").find("a").eq(0).attr("href").split("/")[3].split("-")[0] // uhh...
-        }]);
-
-        let temp = []
-
-        for (let i = 0; i < evoTree.children(".second-evo").length; i++) {
-          temp.push({
-            stage: 2,
-            name: evoTree.children(".second-evo").eq(i).text().trim().match(/Evolves to\s(\w*)/, "")[1],
-            method: editEvolutionMethod(evoTree.children(".second-evo").eq(i).text().trim()),
-            id: evoTree.children(".second-evo").eq(i).find("a").eq(0).attr("href").split("/")[3].split("-")[0]
-          });
-        }
-        if (temp.length) {
-          monsterEvolutions.push(temp);
-        }
-
-        temp = [];
-        for (let i = 0; i < evoTree.children(".third-evo").length; i++) {
-          temp.push({
-            stage: 3,
-            name: evoTree.children(".third-evo").eq(i).text().trim().match(/Evolves to\s(\w*)/, "")[1],
-            method: editEvolutionMethod(evoTree.children(".third-evo").eq(i).text().trim()),
-            id: evoTree.children(".third-evo").eq(i).find("a").eq(0).attr("href").split("/")[3].split("-")[0]
-          });
-        }
-        if (temp.length) {
-          monsterEvolutions.push(temp);
-        }
+          monsterMoves.push(moveSet);
+        });
+        /* End Moveset(s) */
 
         resolve({
           id,
@@ -242,35 +241,43 @@ const getPokemon = (id) => {
           monsterSpecies,
           monsterWeight,
           monsterHeight,
-          monsterTypes,
-          monsterStats,
-          monsterDefensive,
-          monsterMoves,
-          monsterEvolutions,
+          evoGroup,
+          monsterDexEntry,
+          monsterAbility,
           monsterCatchRate,
-          monsterBaseExp,
           monsterBaseHappiness,
           monsterHatchSteps,
           monsterGenderSplit,
-          monsterGrowth,
-          monsterEffortValues
+          monsterTypes,
+          monsterHasMultiform,
+          monsterForms,
+          monsterStats,
+          monsterDefensive,
+          monsterMoves
         });
-      }
-    });
+      })}, 300 * id);
   });
 };
 
 
-for (let i = 1; i < 252; i++) {
-  allPromises.push(getPokemon(i));
+// for (let i = 1; i < 494; i++) {
+for (let i = 1; i <= 809; i++) {
+  const id = ("0000" + i).substr(-3, 3);
+  allPromises.push(getPokemon(id));
 }
 
 Promise.all(allPromises).then(values => {
-  console.log(values);
-  fs.writeFile("src/data/monsters.json", JSON.stringify(values), err => {
+  // fs.writeFile("src/data/monsters2.json", JSON.stringify(values), err => {
+  fs.writeFile("src/data/monstersGen7.json", JSON.stringify(values), err => {
     if (err) return console.log(err);
     console.log("Monsters.json written successfully");
   });
-}).catch(reason => {
+}).then(() => {
+  fs.writeFile("src/data/errorLog.json", JSON.stringify(errors), err => {
+    if (err) return console.log(err);
+    console.log("Error log written successfully");
+  });
+})
+.catch(reason => {
   console.log(reason)
 });

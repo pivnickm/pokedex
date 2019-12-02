@@ -1,122 +1,53 @@
 module.exports = {
-  "SonicBoom" : {
-    power: 20,
-    notes: "Fixed Damage"
+  "Crush Grip" : {
+    newEffectText: "Base Power = 110 * (Opponent's Current HP / Opponent's Max HP)"
   },
-  "Dragon Rage": {
-    power: 40,
-    notes: "Fixed Damage"
+  "Spit Up" : {
+    newEffectText: "Releases power from Stockpile.	Base Power = (Stockpiles * 100)"
   },
-  "Frustration": {
-    power: "varies",
-    notes: "Power = (255 - Friendship) / 2.5"
+  "Swallow" : {
+    newEffectText: "Absorbs power from Stockpile and recovers HP. 1 Stockpile = 1/4HP, 2 Stockpile = 1/2 HP, 3 Stockpile = full HP"
   },
-  "Return": {
-    power: "varies",
-    notes: "Power = Friendship / 2.5"
+  "Trump Card" : {
+    newEffectText: "Base power is dependant on the amount of PP that it has left. 1PP = 190, 2PP = 75, 3PP = 60, 4PP = 50, 5-8PP = 40"
   },
-  "Reversal": {
-    power: "varies",
-    notes: "Stronger when user's HP is low"
+  "Wring Out" : {
+    newEffectText: "Base Power = 110 * (Opponent's Current HP / Opponent's Max HP)"
   },
-  "Hidden Power": {
-    power: "varies",
-    notes: "Power and type vary"
+  "Water Spout" : {
+    newEffectText: "Base Power = (Current HP * 150) / Max HP, max power is 150, min power is 1"
   },
-  "Low Kick": {
-    power: 50,
-    notes: "Power based on weight after GenII"
+  "Eruption" : {
+    newEffectText: "Base Power = (Current HP * 150) / Max HP, max power is 150, min power is 1"
   },
-  "Magnitude": {
-    power: "varies",
-    notes: "10-150, double if enemy underground"
+  "Grass Knot" : {
+    newEffectText: "Base power is dependant on target's weight, max power is 120, min power is 20"
   },
-  "Earthquake": {
-    power: 100,
-    notes: "Double if enemy underground"
+  "Toxic Spikes" : {
+    newEffectText: "1 layer poisons enemy, 2 layers badly poisons. Does not affect Flying, Steel, Poison types or enemies with Levitate"
   },
-  "Fury Cutter": {
-    power: "varies",
-    notes: "Base 10, doubles for each hit"
+  "Fling" : {
+    newEffectText: "Base power and secondary effects are dependant on the item flung"
   },
-  "Gust": {
-    power: 40,
-    notes: "Doubles if enemy in flight"
+  "Punishment" : {
+    newEffectText: "Base power increases by 20 for each stat increase. Max power is 200, min power is 1"
   },
-  "Pursuit": {
-    power: 40,
-    notes: "Doubles if enemy switches out"
+  "Magic Coat" : {
+    newEffectText: "Any special move is reflected back to the attacker."
   },
-  "Rollout": {
-    power: 40,
-    notes: "Base 30, doubles for each hit"
+  "Gyro Ball" : {
+    newEffectText: "Base Power = 25 * (TargetSpeed / UserSpeed), max power is 150, min power is 1"
   },
-  "Stomp": {
-    power: 65,
-    notes: "Doubles if enemy minimized"
+  "Low Kick" : {
+    newEffectText: "Base power is dependant on target's weight, max power is 120, min power is 20"
   },
-  "Twister": {
-    power: 40,
-    notes: "Doubles if enemy in flight"
+  "Magnitude" : {
+    newEffectText: "Move power is random: 10/30/50/70/90/110/150"
   },
-  "Whirlpool": {
-    power: 15,
-    notes: "Inflicts 1/16 enemy's health each turn"
+  "Spikes" : {
+    newEffectText: "1 layer = 1/8 enemy max HP, 2 layers = 1/6 enemy max HP, 3 layers = 1/4 enemy max HP"
   },
-  "Triple Kick": {
-    power: 10,
-    notes: "Increases by 10 each hit, max 30"
-  },
-  "Flail": {
-    power: "varies",
-    notes: "Stronger when user's HP is low"
-  },
-  "Present": {
-    power: "varies",
-    notes: "40, 80, 120, or heals enemy 25%"
-  },
-  "Bide": {
-    power: "varies",
-    notes: "Double damage taken for 2-3 turns"
-  },
-  "Mirror Coat": {
-    power: "varies",
-    notes: "Double damage taken from special attacks"
-  },
-  "Counter": {
-    power: "varies",
-    notes: "Double damage taken from physical attacks"
-  },
-  "Beat Up": {
-    power: "varies",
-    notes: "10 per each conscious member of user's party"
-  },
-  "Guillotine": {
-    power: "varies",
-    notes: "If move lands, 1HKO"
-  },
-  "Fissure": {
-    power: "varies",
-    notes: "If move lands, 1HKO"
-  },
-  "Horn Drill": {
-    power: "varies",
-    notes: "If move lands, 1HKO"
-  },
-  "Psywave": {
-    power: "varies",
-    notes: "50% and 150% of the user's level"
-  },
-  "Night Shade": {
-    power: "varies",
-    notes: "Damage equal to user's level"
-  },
-  "Seismic Toss": {
-    power: "varies",
-    notes: "Damage equal to user's level"
-  },
-  "Super Fang": {
-    power: "varies",
-    notes: "Inflicts 50% enemy's current health"
+  "Stealth Rock" : {
+    newEffectText: "Does damage relative to type advantage, 1/32 max HP for .25x effective -> 1/2 max HP for 4x effective"
   }
 };
