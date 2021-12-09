@@ -1,5 +1,13 @@
-.MoveList__moves {
+.MoveList {
   display: flex;
   flex-flow: row wrap;
   font-size: .8rem;
+}
+
+.MoveList_wrapper {
+  flex: 1 1 100%;
+}
+
+.MoveList_header {
+  margin: .5rem 0;
 }

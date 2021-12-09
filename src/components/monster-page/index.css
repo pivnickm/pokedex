@@ -5,16 +5,66 @@
 
 .MonsterPage__basic {
   flex: 3 3 30px;
-  padding: 1rem 0;
+  padding: 1rem .5rem;
+  margin: 0 .5rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
 }
 
+.MonsterPage__visualInfo {
+  flex: 0 50%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.MonsterPage__formChanger {
+  order: 3;
+  flex: 1 100%;
+  padding: .5rem 0;
+  text-align: center;
+}
+
+.MonsterPage__formSelect {
+  width: 75%;
+  border: 1px solid #333;
+}
+
+.MonsterPage__nav {
+  flex: 1 5%;
+  padding: 0 .5rem .5rem .5rem;
+  text-align: center;
+}
+
+.MonsterPage__nav:last-child {
+  order: 3;
+}
+
+.MonsterPage__nav_forward ,
+.MonsterPage__nav_back {
+  color: #333;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.MonsterPage__nav_forward:hover ,
+.MonsterPage__nav_back:hover {
+  color: #666;
+}
+
 .defense {
   flex: 8 8 100%;
   display: flex;
+}
+
+.ability_name {
+  font-weight: bold;
+}
+
+.dexEntry__text {
+  font-size: .75rem;
 }
 
 .MonsterPage__EvolutionInfo {
@@ -33,10 +83,27 @@
 }
 
 .VisualInfo__type_wrapper {
+  flex: 1 100%;
   text-align: center;
+  order: 4;
 }
 
 .VisualInfo__gender_wrapper {
   padding-top: .5rem;
   font-size: .75rem;
+}
+
+.MonsterPage__sectionHeader {
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: .8rem;
+  margin-bottom: .5rem;
+  padding: .5rem;
+}
+
+@media (min-width: 600px) {
+  .MonsterPage__formSelect {
+    width: 50%;
+  }
 }

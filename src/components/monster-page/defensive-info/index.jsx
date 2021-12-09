@@ -8,9 +8,6 @@ const DefensiveInfo = ({ monsterInfo }) => {
   const { monsterDefensive } = monsterInfo;
   return (
     <div className="DefensiveInfo">
-      <div className="DefensiveInfo__header">
-        Damage Taken
-      </div>
       <div className="DefensiveInfo__types">
         {monsterDefensive.map((item, key) =>
           item.dmgMultiplier !== 1 &&

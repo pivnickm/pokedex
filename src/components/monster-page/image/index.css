@@ -1,9 +1,0 @@
-.VisualInfo__sprite {
-  height: 200px;
-}
-
-@media (max-width: 600px) {
-  .VisualInfo__sprite {
-    height: 125px;
-  }
-}
